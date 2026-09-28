@@ -1,0 +1,12 @@
+ the decision boundary. If we are
+asked to make a prediction for the value of yat A, it seems we should be
+quite conﬁdent that y= 1 there. Conversely, the point C is very close to
+the decision boundary, and while it’s on the side of the decision boundary
+on which we would predict y= 1, it seems likely that just a small change to
+the decision boundary could easily have caused out prediction to be y= 0.
+Hence, we’re much more conﬁdent about our prediction at A than at C. The
+point B lies in-between these two cases, and more broadly, we see that if
+a point is far from the separating hyperplane, then we may be signiﬁcantly
+more conﬁdent in our predictions. Again, informally we think it would be
+nice if, given a training set, we manage to ﬁnd a decision boundary that
+allows us to make all corre

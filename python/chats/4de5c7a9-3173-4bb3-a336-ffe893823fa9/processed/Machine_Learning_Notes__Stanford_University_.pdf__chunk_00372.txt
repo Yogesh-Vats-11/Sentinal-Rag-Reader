@@ -1,0 +1,20 @@
+
+z(i)Qi(z(i)) logp(x(i),z(i);θ)
+Qi(z(i))
+Recall that EM can be viewed as alternating maximization of
+ELBO(Q,θ). Here instead, we optimize the EBLO over Q∈Q
+max
+Q∈Qmax
+θELBO(Q,θ) (11.20)
+Now the next question is what form of Q(or what structural assumptions
+to make about Q) allows us to eﬃciently maximize the objective above. When
+the latent variable zare high-dimensional discrete variables, one popular as-
+sumption is the mean ﬁeld assumption , which assumes that Qi(z) gives a
+distribution with independent coordinates, or in other words, Qican be de-
+composed into Qi(z) =Q1
+i(z1)···Qk
+i(zk). There are tremendous applications
+of mean ﬁeld assumptions to learning generative models with discrete latent
+variables, and we refer to Blei et al. [2017] for a survey of these models and
+162
+their im

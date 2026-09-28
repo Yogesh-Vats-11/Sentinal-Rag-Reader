@@ -1,0 +1,12 @@
+rning a linear model in the feature
+space, but also learning a good feature map φβ(·) itself so that it’s possi-
+ble to predict accurately with a linear model on top of the feature map.
+Therefore, deep learning tends to depend less on the domain knowledge of
+the particular applications and requires often less feature engineering. The
+penultimate layer a[r]is often (informally) referred to as the learned features
+or representations in the context of deep learning.
+In the example of house price prediction, a fully-connected neural network
+does not need us to specify the intermediate quantity such “family size”, and
+may automatically discover some useful features in the last penultimate layer
+(the activation a[r−1]), and use them to linearly predict the housing price.
+Often the feature map / 

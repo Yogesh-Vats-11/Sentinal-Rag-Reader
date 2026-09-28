@@ -54,7 +54,7 @@ export function IconClose() {
 
 export function IconScroll() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
         d="M6 4H17C18.1 4 19 4.9 19 6V18C19 19.1 18.1 20 17 20H8C6.9 20 6 19.1 6 18V4Z"
         stroke="currentColor"
@@ -62,6 +62,34 @@ export function IconScroll() {
         strokeLinejoin="round"
       />
       <path d="M9 8H15M9 11.5H15M9 15H13" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IconPaperclip() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 20 20" fill="none">
+      <path
+        d="M16.5 9.4L10.1 15.8C8.5 17.4 5.9 17.4 4.3 15.8C2.7 14.2 2.7 11.6 4.3 10L10.9 3.4C11.9 2.4 13.5 2.4 14.5 3.4C15.5 4.4 15.5 6 14.5 7L8.2 13.3C7.7 13.8 6.9 13.8 6.4 13.3C5.9 12.8 5.9 12 6.4 11.5L12 5.9"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconFile() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path
+        d="M3.5 1.75H8L10.5 4.25V11.5C10.5 11.91 10.16 12.25 9.75 12.25H3.5C3.09 12.25 2.75 11.91 2.75 11.5V2.5C2.75 2.09 3.09 1.75 3.5 1.75Z"
+        stroke="currentColor"
+        strokeWidth="1.1"
+        strokeLinejoin="round"
+      />
+      <path d="M8 1.75V4.25H10.5" stroke="currentColor" strokeWidth="1.1" strokeLinejoin="round" />
     </svg>
   );
 }

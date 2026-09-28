@@ -1,0 +1,18 @@
+show that there is no set of 4 points that this
+hypothesis class can shatter. Thus, the largest set that Hcan shatter is of
+size 3, and hence VC( H) = 3.
+Note that the VC dimension of Hhere is 3 even though there may be
+sets of size 3 that it cannot shatter. For instance, if we had a set of three
+points lying in a straight line (left ﬁgure), then there is no way to ﬁnd a linear
+separator for the labeling of the three points shown below (right ﬁgure):
+134
+x
+x12/0 /1
+/0 /1
+/0 /1x
+x12
+In order words, under the deﬁnition of the VC dimension, in order to
+prove that VC(H) is at least D, we need to show only that there’s at least
+oneset of size DthatHcan shatter.
+The following theorem, due to Vapnik, can then be shown. (This is, many
+would argue, the most important theorem in all of learning theo

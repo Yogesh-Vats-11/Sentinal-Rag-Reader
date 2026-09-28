@@ -1,0 +1,18 @@
+ +∑n
+i=11{x(i)
+j= 1∧y(i)= 0}
+2 +∑n
+i=11{y(i)= 0}
+46
+(In practice, it usually doesn’t matter much whether we apply Laplace smooth-
+ing toφyor not, since we will typically have a fair fraction each of spam and
+non-spam messages, so φywill be a reasonable estimate of p(y= 1) and will
+be quite far from 0 anyway.)
+4.2.2 Event models for text classiﬁcation
+To close oﬀ our discussion of generative learning algorithms, let’s talk about
+one more model that is speciﬁcally for text classiﬁcation. While Naive Bayes
+as we’ve presented it will work well for many classiﬁcation problems, for text
+classiﬁcation, there is a related model that does even better.
+In the speciﬁc context of text classiﬁcation, Naive Bayes as presented uses
+the what’s called the Bernoulli event model (or sometimes multi-variate
+B

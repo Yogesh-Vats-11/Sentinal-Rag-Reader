@@ -1,0 +1,26 @@
+J
+∂u[i]and
+u[i−1]. These two type of computations can be also interleaved with each
+other because∂J
+∂θ[i]only depends on∂J
+∂u[i]andu[i−1]but not any∂J
+∂u[k]with
+k<i .
+We ﬁrst see why∂J
+∂u[i−1]can be computed eﬃciently from∂J
+∂u[i]andu[i−1]
+by invoking the discussion in Section 7.4.1 on the chain rule. We in-
+stantiate the discussion by setting u=u[i]andz=u[i−1], andf(u) =
+Mk(Mk−1(···Mi+1(u[i]))), andg(·) =Mi(·). Note that fis very complex
+but we don’t need any concrete information about f. Then, the conclusive
+equation (7.56) corresponds to
+∂J
+∂u[i]chain rule= = = = = = = = = = = = = = = = = = = = = = = = = = ⇒
+only requires info about Mi(·)andu[i−1]∂J
+∂u[i−1]. (7.61)
+More precisely, we can write, following equation (7.57)
+∂J
+∂u[i−1]=B[Mi,u[i−1]](∂J
+∂u[i])
+. (B1)
+Instantiating the chain ru

@@ -1,0 +1,18 @@
+y follows from
+Eτ∼Pθ[
+∇θlogπθ(at|st)·(∑
+0≤j<tγjR(sj,aj))]
+= E[
+E [∇θlogπθ(at|st)|s0,a0,...,st−1,at−1,st]·(∑
+0≤j<tγjR(sj,aj))]
+= 0 (because E [ ∇θlogπθ(at|st)|s0,a0,...,st−1,at−1,st] = 0)
+Note that here we used the law of total expectation. The outer expecta-
+tion in the second line above is over the randomness of s0,a0,...,at−1,st,
+whereas the inner expectation is over the randomness of at(conditioned on
+s0,a0,...,at−1,st.) We see that we’ve made the estimator slightly simpler.
+The second consequence of E at∼πθ(·|st)∇θlogπθ(at|st) = 0 is the following: for
+any valueB(st) that only depends on st, it holds that
+Eτ∼Pθ[∇θlogπθ(at|st)·B(st)]
+= E [E [∇θlogπθ(at|st)|s0,a0,...,st−1,at−1,st]B(st)]
+= 0 (because E [ ∇θlogπθ(at|st)|s0,a0,...,st−1,at−1,st] = 0)
+2In general, it’s true that E x∼pθ[∇logpθ

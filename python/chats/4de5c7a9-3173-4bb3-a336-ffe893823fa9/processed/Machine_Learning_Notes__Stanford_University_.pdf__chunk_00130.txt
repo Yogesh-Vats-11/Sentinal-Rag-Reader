@@ -1,0 +1,13 @@
+ the best)
+“oﬀ-the-shelf” supervised learning algorithms. To tell the SVM story, we’ll
+need to ﬁrst talk about margins and the idea of separating data with a large
+“gap.” Next, we’ll talk about the optimal margin classiﬁer, which will lead
+us into a digression on Lagrange duality. We’ll also see kernels, which give
+a way to apply SVMs eﬃciently in very high dimensional (such as inﬁnite-
+dimensional) feature spaces, and ﬁnally, we’ll close oﬀ the story with the
+SMO algorithm, which gives an eﬃcient implementation of SVMs.
+6.1 Margins: intuition
+We’ll start our story on SVMs by talking about margins. This section will
+give the intuitions about margins and about the “conﬁdence” of our predic-
+tions; these ideas will be made formal in Section 6.3.
+Consider logistic regression, where the probab

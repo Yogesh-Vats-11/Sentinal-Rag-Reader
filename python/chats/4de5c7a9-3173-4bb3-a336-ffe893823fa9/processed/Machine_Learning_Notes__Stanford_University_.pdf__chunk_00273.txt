@@ -1,0 +1,17 @@
+−havg(x))2+E[(havg−hS(x))2] (8.6)
+=σ2
+
+unavoidable+ (h⋆(x)−havg(x))2
+
+≜bias2+ var(hS(x))
+≜variance(8.7)
+We call the second term the bias (square) and the third term the variance. As
+discussed before, the bias captures the part of the error that are introduced
+due to the lack of expressivity of the model. Recall that havgcan be thought
+of as the best possible model learned even with inﬁnite data. Thus, the bias is
+not due to the lack of data, but is rather caused by that the family of models
+fundamentally cannot approximate the h⋆. For example, in the illustrating
+example in Figure 8.2, because any linear model cannot approximate the
+true quadratic function h⋆, neither can havg, and thus the bias term has to
+be large.
+The variance term captures how the random nature of the ﬁnite

@@ -1,0 +1,33 @@
+=
+p(xj=k|y= 1) (for any j) andφk|y=0=p(xj=k|y= 0). Note that we have
+assumed that p(xj|y) is the same for all values of j(i.e., that the distribution
+according to which a word is generated does not depend on its position j
+within the email).
+If we are given a training set {(x(i),y(i));i= 1,...,n}wherex(i)=
+(x(i)
+1,x(i)
+2,...,x(i)
+di) (here,diis the number of words in the i-training example),
+the likelihood of the data is given by
+L(φy,φk|y=0,φk|y=1) =n∏
+i=1p(x(i),y(i))
+=n∏
+i=1(di∏
+j=1p(x(i)
+j|y;φk|y=0,φk|y=1))
+p(y(i);φy).
+Maximizing this yields the maximum likelihood estimates of the parameters:
+φk|y=1=∑n
+i=1∑di
+j=11{x(i)
+j=k∧y(i)= 1}∑n
+i=11{y(i)= 1}di
+φk|y=0=∑n
+i=1∑di
+j=11{x(i)
+j=k∧y(i)= 0}∑n
+i=11{y(i)= 0}di
+φy=∑n
+i=11{y(i)= 1}
+n.
+If we were to apply Laplace smoothing (which is needed in 

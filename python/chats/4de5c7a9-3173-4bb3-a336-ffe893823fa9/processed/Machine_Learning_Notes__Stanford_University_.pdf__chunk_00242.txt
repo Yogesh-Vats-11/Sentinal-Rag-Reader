@@ -1,0 +1,23 @@
+s evaluating the result of matrix multiplication up to
+constant factor.
+Backward function for the activations. SupposeM(z) =σ(z) whereσis an
+element-wise activation function and z∈Rm. Then, using equation (7.59),
+we have
+B[σ,z](v) =
+∂σ(z1)
+∂z1···∂σ(zm)
+∂z1.........
+∂σ(z1)
+∂zm···∂σ(zm)
+∂zm
+v (7.67)
+= diag(σ′(z1),···,σ′(zm))v (7.68)
+=σ′(z)⊙v∈Rm. (7.69)
+Here, we used the fact that∂σ(zj)
+∂zi= 0 whenj̸=i, diag(λ1,...,λm) denotes
+the diagonal matrix with λ1,...,λmon the diagonal, and ⊙denotes the
+element-wise product of two vectors with the same dimension, and σ′(·) is
+the element-wise application of the derivative of the activation function σ.
+Regarding computation eﬃciency, we note that at the ﬁrst sight, equa-
+tion (7.67) appears to indicate the backward function takes O(m2) time, but
+e

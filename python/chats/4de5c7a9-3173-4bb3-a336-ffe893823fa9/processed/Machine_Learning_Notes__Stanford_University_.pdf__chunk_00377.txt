@@ -1,0 +1,24 @@
+n. There is no strong need to
+compute the maximum over each variable at a much greater cost. (For Gaus-
+sian mixture model in Section 11.4, computing the maximum is analytically
+feasible and relatively cheap, and therefore we did alternating maximization.)
+Mathematically, let ηbe the learning rate, the gradient ascent step is
+θ:=θ+η∇θELBO(φ,ψ,θ )
+φ:=φ+η∇φELBO(φ,ψ,θ )
+ψ:=ψ+η∇ψELBO(φ,ψ,θ )
+Computing the gradient over θis simple because
+∇θELBO(φ,ψ,θ ) =∇θn∑
+i=1Ez(i)∼Qi[
+logp(x(i),z(i);θ)
+Qi(z(i))]
+=∇θn∑
+i=1Ez(i)∼Qi[
+logp(x(i),z(i);θ)]
+=n∑
+i=1Ez(i)∼Qi[
+∇θlogp(x(i),z(i);θ)]
+, (11.23)
+But computing the gradient over φandψis tricky because the sam-
+pling distribution Qidepends on φandψ. (Abstractly speaking, the is-
+sue we face can be simpliﬁed as the problem of computing the gradi-
+ent Ez∼Qφ[f(φ

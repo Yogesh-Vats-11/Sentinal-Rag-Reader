@@ -1,0 +1,29 @@
+the contours will form ellipses (the rightmost ﬁgure
+showing an example).
+As our last set of examples, ﬁxing Σ = I, by varying µ, we can also move
+the mean of the density around.
+−3−2−10123
+−3−2−101230.050.10.150.20.25
+−3−2−10123
+−3−2−101230.050.10.150.20.25
+−3−2−10123
+−3−2−101230.050.10.150.20.25
+38
+The ﬁgures above were generated using Σ = I, and respectively
+µ=[1
+0]
+;µ=[-0.5
+0]
+;µ=[-1
+-1.5]
+.
+4.1.2 The Gaussian discriminant analysis model
+When we have a classiﬁcation problem in which the input features xare
+continuous-valued random variables, we can then use the Gaussian Discrim-
+inant Analysis (GDA) model, which models p(x|y) using a multivariate nor-
+mal distribution. The model is:
+y∼Bernoulli(φ)
+x|y= 0∼ N (µ0,Σ)
+x|y= 1∼ N (µ1,Σ)
+Writing out the distributions, this is:
+p(y) =φy(1−φ)1−

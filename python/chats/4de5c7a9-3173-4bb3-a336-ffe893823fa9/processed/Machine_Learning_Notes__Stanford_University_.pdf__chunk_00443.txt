@@ -1,0 +1,17 @@
+derstand
+this equation and see why it makes sense.
+We also deﬁne a policy π∗:S↦→Aas follows:
+π∗(s) = arg max
+a∈A∑
+s′∈SPsa(s′)V∗(s′). (15.3)
+Note thatπ∗(s) gives the action athat attains the maximum in the “max”
+in Equation (15.2).
+It is a fact that for every state sand every policy π, we have
+V∗(s) =Vπ∗(s)≥Vπ(s).
+The ﬁrst equality says that the Vπ∗, the value function for π∗, is equal to the
+optimal value function V∗for every state s. Further, the inequality above
+says thatπ∗’s value is at least a large as the value of any other other policy.
+In other words, π∗as deﬁned in Equation (15.3) is the optimal policy.
+Note thatπ∗has the interesting property that it is the optimal policy
+forallstatess. Speciﬁcally, it is not the case that if we were starting in
+some state sthen there’d be some opt

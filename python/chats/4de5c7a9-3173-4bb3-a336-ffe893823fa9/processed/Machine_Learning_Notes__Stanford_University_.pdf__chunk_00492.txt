@@ -1,0 +1,16 @@
+ics
+Let’s suppose that at time t, the system spends most of its time in some state
+¯stand the actions we perform are around ¯ at. For the inverted pendulum, if
+we reached some kind of optimal, this is true: our actions are small and we
+don’t deviate much from the vertical.
+We are going to use Taylor expansion to linearize the dynamics. In the
+simple case where the state is one-dimensional and the transition function F
+does not depend on the action, we would write something like
+st+1=F(st)≈F(¯st) +F′(¯st)·(st−¯st)
+In the more general setting, the formula looks the same, with gradients
+instead of simple derivatives
+st+1≈F(¯st,¯at) +∇sF(¯st,¯at)·(st−¯st) +∇aF(¯st,¯at)·(at−¯at) (16.3)
+and now,st+1is linear instandat, because we can rewrite equation (16.3)
+as
+st+1≈Ast+Bst+κ
+whereκis some consta

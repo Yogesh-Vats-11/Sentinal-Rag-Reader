@@ -1,0 +1,14 @@
+a straight line, we wish to prevent negative housing
+prices by setting the absolute minimum price as zero. This produces a “kink”
+in the graph as shown in Figure 7.1. How do we represent such a function
+with a single kink as ¯hθ(x) with unknown parameter? (After doing so, we
+can invoke the machinery in Section 7.1.)
+We deﬁne a parameterized function ¯hθ(x) with input x, parameterized by
+θ, which outputs the price of the house y. Formally, ¯hθ:x→y. Perhaps
+one of the simplest parametrization would be
+¯hθ(x) = max(wx+b,0),whereθ= (w,b)∈R2(7.11)
+Here ¯hθ(x) returns a single value: ( wx+b) or zero, whichever is greater. In
+the context of neural networks, the function max {t,0}is called a ReLU (pro-
+nounced “ray-lu”), or rectiﬁed linear unit, and often denoted by ReLU( t)≜
+max{t,0}.
+Generally, 

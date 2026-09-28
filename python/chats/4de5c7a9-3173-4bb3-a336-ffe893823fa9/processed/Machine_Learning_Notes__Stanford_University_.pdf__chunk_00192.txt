@@ -1,0 +1,13 @@
+networks. The
+hidden units a1,...,amcorrespond to the neurons in a biological neural net-
+work, and the parameters θi’s correspond to the synapses. However, it’s
+unclear how similar the modern deep artiﬁcial neural networks are to the bi-
+ological ones. For example, perhaps not many neuroscientists think biological
+3Typically, for multi-layer neural network, at the end, near the output, we don’t apply
+ReLU, especially when the output is not necessarily a positive number.
+87
+neural networks could have 1000 layers, while some modern artiﬁcial neural
+networks do (we will elaborate more on the notion of layers.) Moreover, it’s
+an open question whether human brains update their neural networks in a
+way similar to the way that computer scientists learn artiﬁcial neural net-
+works (using backprop

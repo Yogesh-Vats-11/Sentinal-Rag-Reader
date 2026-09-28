@@ -1,0 +1,19 @@
+ee polynomial to an extremely large dataset, the resulting model would be
+close to a quadratic function and be accurate (Figure 8.6). This is because
+the family of 5-th degree polynomials contains all the quadratic functions
+(settingθ5=θ4=θ3= 0 results in a quadratic function), and, therefore,
+5-th degree polynomials are in principle capable of capturing the structure
+of the data.
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining data
+best fit 5-th degree model
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytest data
+ground truth h*
+best fit 5-th degree model
+Figure 8.5: Best ﬁt 5-th degree polynomial has zero training error, but still
+has a large test error and does not recover the the ground truth. This is a
+classic situation of overﬁtting.
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining data
+best fi

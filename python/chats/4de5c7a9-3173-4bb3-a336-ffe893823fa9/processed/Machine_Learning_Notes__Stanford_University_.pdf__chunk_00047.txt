@@ -1,0 +1,18 @@
+ to “force” it to
+output values that are either 0 or 1 or exactly. To do so, it seems natural to
+change the deﬁnition of gto be the threshold function:
+g(z) ={1 ifz≥0
+0 ifz <0
+If we then let hθ(x) =g(θTx) as before but using this modiﬁed deﬁnition of
+g, and if we use the update rule
+θj:=θj+α(
+y(i)−hθ(x(i)))
+x(i)
+j.
+then we have the perceptron learning algorithn .
+In the 1960s, this “perceptron” was argued to be a rough model for how
+individual neurons in the brain work. Given how simple the algorithm is, it
+will also provide a starting point for our analysis when we talk about learning
+theory later in this class. Note however that even though the perceptron may
+be cosmetically similar to the other algorithms we talked about, it is actually
+a very diﬀerent type of algorithm than logistic re

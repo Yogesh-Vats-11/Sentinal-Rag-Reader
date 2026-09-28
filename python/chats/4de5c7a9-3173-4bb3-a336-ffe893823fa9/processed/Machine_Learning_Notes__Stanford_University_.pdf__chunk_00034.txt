@@ -1,0 +1,12 @@
+ht seem that the more features we add, the better. However, there is also
+a danger in adding too many features: The rightmost ﬁgure is the result of
+ﬁtting a 5-th order polynomial y=∑5
+j=0θjxj. We see that even though the
+ﬁtted curve passes through the data perfectly, we would not expect this to
+be a very good predictor of, say, housing prices ( y) for diﬀerent living areas
+(x). Without formally deﬁning what these terms mean, we’ll say the ﬁgure
+on the left shows an instance of underﬁtting —in which the data clearly
+shows structure not captured by the model—and the ﬁgure on the right is
+an example of overﬁtting . (Later in this class, when we talk about learning
+theory we’ll formalize some of these notions, and also deﬁne more carefully
+just what it means for a hypothesis to be good or bad

@@ -1,0 +1,14 @@
+rning model is learned
+with the following steps. 1. Deﬁne a neural network parametrization hθ(x),
+which we will introduce in Section 7.2, and 2. write the backpropagation
+algorithm to compute the gradient of the loss function J(j)(θ) eﬃciently,
+which will be covered in Section 7.4, and 3. run SGD or mini-batch SGD (or
+other gradient-based optimizers) with the loss function J(θ).
+84
+7.2 Neural networks
+Neural networks refer to a broad type of non-linear models/parametrizations
+¯hθ(x) that involve combinations of matrix multiplications and other entry-
+wise non-linear operations. To have a uniﬁed treatment for regression prob-
+lem and classiﬁcation problem, here we consider ¯hθ(x) as the output of the
+neural network. For regression problem, the ﬁnal prediction hθ(x) =¯hθ(x),
+and for classiﬁc

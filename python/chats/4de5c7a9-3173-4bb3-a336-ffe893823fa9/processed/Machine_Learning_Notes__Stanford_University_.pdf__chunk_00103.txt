@@ -1,0 +1,12 @@
+et of features for
+representing emails. We let xjdenote the identity of the j-th word in the
+email. Thus, xjis now an integer taking values in {1,...,|V|}, where|V|
+is the size of our vocabulary (dictionary). An email of dwords is now rep-
+resented by a vector ( x1,x2,...,xd) of length d; note that dcan vary for
+diﬀerent documents. For instance, if an email starts with “A NeurIPS . . . ,”
+thenx1= 1 (“a” is the ﬁrst word in the dictionary), and x2= 35000 (if
+“neurips” is the 35000th word in the dictionary).
+In the multinomial event model, we assume that the way an email is
+generated is via a random process in which spam/non-spam is ﬁrst deter-
+mined (according to p(y)) as before. Then, the sender of the email writes the
+email by ﬁrst generating x1from some multinomial distribution over word

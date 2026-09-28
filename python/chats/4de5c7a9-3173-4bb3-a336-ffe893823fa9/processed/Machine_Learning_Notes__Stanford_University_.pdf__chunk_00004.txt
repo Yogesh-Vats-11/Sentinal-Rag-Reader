@@ -1,0 +1,15 @@
+
+7 Deep learning 80
+7.1 Supervised learning with non-linear models . . . . . . . . . . . 80
+7.2 Neural networks . . . . . . . . . . . . . . . . . . . . . . . . . . 84
+7.3 Modules in Modern Neural Networks . . . . . . . . . . . . . . 92
+7.4 Backpropagation . . . . . . . . . . . . . . . . . . . . . . . . . 98
+7.4.1 Preliminaries on partial derivatives . . . . . . . . . . . 99
+7.4.2 General strategy of backpropagation . . . . . . . . . . 102
+7.4.3 Backward functions for basic modules . . . . . . . . . . 105
+7.4.4 Back-propagation for MLPs . . . . . . . . . . . . . . . 107
+7.5 Vectorization over training examples . . . . . . . . . . . . . . 109
+III Generalization and regularization 112
+8 Generalization 113
+8.1 Bias-variance tradeoﬀ . . . . . . . . . . . . . . . . . . . . . . . 115
+8.1.1 A math

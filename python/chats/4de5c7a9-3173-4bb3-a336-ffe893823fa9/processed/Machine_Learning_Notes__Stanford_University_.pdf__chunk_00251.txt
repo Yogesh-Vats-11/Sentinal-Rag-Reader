@@ -1,0 +1,13 @@
+-
+centrated along the zero-th dimension.) However, most of the deep learning
+papers use a similar notation to these notes where the data points are treated
+as column vectors.8There is a simple conversion to deal with the mismatch:
+in the implementation, all the columns become row vectors, row vectors be-
+come column vectors, all the matrices are transposed, and the orders of the
+matrix multiplications are ﬂipped. In the example above, using the row ma-
+jor convention, the data matrix is X∈R3×d, the ﬁrst layer weight matrix
+has dimensionality d×m(instead of m×das in the two layer neural net
+section), and the bias vector b[1]∈R1×m. The computation for the hidden
+activation becomes
+Z[1]=XW[1]+b[1]∈R3×m(7.84)
+8The instructor suspects that this is mostly because in mathematics we naturally mul-

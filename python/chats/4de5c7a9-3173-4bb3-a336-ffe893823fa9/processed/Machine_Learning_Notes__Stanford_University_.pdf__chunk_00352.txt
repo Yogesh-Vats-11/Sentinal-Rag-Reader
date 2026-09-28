@@ -1,0 +1,22 @@
+zed over the latent variable z:
+p(x;θ) =∑
+zp(x,z;θ) (11.1)
+We wish to ﬁt the parameters θby maximizing the log-likelihood of the
+data, deﬁned by
+ℓ(θ) =n∑
+i=1logp(x(i);θ) (11.2)
+We can rewrite the objective in terms of the joint density p(x,z;θ) by
+ℓ(θ) =n∑
+i=1logp(x(i);θ) (11.3)
+=n∑
+i=1log∑
+z(i)p(x(i),z(i);θ). (11.4)
+But, explicitly ﬁnding the maximum likelihood estimates of the parameters
+θmay be hard since it will result in diﬃcult non-convex optimization prob-
+153
+lems.3Here, thez(i)’s are the latent random variables; and it is often the case
+that if the z(i)’s were observed, then maximum likelihood estimation would
+be easy.
+In such a setting, the EM algorithm gives an eﬃcient method for max-
+imum likelihood estimation. Maximizing ℓ(θ) explicitly might be diﬃcult,
+and our strategy will 

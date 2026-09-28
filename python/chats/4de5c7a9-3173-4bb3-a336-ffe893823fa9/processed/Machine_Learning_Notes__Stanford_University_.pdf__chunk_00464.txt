@@ -1,0 +1,13 @@
+t has been found in recent work Luo et al. [2018] that using
+∥·∥ 2norm (without the square) may be helpful in certain cases.
+Having learned AandB, one option is to build a deterministic model,
+in which given an input standat, the output st+1is exactly determined.
+Speciﬁcally, we always compute st+1according to Equation (15.6). Alter-
+natively, we may also build a stochastic model, in which st+1is a random
+function of the inputs, by modeling it as
+st+1=Ast+Bat+ϵt,
+where here ϵtis a noise term, usually modeled as ϵt∼N(0,Σ). (The covari-
+ance matrix Σ can also be estimated from data in a straightforward way.)
+Here, we’ve written the next-state st+1as a linear function of the current
+state and action; but of course, non-linear functions are also possible. Specif-
+ically, one can learn a model 

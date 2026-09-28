@@ -1,0 +1,14 @@
+1sampled according to the state transition
+probabilities Pstat:
+[t]
+There are several ways that one can get such a model. One is to use
+physics simulation. For example, the simulator for the inverted pendulum
+in PS4 was obtained by using the laws of physics to calculate what position
+and orientation the cart/pole will be in at time t+ 1, given the current state
+at timetand the action ataken, assuming that we know all the parameters
+of the system such as the length of the pole, the mass of the pole, and so
+on. Alternatively, one can also use an oﬀ-the-shelf physics simulation software
+package which takes as input a complete physical description of a mechanical
+system, the current state stand actionat, and computes the state st+1of the
+system a small fraction of a second into the future.4
+An

@@ -1,0 +1,26 @@
+k, can then be shown. (This is, many
+would argue, the most important theorem in all of learning theory.)
+Theorem. LetHbe given, and let D= VC(H). Then with probability at
+least 1−δ, we have that for all h∈H,
+|ε(h)−ˆε(h)|≤O(√
+D
+nlogn
+D+1
+nlog1
+δ)
+.
+Thus, with probability at least 1 −δ, we also have that:
+ε(ˆh)≤ε(h∗) +O(√
+D
+nlogn
+D+1
+nlog1
+δ)
+.
+In other words, if a hypothesis class has ﬁnite VC dimension, then uniform
+convergence occurs as nbecomes large. As before, this allows us to give a
+bound onε(h) in terms of ε(h∗). We also have the following corollary:
+Corollary. For|ε(h)−ˆε(h)|≤γto hold for all h∈H (and hence ε(ˆh)≤
+ε(h∗) + 2γ) with probability at least 1 −δ, it suﬃces that n=Oγ,δ(D).
+In other words, the number of training examples needed to learn “well”
+usingHis linear in the VC dim

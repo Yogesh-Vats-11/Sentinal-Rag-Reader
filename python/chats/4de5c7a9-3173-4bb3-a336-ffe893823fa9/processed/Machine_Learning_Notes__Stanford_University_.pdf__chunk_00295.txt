@@ -1,0 +1,19 @@
+n
+P(|ε(hi)−ˆε(hi)|>γ)≤2 exp(−2γ2n).
+This shows that, for our particular hi, training error will be close to
+generalization error with high probability, assuming nis large. But we don’t
+just want to guarantee that ε(hi) will be close to ˆ ε(hi) (with high probability)
+for just only one particular hi. We want to prove that this will be true
+simultaneously for allh∈H. To do so, let Aidenote the event that |ε(hi)−
+ˆε(hi)|> γ. We’ve already shown that, for any particular Ai, it holds true
+thatP(Ai)≤2 exp(−2γ2n). Thus, using the union bound, we have that
+P(∃h∈H.|ε(hi)−ˆε(hi)|>γ) =P(A1∪···∪Ak)
+≤k∑
+i=1P(Ai)
+≤k∑
+i=12 exp(−2γ2n)
+= 2kexp(−2γ2n)
+If we subtract both sides from 1, we ﬁnd that
+P(¬∃h∈H.|ε(hi)−ˆε(hi)|>γ) =P(∀h∈H.|ε(hi)−ˆε(hi)|≤γ)
+≥1−2kexp(−2γ2n)
+(The “¬” symbol means “not.”) So, with proba

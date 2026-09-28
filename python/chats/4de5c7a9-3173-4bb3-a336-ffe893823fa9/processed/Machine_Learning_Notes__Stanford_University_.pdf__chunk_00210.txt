@@ -1,0 +1,14 @@
+es as well, e.g., one
+activation layer σand a matrix multiplication layer MM are often combined
+and called a “layer” in many papers. People often draw the architecture
+with the basic modules in a ﬁgure by indicating the dependency between
+these modules. E.g., see an illustration of an MLP in Figure 7.4, Left.
+Residual connections. One of the very inﬂuential neural network archi-
+tecture for vision application is ResNet, which uses the residual connections
+that are essentially used in almost all large-scale deep learning architectures
+these days. Using our notation above, a very much simpliﬁed residual block
+can be deﬁned as
+Res(z) =z+σ(MM(σ(MM(z)))). (7.38)
+A much simpliﬁed ResNet is a composition of many residual blocks followed
+by a matrix multiplication,
+ResNet-S(x) = MM(Res(Res( ···Res

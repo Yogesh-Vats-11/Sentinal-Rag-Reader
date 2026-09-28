@@ -1,0 +1,13 @@
+eal numbers
+(as in linear classiﬁcation) actually contain an inﬁnite number of functions.
+Can we prove similar results for this setting?
+Let’s start by going through something that is notthe “right” argument.
+Better and more general arguments exist , but this will be useful for honing
+our intuitions about the domain.
+Suppose we have an Hthat is parameterized by dreal numbers. Since we
+are using a computer to represent real numbers, and IEEE double-precision
+ﬂoating point ( double ’s in C) uses 64 bits to represent a ﬂoating point num-
+ber, this means that our learning algorithm, assuming we’re using double-
+precision ﬂoating point, is parameterized by 64 dbits. Thus, our hypothesis
+class really consists of at most k= 264ddiﬀerent hypotheses. From the Corol-
+lary at the end of the previous 

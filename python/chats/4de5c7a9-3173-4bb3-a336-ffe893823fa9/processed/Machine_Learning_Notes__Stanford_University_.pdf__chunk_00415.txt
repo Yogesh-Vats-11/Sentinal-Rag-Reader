@@ -1,0 +1,18 @@
+ pretrain the model θwith a pretraining loss, which is often
+an average of loss functions on all the examples: Lpre(θ) =1
+n∑n
+i=1ℓpre(θ,x(i)).
+Hereℓpreis a so-called self-supervised loss on a single datapoint x(i), because
+as shown later, e.g., in Section 14.3, the “supervision” comes from the data
+pointx(i)itself. It is also possible that the pretraining loss is not a sum
+of losses on individual examples. We will discuss two pretraining losses in
+Section 14.2 and Section 14.3.
+We use some optimizers (mostly likely SGD or ADAM [Kingma and Ba,
+2014]) to minimize Lpre(θ). We denote the obtained pretrained model by ˆθ.
+Adaptation. For a downstream task, we usually have a labeled dataset
+{(x(1)
+task,y(1)
+task),···,(x(ntask)
+task,y(ntask)
+task )}withntaskexamples. The setting when
+ntask= 0 is c

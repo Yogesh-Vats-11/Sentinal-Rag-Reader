@@ -1,0 +1,17 @@
+m) called the Hessian , whose entries are given
+by
+Hij=∂2ℓ(θ)
+∂θi∂θj.
+Newton’s method typically enjoys faster convergence than (batch) gra-
+dient descent, and requires many fewer iterations to get very close to the
+minimum. One iteration of Newton’s can, however, be more expensive than
+one iteration of gradient descent, since it requires ﬁnding and inverting an
+d-by-dHessian; but so long as dis not too large, it is usually much faster
+overall. When Newton’s method is applied to maximize the logistic regres-
+sion log likelihood function ℓ(θ), the resulting method is also called Fisher
+scoring .
+Chapter 3
+Generalized linear models
+So far, we’ve seen a regression example, and a classiﬁcation example. In the
+regression example, we had y|x;θ∼N (µ,σ2), and in the classiﬁcation one,
+y|x;θ∼Bernoul

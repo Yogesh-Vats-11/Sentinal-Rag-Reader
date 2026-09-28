@@ -1,0 +1,16 @@
+ neuron with a subset of x1,...,x 4as inputs. Then
+as in Figure 7.1, we will have the parameterization:
+a1= ReLU(θ1x1+θ2x2+θ3)
+a2= ReLU(θ4x3+θ5)
+a3= ReLU(θ6x3+θ7x4+θ8)
+where (θ1,···,θ8) are parameters. Now we represent the ﬁnal output ¯hθ(x)
+as another linear function with a1,a2,a3as inputs, and we get3
+¯hθ(x) =θ9a1+θ10a2+θ11a3+θ12 (7.13)
+whereθcontains all the parameters ( θ1,···,θ12).
+Now we represent the output as a quite complex function of xwith pa-
+rametersθ. Then you can use this parametrization ¯hθwith the machinery of
+Section 7.1 to learn the parameters θ.
+Inspiration from Biological Neural Networks. As the name suggests,
+artiﬁcial neural networks were inspired by biological neural networks. The
+hidden units a1,...,amcorrespond to the neurons in a biological neural net-
+work, and 

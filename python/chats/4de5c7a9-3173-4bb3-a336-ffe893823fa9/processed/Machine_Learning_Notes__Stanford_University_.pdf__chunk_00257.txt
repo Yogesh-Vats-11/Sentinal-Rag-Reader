@@ -1,0 +1,19 @@
+
+nomenon in Section 8.2 and some classical theoretical results in Section 8.3.
+2These days, researchers have increasingly been more interested in the setting with
+“domain shift”, that is, the training distribution and test distribution are diﬀerent.
+3the diﬀerence between test error and training error is often referred to as the gener-
+alization gap. The term generalization error in some literature means the test error, and
+in some other literature means the generalization gap.
+4e.g., larger than the intrinsic noise level of the data in regression problems.
+115
+8.1 Bias-variance tradeoﬀ
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining dataset
+training data
+ground truth h*
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytest dataset
+test data
+ground truth h*
+Figure 8.1: A running example of training an

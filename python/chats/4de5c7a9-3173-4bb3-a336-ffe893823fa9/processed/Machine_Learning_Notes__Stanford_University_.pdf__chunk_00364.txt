@@ -1,0 +1,20 @@
+rithm on ELBO( Q,θ),
+in which the E-step maximizes it with respect to Q(check this yourself), and
+the M-step maximizes it with respect to θ.
+158
+11.3.1 Other interpretation of ELBO
+Let ELBO( x;Q,θ) =∑
+zQ(z) logp(x,z;θ)
+Q(z)be deﬁned as in equation (11.9).
+There are several other forms of ELBO. First, we can rewrite
+ELBO(x;Q,θ) = Ez∼Q[logp(x,z;θ)]−Ez∼Q[logQ(z)]
+= Ez∼Q[logp(x|z;θ)]−DKL(Q∥pz) (11.15)
+where we use pzto denote the marginal distribution of z(under the distri-
+butionp(x,z;θ)), andDKL() denotes the KL divergence
+DKL(Q∥pz) =∑
+zQ(z) logQ(z)
+p(z)(11.16)
+In many cases, the marginal distribution of zdoes not depend on the param-
+eterθ. In this case, we can see that maximizing ELBO over θis equivalent
+to maximizing the ﬁrst term in (11.15). This corresponds to maximizing the
+conditional

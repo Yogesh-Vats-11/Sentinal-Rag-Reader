@@ -1,0 +1,30 @@
+th derivatives of
+multi-variate functions.
+Chain rule. We review the chain rule in calculus but with a perspective
+and notions that are more relevant for auto-diﬀerentiation.
+Consider a scalar variable Jwhich is obtained by the composition of f
+andgon some variable z,
+z∈Rm
+u=g(z)∈Rn
+J=f(u)∈R. (7.52)
+The same derivations below can be easily extend to the cases when zandu
+are matrices or tensors; but we insist that the ﬁnal variable Jis a scalar. (See
+also Remark 7.4.2.) Let u= (u1,...,un) and letg(z) = (g1(z),···,gn(z)).
+Then, the standard chain rule gives us that
+∀i∈{1,...,m},∂J
+∂zi=n∑
+j=1∂J
+∂uj·∂gj
+∂zi. (7.53)
+Alternatively, when zanduare both vectors, in a vectorized notation:
+∂J
+∂z=
+∂g1
+∂z1···∂gn
+∂z1.........
+∂g1
+∂zm···∂gn
+∂zm
+·∂J
+∂u. (7.54)
+In other words, the backward function i

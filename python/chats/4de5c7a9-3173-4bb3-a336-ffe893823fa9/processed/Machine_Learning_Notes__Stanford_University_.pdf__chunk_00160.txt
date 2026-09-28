@@ -1,0 +1,18 @@
+cept term bas
+b∗=−maxi:y(i)=−1w∗Tx(i)+ mini:y(i)=1w∗Tx(i)
+2. (6.13)
+(Check for yourself that this is correct.)
+Before moving on, let’s also take a more careful look at Equation (6.10),
+which gives the optimal value of win terms of (the optimal value of) α.
+Suppose we’ve ﬁt our model’s parameters to a training set, and now wish to
+make a prediction at a new point input x. We would then calculate wTx+b,
+and predict y= 1 if and only if this quantity is bigger than zero. But
+using (6.10), this quantity can also be written:
+wTx+b=(n∑
+i=1αiy(i)x(i))T
+x+b (6.14)
+=n∑
+i=1αiy(i)⟨x(i),x⟩+b. (6.15)
+Hence, if we’ve found the αi’s, in order to make a prediction, we have to
+calculate a quantity that depends only on the inner product between xand
+the points in the training set. Moreover, we saw earlier th

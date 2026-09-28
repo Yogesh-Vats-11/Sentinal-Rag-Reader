@@ -1,0 +1,29 @@
+∑n
+i=11{y(i)= 0}di
+φy=∑n
+i=11{y(i)= 1}
+n.
+If we were to apply Laplace smoothing (which is needed in practice for good
+performance) when estimating φk|y=0andφk|y=1, we add 1 to the numerators
+and|V|to the denominators, and obtain:
+φk|y=1=1 +∑n
+i=1∑di
+j=11{x(i)
+j=k∧y(i)= 1}
+|V|+∑n
+i=11{y(i)= 1}di
+φk|y=0=1 +∑n
+i=1∑di
+j=11{x(i)
+j=k∧y(i)= 0}
+|V|+∑n
+i=11{y(i)= 0}di.
+While not necessarily the very best classiﬁcation algorithm, the Naive Bayes
+classiﬁer often works surprisingly well. It is often also a very good “ﬁrst thing
+to try,” given its simplicity and ease of implementation.
+Chapter 5
+Kernel methods
+5.1 Feature maps
+Recall that in our discussion about linear regression, we considered the prob-
+lem of predicting the price of a house (denoted by y) from the living area of
+the house (denoted by

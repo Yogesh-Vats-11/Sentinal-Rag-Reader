@@ -1,0 +1,14 @@
+ult the vectors in Rdare viewed as column vectors, and
+in particular ais a column vector with components a1,a2,...,am. The indices
+[1]and[2]are used to distinguish two sets of parameters: the w[1]
+j’s (each of
+which is a vector in Rd) andw[2](which is a vector in Rm). We will have
+more of these later.
+Vectorization. Before we introduce neural networks with more layers and
+more complex structures, we will simplify the expressions for neural networks
+88
+with more matrix and vector notations. Another important motivation of
+vectorization is the speed perspective in the implementation. In order to
+implement a neural network eﬃciently, one must be careful when using for
+loops. The most natural way to implement equation (7.15) in code is perhaps
+to use a for loop. In practice, the dimensionaliti

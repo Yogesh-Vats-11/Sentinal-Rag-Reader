@@ -1,0 +1,13 @@
+ does notwork. Consider choosing the degree of a poly-
+nomial. The higher the degree of the polynomial, the better it will ﬁt the
+training set S, and thus the lower the training error. Hence, this method will
+always select a high-variance, high-degree polynomial model, which we saw
+previously is often poor choice.
+Here’s an algorithm that works better. In hold-out cross validation
+(also called simple cross validation ), we do the following:
+1. Randomly split SintoStrain(say, 70% of the data) and Scv(the remain-
+ing 30%). Here, Scvis called the hold-out cross validation set.
+2. Train each model MionStrainonly, to get some hypothesis hi.
+3. Select and output the hypothesis hithat had the smallest error ˆ εScv(hi)
+on the hold out cross validation set. (Here ˆ εScv(h) denotes the average
+error

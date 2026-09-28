@@ -1,0 +1,22 @@
+1)is chosen explicitly to be
+arg max
+θn∑
+i=1ELBO(x(i);Q(t)
+i,θ)
+Hence, EM causes the likelihood to converge monotonically. In our de-
+scription of the EM algorithm, we said we’d run it until convergence. Given
+the result that we just showed, one reasonable convergence test would be
+to check if the increase in ℓ(θ) between successive iterations is smaller than
+some tolerance parameter, and to declare convergence if EM is improving
+ℓ(θ) too slowly.
+Remark. If we deﬁne (by overloading ELBO( ·))
+ELBO(Q,θ) =n∑
+i=1ELBO(x(i);Qi,θ) =∑
+i∑
+z(i)Qi(z(i)) logp(x(i),z(i);θ)
+Qi(z(i))
+(11.14)
+then we know ℓ(θ)≥ELBO(Q,θ) from our previous derivation. The EM
+can also be viewed an alternating maximization algorithm on ELBO( Q,θ),
+in which the E-step maximizes it with respect to Q(check this yourself), and
+th

@@ -1,0 +1,21 @@
+also McCullagh and
+Nelder, Generalized Linear Models (2nd ed.) .
+29
+30
+We now show that the Bernoulli and the Gaussian distributions are ex-
+amples of exponential family distributions. The Bernoulli distribution with
+meanφ, written Bernoulli( φ), speciﬁes a distribution over y∈{0,1}, so that
+p(y= 1;φ) =φ;p(y= 0;φ) = 1−φ. As we vary φ, we obtain Bernoulli
+distributions with diﬀerent means. We now show that this class of Bernoulli
+distributions, ones obtained by varying φ, is in the exponential family; i.e.,
+that there is a choice of T,aandbso that Equation (3.1) becomes exactly
+the class of Bernoulli distributions.
+We write the Bernoulli distribution as:
+p(y;φ) =φy(1−φ)1−y
+= exp(ylogφ+ (1−y) log(1−φ))
+= exp((
+log(φ
+1−φ))
+y+ log(1−φ))
+.
+Thus, the natural parameter is given by η= log(φ/(1−φ))

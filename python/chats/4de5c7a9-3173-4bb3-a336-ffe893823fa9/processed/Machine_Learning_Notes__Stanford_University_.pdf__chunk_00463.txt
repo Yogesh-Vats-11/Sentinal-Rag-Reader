@@ -1,0 +1,48 @@
+wing:
+s(1)
+0a(1)
+0−→s(1)
+1a(1)
+1−→s(1)
+2a(1)
+2−→···a(1)
+T−1−→s(1)
+T
+s(2)
+0a(2)
+0−→s(2)
+1a(2)
+1−→s(2)
+2a(2)
+2−→···a(2)
+T−1−→s(2)
+T
+···
+s(n)
+0a(n)
+0−→s(n)
+1a(n)
+1−→s(n)
+2a(n)
+2−→···a(n)
+T−1−→s(n)
+T
+We can then apply a learning algorithm to predict st+1as a function of st
+andat.
+For example, one may choose to learn a linear model of the form
+st+1=Ast+Bat, (15.6)
+using an algorithm similar to linear regression. Here, the parameters of the
+model are the matrices AandB, and we can estimate them using the data
+collected from our ntrials, by picking
+arg min
+A,Bn∑
+i=1T−1∑
+t=0s(i)
+t+1−(
+As(i)
+t+Ba(i)
+t)2
+2.
+We could also potentially use other loss functions for learning the model.
+For example, it has been found in recent work Luo et al. [2018] that using
+∥·∥ 2norm (without the square) may be h

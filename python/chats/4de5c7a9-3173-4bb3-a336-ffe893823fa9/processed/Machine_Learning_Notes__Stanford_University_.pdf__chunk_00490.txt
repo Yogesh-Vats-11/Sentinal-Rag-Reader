@@ -1,0 +1,17 @@
+Bt−Wt)−1BtΦt+1)
+At−Ut
+Ψt=−tr (ΣtΦt+1) + Ψt+1
+Fact 3: we notice that Φ tdepends on neither Ψ nor the noise Σ t! AsLt
+is a function of At,Btand Φt+1, it implies that the optimal policy also
+does not depend on the noise ! (But Ψ tdoes depend on Σ t, which
+implies that V∗
+tdepends on Σ t.)
+Then, to summarize, the LQR algorithm works as follows
+1. (if necessary) estimate parameters At,Bt,Σt
+2. initialize Φ T:=−UTand ΨT:= 0.
+3. iterate from t=T−1...0 to update Φ tand Ψtusing Φt+1and Ψt+1
+using the discrete Ricatti equations. If there exists a policy that drives
+the state towards zero, then convergence is guaranteed!
+Using Fact 3 , we can be even more clever and make our algorithm run
+(slightly) faster! As the optimal policy does not depend on Ψ t, and the
+update of Φ tonly depends on Φ t, it is 

@@ -1,0 +1,13 @@
+ibutions to such non-Gaussian data—then the
+results will be less predictable, and GDA may (or may not) do well.
+To summarize: GDA makes stronger modeling assumptions, and is more
+data eﬃcient (i.e., requires less training data to learn “well”) when the mod-
+eling assumptions are correct or at least approximately correct. Logistic
+1This uses the convention of redeﬁning the x(i)’s on the right-hand-side to be ( d+ 1)-
+dimensional vectors by adding the extra coordinate x(i)
+0= 1; see problem set 1.
+41
+regression makes weaker assumptions, and is signiﬁcantly more robust to
+deviations from modeling assumptions. Speciﬁcally, when the data is in-
+deed non-Gaussian, then in the limit of large datasets, logistic regression will
+almost always do better than GDA. For this reason, in practice logistic

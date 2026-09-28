@@ -1,0 +1,15 @@
+{0,1}, (such as the perceptron algorithm) are called discrim-
+inative learning algorithms. Here, we’ll talk about algorithms that instead
+try to model p(x|y) (andp(y)). These algorithms are called generative
+learning algorithms. For instance, if yindicates whether an example is a
+dog (0) or an elephant (1), then p(x|y= 0) models the distribution of dogs’
+features, and p(x|y= 1) models the distribution of elephants’ features.
+After modeling p(y) (called the class priors ) andp(x|y), our algorithm
+34
+35
+can then use Bayes rule to derive the posterior distribution on ygivenx:
+p(y|x) =p(x|y)p(y)
+p(x).
+Here, the denominator is given by p(x) =p(x|y= 1)p(y= 1) +p(x|y=
+0)p(y= 0) (you should be able to verify that this is true from the standard
+properties of probabilities), and thus can also be exp

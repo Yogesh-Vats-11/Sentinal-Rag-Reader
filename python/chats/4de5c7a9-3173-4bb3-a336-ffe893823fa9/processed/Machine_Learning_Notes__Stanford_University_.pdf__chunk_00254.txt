@@ -1,0 +1,14 @@
+error involves computing the expectation,
+and in practice, it can be approximated by the average error on many sampled
+test examples, which are referred to as the test dataset. Note that the key
+diﬀerence here between training and test datasets is that the test examples
+1In theoretical and statistical literature, we oftentimes call the uniform distribution
+over the training set {(x(i),y(i))}n
+i=1, denoted by ˆD, an empirical distribution, and call
+Dthe population distribution. Partly because of this, the training loss is also referred
+to as the empirical loss/risk/error, and the test loss is also referred to as the population
+loss/risk/error.
+113
+114
+areunseen , in the sense that the training procedure has not used the test
+examples. In classical statistical learning settings, the training

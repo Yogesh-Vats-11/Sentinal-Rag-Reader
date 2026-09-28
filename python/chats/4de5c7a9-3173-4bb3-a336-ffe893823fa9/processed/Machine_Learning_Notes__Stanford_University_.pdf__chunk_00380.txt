@@ -1,0 +1,15 @@
+many high-dimensional distributions with analytically com-
+putable density function are known to be re-parameterizable. We refer to
+Kingma and Welling [2013] for a few other choices that can replace Gaussian
+distribution.
+9Empirically people sometimes just use one sample to estimate it for maximum com-
+putational eﬃciency.
+Chapter 12
+Principal components analysis
+In this set of notes, we will develop a method, Principal Components Analysis
+(PCA), that tries to identify the subspace in which the data approximately
+lies. PCA is computationally eﬃcient: it will require only an eigenvector
+calculation (easily done with the eigfunction in Matlab).
+Suppose we are given a dataset {x(i);i= 1,...,n}of attributes of ndif-
+ferent types of automobiles, such as their maximum speed, turn radius, and
+so 

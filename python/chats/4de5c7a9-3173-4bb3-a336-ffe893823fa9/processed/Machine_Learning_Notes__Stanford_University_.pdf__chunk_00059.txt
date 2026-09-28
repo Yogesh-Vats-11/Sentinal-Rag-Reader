@@ -1,0 +1,14 @@
+ample. In the
+regression example, we had y|x;θ∼N (µ,σ2), and in the classiﬁcation one,
+y|x;θ∼Bernoulli(φ), for some appropriate deﬁnitions of µandφas functions
+ofxandθ. In this section, we will show that both of these methods are
+special cases of a broader family of models, called Generalized Linear Models
+(GLMs).1We will also show how other models in the GLM family can be
+derived and applied to other classiﬁcation and regression problems.
+3.1 The exponential family
+To work our way up to GLMs, we will begin by deﬁning exponential family
+distributions. We say that a class of distributions is in the exponential family
+if it can be written in the form
+p(y;η) =b(y) exp(ηTT(y)−a(η)) (3.1)
+Here,ηis called the natural parameter (also called the canonical param-
+eter) of the distribution; T(y) is 

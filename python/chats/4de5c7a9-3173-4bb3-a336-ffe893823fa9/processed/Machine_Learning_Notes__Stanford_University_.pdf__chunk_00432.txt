@@ -1,0 +1,17 @@
+ion, that is, computing argmaxxT+1p(xT+1|
+xtask,1,···,xtask,T). In this case, if the most likely next word xT+1is “No”,
+then we solve the task. (The speed of light is only a constant in vacuum).
+We note that there are many ways to decode the answer from the language
+184
+models, e.g., instead of computing the argmax, we may use the language
+model to generate a few words word. It is an active research question to ﬁnd
+the best way to utilize the language models.
+In-context learning is mostly used for few-shot settings where we have a
+few labeled examples ( x(1)
+task,y(1)
+task),···,(x(ntask)
+task,y(ntask)
+task ). Given a test example
+xtest, we construct a document ( x1,···,xT), which is more commonly called
+a “prompt” in this context, by concatenating the labeled examples and the
+text example 

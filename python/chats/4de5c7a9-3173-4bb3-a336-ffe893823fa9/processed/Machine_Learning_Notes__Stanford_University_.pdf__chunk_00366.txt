@@ -1,0 +1,39 @@
+arry out the derivations for the M-step updates
+only forφandµj, and leave the updates for Σ jas an exercise for the reader.
+The E-step is easy. Following our algorithm derivation above, we simply
+calculate
+w(i)
+j=Qi(z(i)=j) =P(z(i)=j|x(i);φ,µ, Σ).
+Here, “Qi(z(i)=j)” denotes the probability of z(i)taking the value junder
+the distribution Qi.
+159
+Next, in the M-step, we need to maximize, with respect to our parameters
+φ,µ, Σ, the quantity
+n∑
+i=1∑
+z(i)Qi(z(i)) logp(x(i),z(i);φ,µ, Σ)
+Qi(z(i))
+=n∑
+i=1k∑
+j=1Qi(z(i)=j) logp(x(i)|z(i)=j;µ,Σ)p(z(i)=j;φ)
+Qi(z(i)=j)
+=n∑
+i=1k∑
+j=1w(i)
+jlog1
+(2π)d/2|Σj|1/2exp(
+−1
+2(x(i)−µj)TΣ−1
+j(x(i)−µj))
+·φj
+w(i)
+j
+Let’s maximize this with respect to µl. If we take the derivative with respect
+toµl, we ﬁnd
+∇µln∑
+i=1k∑
+j=1w(i)
+jlog1
+(2π)d/2|Σj|1/2exp(
+−1
+2(x(i)−µj)TΣ−1

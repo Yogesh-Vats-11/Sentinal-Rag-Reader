@@ -1,0 +1,39 @@
+. First, collect transitions
+from an arbitrary policy. Then, use linear regression to ﬁnd
+argminA,B∑n
+i=1∑T−1
+t=0s(i)
+t+1−(
+As(i)
+t+Ba(i)
+t)2
+. Finally, use a tech-
+nique seen in Gaussian Discriminant Analysis to learn Σ.
+step 2 assuming that the parameters of our model are known (given or esti-
+mated with step 1), we can derive the optimal policy using dynamic
+programming.
+In other words, given
+{
+st+1 =Atst+Btat+wtAt,Bt,Ut,Wt,Σtknown
+R(t)(st,at) =−s⊤
+tUtst−a⊤
+tWtat
+we want to compute V∗
+t. If we go back to section 16.1, we can apply
+dynamic programming, which yields
+1.Initialization step
+For the last time step T,
+V∗
+T(sT) = max
+aT∈ART(sT,aT)
+= max
+aT∈A−s⊤
+TUTsT−a⊤
+TWtaT
+=−s⊤
+TUtsT (maximized for aT= 0)
+209
+2.Recurrence step
+Lett<T . Suppose we know V∗
+t+1.
+Fact 1: It can be shown th

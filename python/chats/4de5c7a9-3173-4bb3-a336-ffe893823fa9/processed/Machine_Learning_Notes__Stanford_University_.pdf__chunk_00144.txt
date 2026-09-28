@@ -1,0 +1,15 @@
+ γ/||w||, subject to the functional margins all
+being at least ˆ γ. Since the geometric and functional margins are related by
+γ= ˆγ/||w|, this will give us the answer we want. Moreover, we’ve gotten rid
+of the constraint||w||= 1 that we didn’t like. The downside is that we now
+have a nasty (again, non-convex) objectiveˆγ
+||w||function; and, we still don’t
+have any oﬀ-the-shelf software that can solve this form of an optimization
+problem.
+Let’s keep going. Recall our earlier discussion that we can add an arbi-
+trary scaling constraint on wandbwithout changing anything. This is the
+key idea we’ll use now. We will introduce the scaling constraint that the
+functional margin of w,bwith respect to the training set must be 1:
+ˆγ= 1.
+65
+Since multiplying wandbby some constant results in the functi

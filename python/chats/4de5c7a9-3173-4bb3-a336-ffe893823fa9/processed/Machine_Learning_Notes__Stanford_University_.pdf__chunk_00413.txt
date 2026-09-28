@@ -1,0 +1,15 @@
+duce the paradigm of foundation models and basic
+related concepts.
+14.1 Pretraining and adaptation
+The foundation models paradigm consists of two phases: pretraining (or sim-
+ply training) and adaptation. We ﬁrst pretrain a large model on a massive
+unlabeled dataset (e.g., billions of unlabeled images).1Then, we adapt the
+pretrained model to a downstream task (e.g., detecting cancer from scan im-
+ages). These downstream tasks are often prediction tasks with limited or
+1Sometimes, pretraining can involve large-scale labeled datasets as well (e.g., the Ima-
+geNet dataset).
+177
+178
+even no labeled data. The intuition is that the pretrained models learn good
+representations that capture intrinsic semantic structure/ information about
+the data, and the adaptation phase customizes the model to a

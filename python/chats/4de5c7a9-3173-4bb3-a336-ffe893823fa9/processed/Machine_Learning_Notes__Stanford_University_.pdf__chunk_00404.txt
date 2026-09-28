@@ -1,0 +1,15 @@
+ ispx?
+LetW=A−1. To calculate the “probability” of a particular value of x,
+it is tempting to compute s=Wx, then then evaluate psat that point, and
+174
+conclude that “ px(x) =ps(Wx).” However, this is incorrect . For example,
+lets∼Uniform[0,1], sops(s) = 1{0≤s≤1}. Now, let A= 2, sox= 2s.
+Clearly,xis distributed uniformly in the interval [0 ,2]. Thus, its density is
+given bypx(x) = (0.5)1{0≤x≤2}. This does not equal ps(Wx), where
+W= 0.5 =A−1. Instead, the correct formula is px(x) =ps(Wx)|W|.
+More generally, if sis a vector-valued distribution with density ps, and
+x=Asfor a square, invertible matrix A, then the density of xis given by
+px(x) =ps(Wx)·|W|,
+whereW=A−1.
+Remark. If you’re seen the result that Amaps [0,1]dto a set of volume |A|,
+then here’s another way to remember the formula for p

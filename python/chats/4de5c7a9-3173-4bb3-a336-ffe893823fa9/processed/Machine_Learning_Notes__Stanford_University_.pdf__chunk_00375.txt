@@ -1,0 +1,17 @@
+in variational auto-encoder, qandv
+are chosen to be neural networks.8In recent deep learning literature, often
+q,vare called encoder (in the sense of encoding the data into latent code),
+whereasg(z;θ) if often referred to as the decoder.
+We remark that Qiof such form in many cases are very far from a good ap-
+proximation of the true posterior distribution. However, some approximation
+is necessary for feasible optimization. In fact, the form of Qineeds to satisfy
+other requirements (which happened to be satisﬁed by the form (11.21))
+Before optimizing the ELBO, let’s ﬁrst verify whether we can eﬃciently
+evaluate the value of the ELBO for ﬁxed Qof the form (11.21) and θ. We
+rewrite the ELBO as a function of φ,ψ,θ by
+ELBO(φ,ψ,θ ) =n∑
+i=1Ez(i)∼Qi[
+logp(x(i),z(i);θ)
+Qi(z(i))]
+, (11.22)
+whereQi=N

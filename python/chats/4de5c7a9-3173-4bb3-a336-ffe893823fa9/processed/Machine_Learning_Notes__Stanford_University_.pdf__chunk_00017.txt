@@ -1,0 +1,21 @@
+)·∂
+∂θj(hθ(x)−y)
+= (hθ(x)−y)·∂
+∂θj(d∑
+i=0θixi−y)
+= (hθ(x)−y)xj
+For a single training example, this gives the update rule:1
+θj:=θj+α(
+y(i)−hθ(x(i)))
+x(i)
+j.
+The rule is called the LMS update rule (LMS stands for “least mean squares”),
+and is also known as the Widrow-Hoﬀ learning rule. This rule has several
+properties that seem natural and intuitive. For instance, the magnitude of
+the update is proportional to the error term (y(i)−hθ(x(i))); thus, for in-
+stance, if we are encountering a training example on which our prediction
+nearly matches the actual value of y(i), then we ﬁnd that there is little need
+to change the parameters; in contrast, a larger change to the parameters will
+be made if our prediction hθ(x(i)) has a large error (i.e., if it is very far from
+y(i)).
+We’d derived the LMS 

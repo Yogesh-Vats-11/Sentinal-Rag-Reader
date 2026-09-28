@@ -1,0 +1,27 @@
+ some h∈H so that
+h(x(i)) =y(i)for alli= 1,...D.
+Given a hypothesis class H, we then deﬁne its Vapnik-Chervonenkis
+dimension , written VC(H), to be the size of the largest set that is shattered
+byH. (IfHcan shatter arbitrarily large sets, then VC( H) =∞.)
+For instance, consider the following set of three points:
+133
+/0 /1
+/0 /1/0 /1
+x
+x12
+Can the setHof linear classiﬁers in two dimensions ( h(x) = 1{θ0+θ1x1+
+θ2x2≥0}) can shatter the set above? The answer is yes. Speciﬁcally, we
+see that, for any of the eight possible labelings of these points, we can ﬁnd a
+linear classiﬁer that obtains “zero training error” on them:
+x
+x12 x
+x12 x
+x12 x
+x12
+x
+x12 x
+x12 x
+x12 x
+x12
+Moreover, it is possible to show that there is no set of 4 points that this
+hypothesis class can shatter. Thus, the largest set 

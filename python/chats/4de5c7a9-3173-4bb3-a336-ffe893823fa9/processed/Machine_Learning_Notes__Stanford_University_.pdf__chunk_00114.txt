@@ -1,0 +1,22 @@
+teratively. It may appear that
+at every iteration, we still need to compute the values of ⟨φ(x(j)),φ(x(i))⟩for
+all pairs of i,j, each of which may take roughly O(p) operation. However,
+two important properties come to rescue:
+1. We can pre-compute the pairwise inner products ⟨φ(x(j)),φ(x(i))⟩for all
+pairs ofi,jbefore the loop starts.
+2. For the feature map φdeﬁned in (5.5) (or many other interesting fea-
+ture maps), computing ⟨φ(x(j)),φ(x(i))⟩can be eﬃcient and does not
+52
+necessarily require computing φ(x(i)) explicitly. This is because:
+⟨φ(x),φ(z)⟩= 1 +d∑
+i=1xizi+∑
+i,j∈{1,...,d}xixjzizj+∑
+i,j,k∈{1,...,d}xixjxkzizjzk
+= 1 +d∑
+i=1xizi+(d∑
+i=1xizi)2
++(d∑
+i=1xizi)3
+= 1 +⟨x,z⟩+⟨x,z⟩2+⟨x,z⟩3(5.9)
+Therefore, to compute ⟨φ(x),φ(z)⟩, we can ﬁrst compute ⟨x,z⟩with
+O(d) time and then take another co

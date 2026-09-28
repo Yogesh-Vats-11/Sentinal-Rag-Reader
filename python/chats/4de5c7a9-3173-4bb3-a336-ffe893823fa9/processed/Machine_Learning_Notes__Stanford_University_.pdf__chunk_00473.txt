@@ -1,0 +1,17 @@
+ng to sample k|A|states using the model, in order to approximate the
+expectation above, can be computationally expensive.
+15.5 Connections between Policy and Value
+Iteration (Optional)
+In the policy iteration, line 3 of Algorithm 5, we typically use linear system
+solver to compute Vπ. Alternatively, one can also the iterative Bellman
+updates, similarly to the value iteration, to evaluate Vπ, as in the Procedure
+VE(·) in Line 1 of Algorithm 6 below. Here if we take option 1 in Line 2 of
+the Procedure VE, then the diﬀerence between the Procedure VE from the
+201
+Algorithm 6 Variant of Policy Iteration
+1:procedure VE(π,k) ⊿To evaluate Vπ
+2: Option 1: initialize V(s) := 0; Option 2: Initialize from the current
+Vin the main algorithm.
+3: fori= 0 tok−1do
+4: For every state s, update
+V(s) :=R(s) +

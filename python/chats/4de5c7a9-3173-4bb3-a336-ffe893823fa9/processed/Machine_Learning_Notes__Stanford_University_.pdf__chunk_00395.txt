@@ -1,0 +1,15 @@
+s, resulting in eigenfaces
+method. Here, each point x(i)∈R100×100was a 10000 dimensional vector,
+with each coordinate corresponding to a pixel intensity value in a 100x100
+image of a face. Using PCA, we represent each image x(i)with a much lower-
+dimensional y(i). In doing so, we hope that the principal components we
+found retain the interesting, systematic variations between faces that capture
+what a person really looks like, but not the “noise” in the images introduced
+by minor lighting variations, slightly diﬀerent imaging conditions, and so on.
+We then measure distances between faces iandjby working in the reduced
+dimension, and computing ∥y(i)−y(j)∥2. This resulted in a surprisingly good
+face-matching and retrieval algorithm.
+Chapter 13
+Independent components
+analysis
+Our next topic i

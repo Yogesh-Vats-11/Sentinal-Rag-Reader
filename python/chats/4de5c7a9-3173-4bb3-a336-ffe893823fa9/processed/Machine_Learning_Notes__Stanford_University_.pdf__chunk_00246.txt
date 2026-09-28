@@ -1,0 +1,29 @@
+oking equa-
+tions (7.69) and (7.63) with diﬀerent choices of variables.
+We note that the intermediate values of a[i]andz[i]are used in the back-
+propagation (equation (7.74)), and therefore these values need to be stored
+in the memory after the forward pass.
+Next, we compute the gradient of the parameters by invoking equa-
+tions (7.65) and (7.66),
+∂J
+∂W[r]=B[MM,W[r]](∂J
+∂z[r])
+∂J
+∂b[r]=B[MM,b[r]](∂J
+∂z[r])
+...
+∂J
+∂W[1]=B[MM,W[1]](∂J
+∂z[1])
+∂J
+∂b[1]=B[MM,b[1]](∂J
+∂z[1])
+. (7.75)
+We also note that the block of computations in equations (7.75) can be
+interleaved with the block of computation in equations (7.74) because the
+∂J
+∂W[i]and∂J
+∂b[i]can be computed as soon as∂J
+∂z[i]is computed.
+Putting all of these together, and explicitly invoking the equa-
+tions (7.72), (7.74) and (7.75), we have 

@@ -1,0 +1,22 @@
+
+Therefore, to compute ⟨φ(x),φ(z)⟩, we can ﬁrst compute ⟨x,z⟩with
+O(d) time and then take another constant number of operations to com-
+pute 1 +⟨x,z⟩+⟨x,z⟩2+⟨x,z⟩3.
+As you will see, the inner products between the features ⟨φ(x),φ(z)⟩are
+essential here. We deﬁne the Kernel corresponding to the feature map φas
+a function that maps X×X→ Rsatisfying:2
+K(x,z)≜⟨φ(x),φ(z)⟩ (5.10)
+To wrap up the discussion, we write the down the ﬁnal algorithm as
+follows:
+1. Compute all the values K(x(i),x(j))≜⟨φ(x(i)),φ(x(j))⟩using equa-
+tion (5.9) for all i,j∈{1,...,n}. Setβ:= 0.
+2.Loop:
+∀i∈{1,...,n},βi:=βi+α(
+y(i)−n∑
+j=1βjK(x(i),x(j)))
+(5.11)
+Or in vector notation, letting Kbe then×nmatrix with Kij=
+K(x(i),x(j)), we have
+β:=β+α(⃗ y−Kβ)
+With the algorithm above, we can update the representation βof the
+vectorθeﬃ

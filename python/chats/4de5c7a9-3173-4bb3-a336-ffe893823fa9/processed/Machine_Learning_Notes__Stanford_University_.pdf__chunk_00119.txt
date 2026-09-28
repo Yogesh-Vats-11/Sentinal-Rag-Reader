@@ -1,0 +1,35 @@
+r
+we go through several concrete examples of kernels.
+Supposex,z∈Rd, and let’s ﬁrst consider the function K(·,·) deﬁned as:
+K(x,z) = (xTz)2.
+54
+We can also write this as
+K(x,z) =(d∑
+i=1xizi)(d∑
+j=1xjzj)
+=d∑
+i=1d∑
+j=1xixjzizj
+=d∑
+i,j=1(xixj)(zizj)
+Thus, we see that K(x,z) =⟨φ(x),φ(z)⟩is the kernel function that corre-
+sponds to the the feature mapping φgiven (shown here for the case of d= 3)
+by
+φ(x) =
+x1x1
+x1x2
+x1x3
+x2x1
+x2x2
+x2x3
+x3x1
+x3x2
+x3x3
+.
+Revisiting the computational eﬃciency perspective of kernel, note that whereas
+calculating the high-dimensional φ(x) requiresO(d2) time, ﬁnding K(x,z)
+takes onlyO(d) time—linear in the dimension of the input attributes.
+For another related example, also consider K(·,·) deﬁned by
+K(x,z) = (xTz+c)2
+=d∑
+i,j=1(xixj)(zizj) +

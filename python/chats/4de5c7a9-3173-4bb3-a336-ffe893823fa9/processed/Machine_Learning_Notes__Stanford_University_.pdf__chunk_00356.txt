@@ -1,0 +1,12 @@
+∼Q” subscripts above indicate that the expectations are with
+respect tozdrawn from Q. This allowed us to go from Equation (11.6) to
+Equation (11.7).
+Now, for any distribution Q, the formula (11.7) gives a lower-bound on
+logp(x;θ). There are many possible choices for the Q’s. Which should we
+choose? Well, if we have some current guess θof the parameters, it seems
+natural to try to make the lower-bound tight at that value of θ. I.e., we will
+make the inequality above hold with equality at our particular value of θ.
+To make the bound tight for a particular value of θ, we need for the step
+involving Jensen’s inequality in our derivation above to hold with equality.
+For this to be true, we know it is suﬃcient that the expectation be taken
+over a “constant”-valued random variable. I.e., we requi

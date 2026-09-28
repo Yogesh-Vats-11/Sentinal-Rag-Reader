@@ -1,0 +1,12 @@
+ individual bricks and stack them together to build
+complex structures. The same applies to neural networks: we take individual
+neurons and stack them together to create complex neural networks.
+Given these features (size, number of bedrooms, zip code, and wealth),
+we might then decide that the price of the house depends on the maximum
+family size it can accommodate. Suppose the family size is a function of the
+size of the house and number of bedrooms (see Figure 7.2). The zip code
+may provide additional information such as how walkable the neighborhood
+is (i.e., can you walk to the grocery store or do you need to drive everywhere).
+Combining the zip code with the wealth of the neighborhood may predict
+the quality of the local elementary school. Given these three derived features
+(family s

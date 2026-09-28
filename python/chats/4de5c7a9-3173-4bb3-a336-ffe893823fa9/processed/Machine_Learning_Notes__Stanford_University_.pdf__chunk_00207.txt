@@ -1,0 +1,12 @@
+the activation a[r−1]), and use them to linearly predict the housing price.
+Often the feature map / representation obtained from one datasets (that is,
+the function φβ(·) can be also useful for other datasets, which indicates they
+contain essential information about the data. However, oftentimes, the neural
+network will discover complex features which are very useful for predicting
+the output but may be diﬃcult for a human to understand or interpret. This
+is why some people refer to neural networks as a black box , as it can be
+diﬃcult to understand the features it has discovered.
+7.3 Modules in Modern Neural Networks
+The multi-layer neural network introduced in equation (7.22) of Section 7.2
+is often called multi-layer perceptron (MLP) these days. Modern neural net-
+works used in practice

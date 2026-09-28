@@ -1,0 +1,19 @@
+duced in 14.3.1.
+The linear probe approach uses a linear head on top of the representation
+to predict the downstream labels. Mathematically, the adapted model out-
+putsw⊤φˆθ(x), wherew∈Rmis a parameter to be learned, and ˆθis exactly
+the pretrained model (ﬁxed). We can use SGD (or other optimizers) to train
+179
+won the downstream task loss to predict the task label
+min
+w∈Rm1
+ntaskntask∑
+i=1ℓtask(y(i)
+task,w⊤φˆθ(x(i)
+task)) (14.1)
+E.g., if the downstream task is a regression problem, we will have
+ℓtask(ytask,w⊤φˆθ(xtask)) = (ytask−w⊤φˆθ(xtask))2.
+The ﬁnetuning algorithm uses a similar structure for the downstream
+prediction model, but also further ﬁnetunes the pretrained model (instead
+of keeping it ﬁxed). Concretely, the prediction model is w⊤φθ(x) with pa-
+rameterswandθ.We optimize both w

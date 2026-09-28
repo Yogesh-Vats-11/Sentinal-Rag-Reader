@@ -1,0 +1,24 @@
+nction fby taking a weighted sum of the
+observed rewards, but we do not necessarily know the reward function itself
+to compute the gradient.)
+The REINFORCE algorithm uses an another approach to estimate the
+gradient of η(θ). We start with the following derivation:
+∇θEτ∼Pθ[f(τ)] =∇θ∫
+Pθ(τ)f(τ)dτ
+=∫
+∇θ(Pθ(τ)f(τ))dτ (swap integration with gradient)
+=∫
+(∇θPθ(τ))f(τ)dτ (becauefdoes not depend on θ)
+=∫
+Pθ(τ)(∇θlogPθ(τ))f(τ)dτ
+(because∇logPθ(τ) =∇Pθ(τ)
+Pθ(τ))
+= Eτ∼Pθ[(∇θlogPθ(τ))f(τ)] (17.3)
+Now we have a sample-based estimator for ∇θEτ∼Pθ[f(τ)]. Letτ(1),...,τ(n)
+benempirical samples from Pθ(which are obtained by running the policy
+πθforntimes, with Tsteps for each run). We can estimate the gradient of
+η(θ) by
+∇θEτ∼Pθ[f(τ)] = Eτ∼Pθ[(∇θlogPθ(τ))f(τ)] (17.4)
+≈1
+nn∑
+i=1(∇θlogPθ(τ(i)))f(τ(i)) (17.5)

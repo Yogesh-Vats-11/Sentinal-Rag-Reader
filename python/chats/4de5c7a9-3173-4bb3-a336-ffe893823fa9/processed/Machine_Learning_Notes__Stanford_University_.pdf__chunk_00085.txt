@@ -1,0 +1,11 @@
+timate p(y|x)). In particular, it can be shown that in this setting,
+GDA will be a better algorithm than logistic regression; and more generally,
+even for small training set sizes, we would generally expect GDA to better.
+In contrast, by making signiﬁcantly weaker assumptions, logistic regres-
+sion is also more robust and less sensitive to incorrect modeling assumptions.
+There are many diﬀerent sets of assumptions that would lead to p(y|x) taking
+the form of a logistic function. For example, if x|y= 0∼Poisson(λ0), and
+x|y= 1∼Poisson(λ1), thenp(y|x) will be logistic. Logistic regression will
+also work well on Poisson data like this. But if we were to use GDA on such
+data—and ﬁt Gaussian distributions to such non-Gaussian data—then the
+results will be less predictable, and GDA may (or may no

@@ -1,0 +1,12 @@
+s only on the inner product between xand
+the points in the training set. Moreover, we saw earlier that the αi’s will all
+be zero except for the support vectors. Thus, many of the terms in the sum
+above will be zero, and we really need to ﬁnd only the inner products between
+xand the support vectors (of which there is often only a small number) in
+order calculate (6.15) and make our prediction.
+By examining the dual form of the optimization problem, we gained sig-
+niﬁcant insight into the structure of the problem, and were also able to write
+the entire algorithm in terms of only inner products between input feature
+vectors. In the next section, we will exploit this property to apply the ker-
+nels to our classiﬁcation problem. The resulting algorithm, support vector
+machines , will be able to

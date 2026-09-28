@@ -1,0 +1,14 @@
+nt. Instead of modeling the distribution of a document itself, we can
+apply the chain rule of conditional probability to decompose it as follows:
+p(x1,···,xT) =p(x1)p(x2|x1)···p(xT|x1,···,xT−1). (14.5)
+Now the support of each of the conditional probability p(xt|x1,···,xt−1) is
+V.
+We will model the conditional probability p(xt|x1,···,xt−1) with some
+parameterized form. To this end, we ﬁrst turn the discrete words into word
+embeddings.
+Letei∈Rdbe the embedding of the word i∈{1,2,···,V}.We call
+[e1,···,eV]∈Rd×Vthe embedding matrix. The most commonly used model
+is transformer [Vaswani et al., 2017]. We will introduce the basic concepts
+regarding the inputs and outputs of a transformer, but treat the interme-
+diate computation in transformer as a blackbox. We refer the students to
+more advanced

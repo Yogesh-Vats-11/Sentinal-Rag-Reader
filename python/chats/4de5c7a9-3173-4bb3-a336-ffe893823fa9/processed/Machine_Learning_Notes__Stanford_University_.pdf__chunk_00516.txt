@@ -1,0 +1,24 @@
+ they will
+exactly match. Removing such discount factors empirically works well because it gives a
+large update.
+222
+Algorithm 7 Vanilla policy gradient with baseline
+fori= 1,···do
+Collect a set of trajectories by executing the current policy. Use R≥t
+as a shorthand for∑T−1
+j≥tγj−tR(sj,aj)
+Fit the baseline by ﬁnding a function Bthat minimizes
+∑
+τ∑
+t(R≥t−B(st))2(17.12)
+Update the policy parameter θwith the gradient estimator
+∑
+τ∑
+t∇θlogπθ(at|st)·(R≥t−B(st)) (17.13)
+Bibliography
+Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal. Reconciling
+modern machine-learning practice and the classical bias–variance trade-
+oﬀ.Proceedings of the National Academy of Sciences , 116(32):15849–15854,
+2019.
+Mikhail Belkin, Daniel Hsu, and Ji Xu. Two models of double descent for
+weak features. SIAM Jour

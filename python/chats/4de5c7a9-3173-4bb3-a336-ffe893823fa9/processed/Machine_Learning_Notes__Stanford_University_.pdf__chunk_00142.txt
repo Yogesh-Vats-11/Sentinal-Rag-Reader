@@ -1,0 +1,16 @@
+ would reﬂect a very conﬁdent set of predictions
+64
+on the training set and a good “ﬁt” to the training data. Speciﬁcally, this
+will result in a classiﬁer that separates the positive and the negative training
+examples with a “gap” (geometric margin).
+For now, we will assume that we are given a training set that is linearly
+separable; i.e., that it is possible to separate the positive and negative ex-
+amples using some separating hyperplane. How will we ﬁnd the one that
+achieves the maximum geometric margin? We can pose the following opti-
+mization problem:
+maxγ,w,bγ
+s.t.y(i)(wTx(i)+b)≥γ, i = 1,...,n
+||w||= 1.
+I.e., we want to maximize γ, subject to each training example having func-
+tional margin at least γ. The||w||= 1 constraint moreover ensures that the
+functional margin equals to the g

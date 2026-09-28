@@ -1,0 +1,13 @@
+uble descent.
+Indeed, with an optimally-tuned regularization (which will be discussed
+more in Section 9), the test error in the n≈dregime can be dramatically
+improved, and the model-wise and sample-wise double descent are both mit-
+igated. See Figure 8.11.
+The intuition above only explains the peak in the model-wise and sample-
+wise double descent, but does not explain the second descent in the model-
+wise double descent—why overparameterized models are able to generalize
+so well. The theoretical understanding of overparameterized models is an ac-
+tive research area with many recent advances. A typical explanation is that
+the commonly-used optimizers such as gradient descent provide an implicit
+regularization eﬀect (which will be discussed in more detail in Section 9.2).
+In other words, ev

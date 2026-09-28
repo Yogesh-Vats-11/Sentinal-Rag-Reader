@@ -1,0 +1,14 @@
+onv2D-S i,j(zj). (7.51)
+Because there are CC′number of Conv2D-S modules and each of the
+Conv2D-S module has k2parameters, the total number of parameters is
+CC′k2. The parameters can also be viewed as a 4D tensor of dimension
+C×C′×k×k.
+7.4 Backpropagation
+In this section, we introduce backpropgation or auto-diﬀerentiation, which
+computes the gradient of the loss ∇J(θ) eﬃciently. We will start with an
+informal theorem that states that as long as a real-valued function fcan be
+eﬃciently computed/evaluated by a diﬀerentiable network or circuit, then its
+gradient can be eﬃciently computed in a similar time. We will then show
+how to do this concretely for neural networks.
+Because the formality of the general theorem is not the main focus here,
+we will introduce the terms with informal deﬁnitions

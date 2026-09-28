@@ -1,0 +1,14 @@
+hange the local
+minima or global minima of the cost function. Also note that the underlying
+parameterization for hθ(x) is diﬀerent from the case of linear regression,
+even though the form of the cost function is the same mean-squared loss.
+Throughout the notes, we use the words “loss” and “cost” interchangeably.
+Binary classiﬁcation. Next we deﬁne the model and loss function for
+binary classiﬁcation. Suppose the inputs x∈Rd. Let ¯hθ:Rd→Rbe a
+parameterized model (the analog of θ⊤xin logistic linear regression). We
+call the output ¯hθ(x)∈Rthe logit. Analogous to Section 2.1, we use the
+logistic function g(·) to turn the logit ¯hθ(x) to a probability hθ(x)∈[0,1]:
+hθ(x) =g(¯hθ(x)) = 1/(1 + exp(−¯hθ(x)). (7.3)
+We model the conditional distribution of ygivenxandθby
+P(y= 1|x;θ) =hθ(x)
+P(y= 0|x;θ)

@@ -1,0 +1,13 @@
+optimizer
+does not only aﬀect minimizing the training loss, but also imposes implicit
+regularization and aﬀects the generalization of the model. Even if your cur-
+rent optimizer already converges to a small training error perfectly, you may
+still need to tune your optimizer for a better generalization, .
+4The setting is the same as in Woodworth et al. [2020], HaoChen et al. [2020]
+139
+One may wonder which components of the optimizers bias towards what
+type of global minima and what type of global minima may generalize bet-
+ter. These are open questions that researchers are actively investigating.
+Empirical and theoretical research have oﬀered some clues and heuristics.
+In many (but deﬁnitely far from all) situations, among those setting where
+optimization can succeed in minimizing the trai

@@ -1,0 +1,15 @@
+rience. Speciﬁcally, if we keep around the counts for both
+the numerator and denominator terms of (15.5), then as we observe more
+trials, we can simply keep accumulating those counts. Computing the ratio
+of these counts then given our estimate of Psa.
+Using a similar procedure, if Ris unknown, we can also pick our estimate
+of the expected immediate reward R(s) in statesto be the average reward
+observed in state s.
+Having learned a model for the MDP, we can then use either value it-
+eration or policy iteration to solve the MDP using the estimated transition
+probabilities and rewards. For example, putting together model learning and
+value iteration, here is one possible algorithm for learning in an MDP with
+unknown state transition probabilities:
+1. Initialize πrandomly.
+2. Repeat{
+(a) Execu

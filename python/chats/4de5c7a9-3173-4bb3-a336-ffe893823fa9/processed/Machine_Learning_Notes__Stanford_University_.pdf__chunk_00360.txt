@@ -1,0 +1,22 @@
+er bound
+logp(x(i);θ)≥ELBO(x(i);Qi,θ) =∑
+z(i)Qi(z(i)) logp(x(i),z(i);θ)
+Qi(z(i))
+156
+Taking sum over all the examples, we obtain a lower bound for the log-
+likelihood
+ℓ(θ)≥∑
+iELBO(x(i);Qi,θ) (11.11)
+=∑
+i∑
+z(i)Qi(z(i)) logp(x(i),z(i);θ)
+Qi(z(i))
+Foranyset of distributions Q1,...,Qn, the formula (11.11) gives a lower-
+bound onℓ(θ), and analogous to the argument around equation (11.8), the
+Qithat attains equality satisﬁes
+Qi(z(i)) =p(z(i)|x(i);θ)
+Thus, we simply set the Qi’s to be the posterior distribution of the z(i)’s
+givenx(i)with the current setting of the parameters θ.
+Now, for this choice of the Qi’s, Equation (11.11) gives a lower-bound on
+the loglikelihood ℓthat we’re trying to maximize. This is the E-step. In the
+M-step of the algorithm, we then maximize our formula in Equation (11.

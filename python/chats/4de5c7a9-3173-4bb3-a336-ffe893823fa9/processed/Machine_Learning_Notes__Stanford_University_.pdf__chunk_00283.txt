@@ -1,0 +1,12 @@
+n the number of parameters is the best
+complexity measure of a model. For example, in many situations, the norm
+of the models is used as a complexity measure. As shown in Figure 8.12
+right, for a particular linear case, if we plot the test error against the norm
+of the learnt model, the double descent phenomenon no longer occurs. This
+is partly because the norm of the learned model is also peaked around n≈d
+(See Figure 8.12 (middle) or Belkin et al. [2019], Mei and Montanari [2022],
+and discussions in Section 10.8 of James et al. [2021]). For deep neural
+networks, the correct complexity measure is even more elusive. The study of
+double descent phenomenon is an active research topic.
+8The ﬁgure is reproduced from Figure 1 of Nakkiran et al. [2020]. Similar phenomenon
+are also observed in Ha

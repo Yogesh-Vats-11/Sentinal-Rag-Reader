@@ -1,0 +1,15 @@
++1is linear instandat, because we can rewrite equation (16.3)
+as
+st+1≈Ast+Bst+κ
+whereκis some constant and A,B are matrices. Now, this writing looks
+awfully similar to the assumptions made for LQR. We just have to get rid
+of the constant term κ! It turns out that the constant term can be absorbed
+intostby artiﬁcially increasing the dimension by one. This is the same trick
+that we used at the beginning of the class for linear regression...
+16.3.2 Diﬀerential Dynamic Programming (DDP)
+The previous method works well for cases where the goal is to stay around
+some state s∗(think about the inverted pendulum, or a car having to stay
+in the middle of a lane). However, in some cases, the goal can be more
+complicated.
+We’ll cover a method that applies when our system has to follow some
+trajectory (

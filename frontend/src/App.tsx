@@ -3,7 +3,8 @@ import Sidebar from "./components/Sidebar";
 import ChatWindow from "./components/ChatWindow";
 import SourcesPanel from "./components/SourcesPanel";
 import { useChats } from "./useChats";
-import { askQuestion } from "./api";
+import { useDocuments } from "./useDocuments";
+import { askQuestion, deleteChatData } from "./api";
 import { ChatMessage } from "./types";
 
 function titleFromQuestion(q: string): string {
@@ -16,6 +17,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [sourcesFor, setSourcesFor] = useState<ChatMessage | null>(null);
   const [panelOpen, setPanelOpen] = useState(false);
+  const docs = useDocuments(activeChat.id);
 
   async function handleAsk(question: string) {
     const chatId = activeChat.id;
@@ -28,7 +30,7 @@ export default function App() {
     }));
 
     setLoading(true);
-    const result = await askQuestion(question);
+    const result = await askQuestion(question, chatId);
     setLoading(false);
 
     const assistantMsg: ChatMessage = result.error
@@ -60,7 +62,10 @@ export default function App() {
           newChat();
           setPanelOpen(false);
         }}
-        onDelete={deleteChat}
+        onDelete={(id) => {
+          deleteChat(id);
+          deleteChatData(id); // also removes that chat's uploaded documents and index
+        }}
       />
 
       <ChatWindow
@@ -68,8 +73,15 @@ export default function App() {
         messages={activeChat.messages}
         loading={loading}
         activeSourcesId={panelOpen ? sourcesFor?.id ?? null : null}
+        documents={docs.documents}
+        docsBusy={docs.busy}
+        docsError={docs.error}
+        docsNotice={docs.notice}
         onAsk={handleAsk}
         onOpenSources={handleOpenSources}
+        onUpload={docs.upload}
+        onDeleteDoc={docs.remove}
+        onDismissDocsMessage={docs.dismissMessages}
       />
 
       {panelOpen && <SourcesPanel message={sourcesFor} onClose={() => setPanelOpen(false)} />}

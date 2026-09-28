@@ -1,0 +1,32 @@
+timal policy in policy iteration, then it will not change at all. On the other hand, even
+though value iteration will converge to the V∗, but there is always some non-zero error in
+the learned value function.
+192
+lem set 4), we had a number of trials in the MDP, that proceeded as follows:
+s(1)
+0a(1)
+0−→s(1)
+1a(1)
+1−→s(1)
+2a(1)
+2−→s(1)
+3a(1)
+3−→...
+s(2)
+0a(2)
+0−→s(2)
+1a(2)
+1−→s(2)
+2a(2)
+2−→s(2)
+3a(2)
+3−→...
+...
+Here,s(j)
+iis the state we were at time iof trialj, anda(j)
+iis the cor-
+responding action that was taken from that state. In practice, each of the
+trials above might be run until the MDP terminates (such as if the pole falls
+over in the inverted pendulum problem), or it might be run for some large
+but ﬁnite number of timesteps.
+Given this “experience” in the MDP consisting of a numb

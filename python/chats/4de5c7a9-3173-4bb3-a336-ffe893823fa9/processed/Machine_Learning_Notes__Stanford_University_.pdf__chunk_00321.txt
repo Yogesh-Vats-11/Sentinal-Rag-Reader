@@ -1,0 +1,13 @@
+ far from all) situations, among those setting where
+optimization can succeed in minimizing the training loss, the use of larger
+initial learning rate, smaller initialization, smaller batch size, and momen-
+tum appears to help with biasing towards more generalizable solutions. A
+conjecture (that can be proven in certain simpliﬁed case) is that stochas-
+ticity in the optimization process help the optimizer to ﬁnd ﬂatter global
+minima (global minima where the curvature of the loss is small), and ﬂat
+global minima tend to give more Lipschitz models and better generalization.
+Characterizing the implicit regularization eﬀect formally is still a challenging
+open research question.
+9.3 Model selection via cross validation
+Suppose we are trying select among several diﬀerent models for a learning
+p

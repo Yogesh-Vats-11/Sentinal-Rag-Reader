@@ -1,0 +1,11 @@
+ in our ﬁrst example above, the model Miwould be an i-th
+degree polynomial regression model. (The generalization to inﬁnite Mis
+not hard.6) Alternatively, if we are trying to decide between using an SVM,
+a neural network or logistic regression, then Mmay contain these models.
+5Given that we said in the previous set of notes that bias and variance are two very
+diﬀerent beasts, some readers may be wondering if we should be calling them “twin” evils
+here. Perhaps it’d be better to think of them as non-identical twins. The phrase “the
+fraternal twin evils of bias and variance” doesn’t have the same ring to it, though.
+6If we are trying to choose from an inﬁnite set of models, say corresponding to the
+possible values of the bandwidth τ∈R+, we may discretize τand consider only a ﬁnite
+number of 

@@ -1,0 +1,14 @@
+lman backup operator” that takes a current estimate of
+the value function, and maps it to a new estimate. (See homework problem
+for details.) Alternatively, we can also perform asynchronous updates.
+Here, we would loop over the states (in some order), updating the values one
+at a time.
+Under either synchronous or asynchronous updates, it can be shown that
+value iteration will cause Vto converge to V∗. Having found V∗, we can
+then use Equation (15.3) to ﬁnd the optimal policy.
+Apart from value iteration, there is a second standard algorithm for ﬁnd-
+ing an optimal policy for an MDP. The policy iteration algorithm proceeds
+as follows:
+Thus, the inner-loop repeatedly computes the value function for the cur-
+rent policy, and then updates the policy using the current value function.
+(The policy

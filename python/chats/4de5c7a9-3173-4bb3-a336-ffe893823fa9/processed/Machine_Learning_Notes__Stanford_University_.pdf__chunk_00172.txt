@@ -1,0 +1,21 @@
+and
+want to reoptimize W(α1,α2,...,αn) with respect to α1andα2(subject to
+the constraints). From (6.21), we require that
+α1y(1)+α2y(2)=−n∑
+i=3αiy(i).
+Since the right hand side is ﬁxed (as we’ve ﬁxed α3,...αn), we can just let
+it be denoted by some constant ζ:
+α1y(1)+α2y(2)=ζ. (6.22)
+We can thus picture the constraints on α1andα2as follows:
+77
+α2
+α1α1 α2
+CC
+(1)+(2)y y=ζH
+L
+From the constraints (6.20), we know that α1andα2must lie within the box
+[0,C]×[0,C] shown. Also plotted is the line α1y(1)+α2y(2)=ζ, on which we
+knowα1andα2must lie. Note also that, from these constraints, we know
+L≤α2≤H; otherwise, ( α1,α2) can’t simultaneously satisfy both the box
+and the straight line constraint. In this example, L= 0. But depending on
+what the line α1y(1)+α2y(2)=ζlooks like, this won’t always necessa

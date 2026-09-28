@@ -1,0 +1,23 @@
+lly we ﬁrst preprocess the data by normalizing each feature
+to have mean 0 and variance 1. We do this by subtracting the mean and
+dividing by the empirical standard deviation:
+x(i)
+j←x(i)
+j−µj
+σj
+whereµj=1
+n∑n
+i=1x(i)
+jandσ2
+j=1
+n∑n
+i=1(x(i)
+j−µj)2are the mean variance of
+featurej, respectively.
+Subtracting µjzeros out the mean and may be omitted for data known
+to have zero mean (for instance, time series corresponding to speech or other
+acoustic signals). Dividing by the standard deviation σjrescales each coor-
+dinate to have unit variance, which ensures that diﬀerent attributes are all
+treated on the same “scale.” For instance, if x1was cars’ maximum speed in
+mph (taking values in the high tens or low hundreds) and x2were the num-
+ber of seats (taking values around 2-4), then this renorm

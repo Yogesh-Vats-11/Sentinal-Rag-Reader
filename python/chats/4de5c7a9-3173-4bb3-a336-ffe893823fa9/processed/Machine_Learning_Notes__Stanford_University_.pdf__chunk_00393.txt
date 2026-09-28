@@ -1,0 +1,12 @@
+so be derived by picking the basis that minimizes the ap-
+proximation error arising from projecting the data onto the k-dimensional
+subspace spanned by them. (See more in homework.)
+PCA has many applications; we will close our discussion with a few exam-
+ples. First, compression—representing x(i)’s with lower dimension y(i)’s—is
+an obvious application. If we reduce high dimensional data to k= 2 or 3 di-
+mensions, then we can also plot the y(i)’s to visualize the data. For instance,
+if we were to reduce our automobiles data to 2 dimensions, then we can plot
+it (one point in our plot would correspond to one car type, say) to see what
+cars are similar to each other and what groups of cars may cluster together.
+Another standard application is to preprocess a dataset to reduce its
+dimension bef

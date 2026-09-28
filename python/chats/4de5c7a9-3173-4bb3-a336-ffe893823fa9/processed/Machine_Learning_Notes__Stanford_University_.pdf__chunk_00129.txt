@@ -1,0 +1,14 @@
+earning algorithm
+that you can write in terms of only inner products ⟨x,z⟩between input
+attribute vectors, then by replacing this with K(x,z) whereKis a kernel,
+you can “magically” allow your algorithm to work eﬃciently in the high
+dimensional feature space corresponding to K. For instance, this kernel trick
+can be applied with the perceptron to derive a kernel perceptron algorithm.
+Many of the algorithms that we’ll see later in this class will also be amenable
+to this method, which has come to be known as the “kernel trick.”
+Chapter 6
+Support vector machines
+This set of notes presents the Support Vector Machine (SVM) learning al-
+gorithm. SVMs are among the best (and many believe are indeed the best)
+“oﬀ-the-shelf” supervised learning algorithms. To tell the SVM story, we’ll
+need to ﬁrst 

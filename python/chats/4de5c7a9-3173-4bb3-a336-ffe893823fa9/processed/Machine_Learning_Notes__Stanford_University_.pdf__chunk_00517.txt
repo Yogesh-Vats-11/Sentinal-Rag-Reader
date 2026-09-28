@@ -1,0 +1,14 @@
+19.
+Mikhail Belkin, Daniel Hsu, and Ji Xu. Two models of double descent for
+weak features. SIAM Journal on Mathematics of Data Science , 2(4):1167–
+1180, 2020.
+David M Blei, Alp Kucukelbir, and Jon D McAuliﬀe. Variational inference:
+A review for statisticians. Journal of the American Statistical Association ,
+112(518):859–877, 2017.
+Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran
+Arora, Sydney von Arx, Michael S Bernstein, Jeannette Bohg, Antoine
+Bosselut, Emma Brunskill, et al. On the opportunities and risks of foun-
+dation models. arXiv preprint arXiv:2108.07258 , 2021.
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Ka-
+plan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sas-
+try, Amanda Askell, et al. Language models are few-shot learners. 

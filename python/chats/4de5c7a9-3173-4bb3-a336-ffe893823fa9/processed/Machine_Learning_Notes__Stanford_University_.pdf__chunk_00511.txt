@@ -1,0 +1,27 @@
+ing a0,...,at−1), and ifτhas low payoﬀ,
+we try less hard with a smaller weight.
+An interesting fact that follows from formula (17.3) is that
+Eτ∼Pθ[T−1∑
+t=0∇θlogπθ(at|st)]
+= 0 (17.9)
+To see this, we take f(τ) = 1 (that is, the reward is always a constant),
+then the LHS of (17.8) is zero because the payoﬀ is always a ﬁxed constant∑T
+t=0γt. Thus the RHS of (17.8) is also zero, which implies (17.9).
+In fact, one can verify that E at∼πθ(·|st)∇θlogπθ(at|st) = 0 for any ﬁxed t
+andst.2This fact has two consequences. First, we can simplify formula (17.8)
+to
+∇θη(θ) =T−1∑
+t=0Eτ∼Pθ[
+∇θlogπθ(at|st)·(T−1∑
+j=0γjR(sj,aj))]
+=T−1∑
+t=0Eτ∼Pθ[
+∇θlogπθ(at|st)·(T−1∑
+j≥tγjR(sj,aj))]
+(17.10)
+where the second equality follows from
+Eτ∼Pθ[
+∇θlogπθ(at|st)·(∑
+0≤j<tγjR(sj,aj))]
+= E[
+E [∇θlogπθ(at|st)|s0,a0,...,st−1,at−1

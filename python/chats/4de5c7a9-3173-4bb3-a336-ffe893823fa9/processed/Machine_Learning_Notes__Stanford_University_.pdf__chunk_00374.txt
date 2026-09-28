@@ -1,0 +1,13 @@
+ Gaussian distribution with some
+mean and variance. We would also like to have more succinct representation
+of the means of Qiof all the examples. Note that Qi(z(i)) is supposed to
+approximate p(z(i)|x(i);θ). It would make sense let all the means of the Qi’s
+be some function of x(i). Concretely, let q(·;φ),v(·;φ) be two functions that
+map from dimension dtok, which are parameterized by φandψ, we assume
+that
+Qi=N(q(x(i);φ),diag(v(x(i);ψ))2) (11.21)
+Here diag(w) means the k×kmatrix with the entries of w∈Rkon the
+diagonal. In other words, the distribution Qiis assumed to be a Gaussian
+distribution with independent coordinates, and the mean and standard de-
+viations are governed by qandv. Often in variational auto-encoder, qandv
+are chosen to be neural networks.8In recent deep learning literat

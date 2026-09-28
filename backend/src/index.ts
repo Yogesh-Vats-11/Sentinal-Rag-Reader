@@ -1,9 +1,10 @@
+// Must be the first import: it loads .env before the modules below read process.env
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import queryRouter from "./routes/query";
-
-dotenv.config();
+import documentsRouter from "./routes/documents";
+import { PYTHON_BIN, PYTHON_DIR } from "./pythonConfig";
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000;
@@ -17,7 +18,10 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api", queryRouter);
+app.use("/api", documentsRouter);
 
 app.listen(PORT, () => {
   console.log(`Sentinel RAG backend listening on http://localhost:${PORT}`);
+  console.log(`Python: ${PYTHON_BIN}`);
+  console.log(`Python folder: ${PYTHON_DIR}`);
 });

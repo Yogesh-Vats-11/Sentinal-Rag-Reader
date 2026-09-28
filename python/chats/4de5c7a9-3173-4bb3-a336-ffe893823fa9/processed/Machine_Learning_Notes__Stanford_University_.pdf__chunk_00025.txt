@@ -1,0 +1,23 @@
+etting the learning rate αdecrease to zero as the algorithm runs, it is also
+possible to ensure that the parameters will converge to the global minimum rather than
+merely oscillate around the minimum.
+14
+Here,Aijdenotes the ( i,j) entry of the matrix A. We then have
+∇Af(A) =[3
+210A12
+A22A21]
+.
+1.2.2 Least squares revisited
+Armed with the tools of matrix derivatives, let us now proceed to ﬁnd in
+closed-form the value of θthat minimizes J(θ). We begin by re-writing Jin
+matrix-vectorial notation.
+Given a training set, deﬁne the design matrix Xto be then-by-dmatrix
+(actuallyn-by-d+ 1, if we include the intercept term) that contains the
+training examples’ input values in its rows:
+X=
+— (x(1))T—
+— (x(2))T—
+...
+— (x(n))T—
+.
+Also, let⃗ ybe then-dimensional vector containing all the targe

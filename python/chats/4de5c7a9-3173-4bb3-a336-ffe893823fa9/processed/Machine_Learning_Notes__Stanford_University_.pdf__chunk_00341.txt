@@ -1,0 +1,15 @@
+distortion function Jis a non-convex function, and so coordinate
+descent on Jis not guaranteed to converge to the global minimum. In other
+words,k-means can be susceptible to local optima. Very often k-means will
+work ﬁne and come up with very good clusterings despite this. But if you
+are worried about getting stuck in bad local minima, one common thing to
+do is runk-means many times (using diﬀerent random initial values for the
+cluster centroids µj). Then, out of all the diﬀerent clusterings found, pick
+the one that gives the lowest distortion J(c,µ).
+Chapter 11
+EM algorithms
+In this set of notes, we discuss the EM (Expectation-Maximization) algorithm
+for density estimation.
+11.1 EM for mixture of Gaussians
+Suppose that we are given a training set {x(1),...,x(n)}as usual. Since we
+are in 

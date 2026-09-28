@@ -1,0 +1,15 @@
+ith
+smallℓ2norm. In deep learning, it’s oftentimes referred to as weight de-
+cay, because gradient descent with learning rate ηon the regularized loss
+Rλ(θ) is equivalent to shrinking/decaying θby a scalar factor of 1 −ηλand
+then applying the standard gradient
+θ←θ−η∇Jλ(θ) =θ−ηλθ−η∇J(θ)
+= (1−λη)θ
+decaying weights−η∇J(θ) (9.2)
+Besides encouraging simpler models, regularization can also impose in-
+ductive biases or structures on the model parameters. For example, suppose
+we had a prior belief that the number of non-zeros in the ground-truth model
+parameters is small,2—which is oftentimes called sparsity of the model—, we
+can impose a regularization on the number of non-zeros in θ, denoted by
+∥θ∥0, to leverage such a prior belief. Imposing additional structure of the
+parameters narrows our

@@ -1,0 +1,19 @@
+ zero. So, by letting f(θ) =ℓ′(θ), we can use
+the same algorithm to maximize ℓ, and we obtain update rule:
+θ:=θ−ℓ′(θ)
+ℓ′′(θ).
+(Something to think about: How would this change if we wanted to use
+Newton’s method to minimize rather than maximize a function?)
+28
+Lastly, in our logistic regression setting, θis vector-valued, so we need to
+generalize Newton’s method to this setting. The generalization of Newton’s
+method to this multidimensional setting (also called the Newton-Raphson
+method) is given by
+θ:=θ−H−1∇θℓ(θ).
+Here,∇θℓ(θ) is, as usual, the vector of partial derivatives of ℓ(θ) with respect
+to theθi’s; andHis and-by-dmatrix (actually, d+1−by−d+1, assuming that
+we include the intercept term) called the Hessian , whose entries are given
+by
+Hij=∂2ℓ(θ)
+∂θi∂θj.
+Newton’s method typically enjo

@@ -1,0 +1,17 @@
+o recover the function h⋆(·).
+We will consider the test error of learning various types of models. When
+talking about linear regression, we discussed the problem of whether to ﬁt
+a “simple” model such as the linear “ y=θ0+θ1x,” or a more “complex”
+model such as the polynomial “ y=θ0+θ1x+···θ5x5.”
+We start with ﬁtting a linear model, as shown in Figure 8.2. The best
+ﬁtted linear model cannot predict yfromxaccurately even on the training
+dataset, let alone on the test dataset. This is because the true relationship
+betweenyandxis not linear—any linear model is far away from the true
+functionh⋆(·). As a result, the training error is large and this is a typical
+situation of underﬁtting .
+116
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining data
+best fit linear model
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.

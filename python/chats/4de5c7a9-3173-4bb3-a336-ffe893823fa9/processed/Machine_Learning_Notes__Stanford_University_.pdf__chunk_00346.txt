@@ -1,0 +1,31 @@
+0
+(M-step) Update the parameters:
+φj:=1
+nn∑
+i=1w(i)
+j,
+µj:=∑n
+i=1w(i)
+jx(i)
+∑n
+i=1w(i)
+j,
+Σj:=∑n
+i=1w(i)
+j(x(i)−µj)(x(i)−µj)T
+∑n
+i=1w(i)
+j
+}
+In the E-step, we calculate the posterior probability of our parameters
+thez(i)’s, given the x(i)and using the current setting of our parameters. I.e.,
+using Bayes rule, we obtain:
+p(z(i)=j|x(i);φ,µ, Σ) =p(x(i)|z(i)=j;µ,Σ)p(z(i)=j;φ)∑k
+l=1p(x(i)|z(i)=l;µ,Σ)p(z(i)=l;φ)
+Here,p(x(i)|z(i)=j;µ,Σ) is given by evaluating the density of a Gaussian
+with mean µjand covariance Σ jatx(i);p(z(i)=j;φ) is given by φj, and so
+on. The values w(i)
+jcalculated in the E-step represent our “soft” guesses2for
+the values of z(i).
+Also, you should contrast the updates in the M-step with the formulas we
+had when the z(i)’s were known exactly. They are identical, except that i

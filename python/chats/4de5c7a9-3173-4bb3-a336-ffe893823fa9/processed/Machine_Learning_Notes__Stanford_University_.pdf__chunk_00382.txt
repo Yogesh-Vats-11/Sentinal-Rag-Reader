@@ -1,0 +1,20 @@
+d helicopters, where x(i)
+1is a measure of the piloting
+skill of pilot i, andx(i)
+2captures how much he/she enjoys ﬂying. Because
+RC helicopters are very diﬃcult to ﬂy, only the most committed students,
+ones that truly enjoy ﬂying, become good pilots. So, the two attributes
+x1andx2are strongly correlated. Indeed, we might posit that that the
+data actually likes along some diagonal axis (the u1direction) capturing the
+intrinsic piloting “karma” of a person, with only a small amount of noise
+lying oﬀ this axis. (See ﬁgure.) How can we automatically compute this u1
+direction?
+165
+166
+x1x2(enjoyment)
+(skill)1
+uu
+2
+We will shortly develop the PCA algorithm. But prior to running PCA
+per se, typically we ﬁrst preprocess the data by normalizing each feature
+to have mean 0 and variance 1. We do thi

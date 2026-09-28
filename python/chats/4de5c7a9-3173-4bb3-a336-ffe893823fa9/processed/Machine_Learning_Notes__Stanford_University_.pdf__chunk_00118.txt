@@ -1,0 +1,13 @@
+ map φ? In
+other words, can we tell if there is some feature mapping φso thatK(x,z) =
+φ(x)Tφ(z) for allx,z?
+If we can answer this question by giving a precise characterization of valid
+kernel functions, then we can completely change the interface of selecting
+feature maps φto the interface of selecting kernel function K. Concretely,
+we can pick a function K, verify that it satisﬁes the characterization (so
+that there exists a feature map φthatKcorresponds to), and then we can
+run update rule (5.11). The beneﬁt here is that we don’t have to be able
+to compute φor write it down analytically, and we only need to know its
+existence. We will answer this question at the end of this subsection after
+we go through several concrete examples of kernels.
+Supposex,z∈Rd, and let’s ﬁrst consider the fun

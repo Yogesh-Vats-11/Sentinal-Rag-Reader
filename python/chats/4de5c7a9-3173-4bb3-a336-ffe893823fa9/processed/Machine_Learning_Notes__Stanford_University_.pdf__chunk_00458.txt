@@ -1,0 +1,15 @@
+use a representation that is piecewise
+constant in each of the discretization intervals, then our ﬁt to the data would
+look like this:
+[t]
+1 2 3 4 5 6 7 81.522.533.544.555.5
+xy
+This piecewise constant representation just isn’t a good representation for
+many smooth functions. It results in little smoothing over the inputs, and no
+generalization over the diﬀerent grid cells. Using this sort of representation,
+we would also need a very ﬁne discretization (very small grid cells) to get a
+good approximation.
+A second downside of this representation is called the curse of dimen-
+sionality . SupposeS=Rd, and we discretize each of the ddimensions of the
+state intokvalues. Then the total number of discrete states we have is kd.
+This grows exponentially quickly in the dimension of the state space d,

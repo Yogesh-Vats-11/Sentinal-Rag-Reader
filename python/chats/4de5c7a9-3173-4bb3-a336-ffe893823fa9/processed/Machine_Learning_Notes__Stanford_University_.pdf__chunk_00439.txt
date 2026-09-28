@@ -1,0 +1,17 @@
+cial
+diﬃculties.
+188
+Our goal in reinforcement learning is to choose actions over time so as to
+maximize the expected value of the total payoﬀ:
+E[
+R(s0) +γR(s1) +γ2R(s2) +···]
+Note that the reward at timestep tisdiscounted by a factor of γt. Thus, to
+make this expectation large, we would like to accrue positive rewards as soon
+as possible (and postpone negative rewards as long as possible). In economic
+applications where R(·) is the amount of money made, γalso has a natural
+interpretation in terms of the interest rate (where a dollar today is worth
+more than a dollar tomorrow).
+Apolicy is any function π:S↦→Amapping from the states to the
+actions. We say that we are executing some policy πif, whenever we are
+in states, we take action a=π(s). We also deﬁne the value function for
+a policyπacc

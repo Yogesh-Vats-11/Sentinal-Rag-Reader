@@ -1,0 +1,12 @@
+l the rest of the weights are
+denote byW. Then, we have fWlast,αW(x) =fWlast,W(x) for allα>0. Here,
+the last layers weights are special because there are typically no layernorm
+or batchnorm after the last layer’s weights.
+Other normalization layers. There are several other normalization layers that
+aim to normalize the intermediate layers of the neural networks to a more
+ﬁxed and controllable scaling, such as batch-normalization [Ioﬀe and Szegedy,
+2015], and group normalization [Wu and He, 2018]. Batch normalization and
+group normalization are more often used in computer vision applications
+whereas layer norm is used more often in language applications.
+Convolutional Layers. Convolutional Neural Networks are neural net-
+works that consist of convolution layers (and many other modules), and

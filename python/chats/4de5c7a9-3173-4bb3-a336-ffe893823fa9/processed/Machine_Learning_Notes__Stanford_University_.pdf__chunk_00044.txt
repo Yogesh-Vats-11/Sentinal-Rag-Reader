@@ -1,0 +1,31 @@
+than negative sign in the update formula, since we’re maximizing,
+rather than minimizing, a function now.) Let’s start by working with just
+one training example ( x,y), and take derivatives to derive the stochastic
+gradient ascent rule:
+∂
+∂θjℓ(θ) =(
+y1
+g(θTx)−(1−y)1
+1−g(θTx))∂
+∂θjg(θTx)
+=(
+y1
+g(θTx)−(1−y)1
+1−g(θTx))
+g(θTx)(1−g(θTx))∂
+∂θjθTx
+=(
+y(1−g(θTx))−(1−y)g(θTx))
+xj
+= (y−hθ(x))xj (2.2)
+23
+Above, we used the fact that g′(z) =g(z)(1−g(z)). This therefore gives us
+the stochastic gradient ascent rule
+θj:=θj+α(
+y(i)−hθ(x(i)))
+x(i)
+j
+If we compare this to the LMS update rule, we see that it looks identical; but
+this is notthe same algorithm, because hθ(x(i)) is now deﬁned as a non-linear
+function of θTx(i). Nonetheless, it’s a little surprising that we end up with
+the same update rule for a

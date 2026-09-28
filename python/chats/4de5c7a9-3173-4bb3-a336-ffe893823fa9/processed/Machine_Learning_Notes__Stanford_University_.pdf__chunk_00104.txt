@@ -1,0 +1,14 @@
+nder of the email writes the
+email by ﬁrst generating x1from some multinomial distribution over words
+(p(x1|y)). Next, the second word x2is chosen independently of x1but from
+the same multinomial distribution, and similarly for x3,x4, and so on, until
+alldwords of the email have been generated. Thus, the overall probability of
+a message is given by p(y)∏d
+j=1p(xj|y). Note that this formula looks like the
+one we had earlier for the probability of a message under the Bernoulli event
+model, but that the terms in the formula now mean very diﬀerent things. In
+particularxj|yis now a multinomial, rather than a Bernoulli distribution.
+47
+The parameters for our new model are φy=p(y) as before, φk|y=1=
+p(xj=k|y= 1) (for any j) andφk|y=0=p(xj=k|y= 0). Note that we have
+assumed that p(xj|y) is the sam

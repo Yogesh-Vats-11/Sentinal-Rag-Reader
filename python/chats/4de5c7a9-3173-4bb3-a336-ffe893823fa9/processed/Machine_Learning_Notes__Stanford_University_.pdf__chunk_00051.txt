@@ -1,0 +1,43 @@
+ nonnegative and sum up to 1.
+Let (t1,...,tk) = (θ⊤
+1x,···,θ⊤
+kx). We apply the softmax function to
+(t1,...,tk), and use the output as the probabilities P(y= 1|x;θ),...,P (y=
+k|x;θ). We obtain the following probabilistic model:
+
+P(y= 1|x;θ)
+...
+P(y=k|x;θ)
+= softmax( t1,···,tk) =
+exp(θ⊤
+1x)∑k
+j=1exp(θ⊤
+jx)
+...
+exp(θ⊤
+kx)∑k
+j=1exp(θ⊤
+jx)
+. (2.10)
+For notational convenience, we will let φi=exp(ti)∑k
+j=1exp(tj). More succinctly, the
+equation above can be written as:
+P(y=i|x;θ) =φi=exp(ti)∑k
+j=1exp(tj)=exp(θ⊤
+ix)∑k
+j=1exp(θ⊤
+jx). (2.11)
+Next, we compute the negative log-likelihood of a single example ( x,y).
+−logp(y|x,θ) =−log(
+exp(ty)∑k
+j=1exp(tj))
+=−log(
+exp(θ⊤
+yx)
+∑k
+j=1exp(θ⊤
+jx))
+(2.12)
+Thus, the loss function, the negative log-likelihood of the training data, is
+given as
+ℓ

@@ -1,0 +1,17 @@
+statistics and regularization
+In this section, we will talk about one more tool in our arsenal for our battle
+against overﬁtting.
+At the beginning of the quarter, we talked about parameter ﬁtting using
+maximum likelihood estimation (MLE), and chose our parameters according
+to
+θMLE= arg max
+θn∏
+i=1p(y(i)|x(i);θ).
+Throughout our subsequent discussions, we viewed θas an unknown param-
+eter of the world. This view of the θas being constant-valued but unknown
+is taken in frequentist statistics. In the frequentist this view of the world, θ
+is not random—it just happens to be unknown—and it’s our job to come up
+with statistical procedures (such as maximum likelihood) to try to estimate
+this parameter.
+An alternative way to approach our parameter estimation problems is to
+take the Bayesian view of

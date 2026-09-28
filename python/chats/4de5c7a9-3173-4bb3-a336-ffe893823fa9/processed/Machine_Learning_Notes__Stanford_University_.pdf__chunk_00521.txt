@@ -1,0 +1,15 @@
+ding variational bayes. arXiv
+preprint arXiv:1312.6114 , 2013.
+Yuping Luo, Huazhe Xu, Yuanzhi Li, Yuandong Tian, Trevor Darrell, and
+Tengyu Ma. Algorithmic framework for model-based deep reinforcement
+learning with theoretical guarantees. In International Conference on Learn-
+ing Representations , 2018.
+Song Mei and Andrea Montanari. The generalization error of random features
+regression: Precise asymptotics and the double descent curve. Communi-
+cations on Pure and Applied Mathematics , 75(4):667–766, 2022.
+Preetum Nakkiran. More data can hurt for linear regression: Sample-wise
+double descent. 2019.
+Preetum Nakkiran, Prayaag Venkat, Sham Kakade, and Tengyu Ma. Optimal
+regularization can mitigate double descent. 2020.
+225
+Manfred Opper. Statistical mechanics of learning: Generalization. Th

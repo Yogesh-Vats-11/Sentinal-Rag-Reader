@@ -1,0 +1,18 @@
+an ﬁnd θso that
+θTx(i)≫0 whenever y(i)= 1, andθTx(i)≪0 whenever y(i)= 0, since this
+would reﬂect a very conﬁdent (and correct) set of classiﬁcations for all the
+59
+60
+training examples. This seems to be a nice goal to aim for, and we’ll soon
+formalize this idea using the notion of functional margins.
+For a diﬀerent type of intuition, consider the following ﬁgure, in which x’s
+represent positive training examples, o’s denote negative training examples,
+a decision boundary (this is the line given by the equation θTx= 0, and
+is also called the separating hyperplane ) is also shown, and three points
+have also been labeled A, B and C.
+/0 /1
+/0 /1
+/0 /1BA
+C
+Notice that the point A is very far from the decision boundary. If we are
+asked to make a prediction for the value of yat A, it seems we sho

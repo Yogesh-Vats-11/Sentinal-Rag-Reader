@@ -1,0 +1,12 @@
+ or a dog, it checks on which side of the
+decision boundary it falls, and makes its prediction accordingly.
+Here’s a diﬀerent approach. First, looking at elephants, we can build a
+model of what elephants look like. Then, looking at dogs, we can build a
+separate model of what dogs look like. Finally, to classify a new animal, we
+can match the new animal against the elephant model, and match it against
+the dog model, to see whether the new animal looks more like the elephants
+or more like the dogs we had seen in the training set.
+Algorithms that try to learn p(y|x) directly (such as logistic regression),
+or algorithms that try to learn mappings directly from the space of inputs X
+to the labels{0,1}, (such as the perceptron algorithm) are called discrim-
+inative learning algorithms. Here, we’

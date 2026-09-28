@@ -1,0 +1,13 @@
+dels in which y(givenxandθ) comes from any of these
+distributions.
+3.2 Constructing GLMs
+Suppose you would like to build a model to estimate the number yof cus-
+tomers arriving in your store (or number of page-views on your website) in
+any given hour, based on certain features xsuch as store promotions, recent
+advertising, weather, day-of-week, etc. We know that the Poisson distribu-
+tion usually gives a good model for numbers of visitors. Knowing this, how
+can we come up with a model for our problem? Fortunately, the Poisson is an
+exponential family distribution, so we can apply a Generalized Linear Model
+(GLM). In this section, we will we will describe a method for constructing
+GLM models for problems such as these.
+More generally, consider a classiﬁcation or regression problem where we

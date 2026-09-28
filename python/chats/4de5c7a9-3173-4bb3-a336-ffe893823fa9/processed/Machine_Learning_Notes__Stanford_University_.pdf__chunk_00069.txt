@@ -1,0 +1,17 @@
+
+Gaussian as an exponential family distribution, we had µ=η. So, we have
+hθ(x) =E[y|x;θ]
+=µ
+=η
+=θTx.
+The ﬁrst equality follows from Assumption 2, above; the second equality
+follows from the fact that y|x;θ∼N(µ,σ2), and so its expected value is given
+33
+byµ; the third equality follows from Assumption 1 (and our earlier derivation
+showing that µ=ηin the formulation of the Gaussian as an exponential
+family distribution); and the last equality follows from Assumption 3.
+3.2.2 Logistic regression
+We now consider logistic regression. Here we are interested in binary classiﬁ-
+cation, soy∈{0,1}. Given that yis binary-valued, it therefore seems natural
+to choose the Bernoulli family of distributions to model the conditional dis-
+tribution of ygivenx. In our formulation of the Bernoulli distribution

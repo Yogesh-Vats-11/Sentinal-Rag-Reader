@@ -1,0 +1,26 @@
+e to indicate whether an
+email is spam or non-spam.
+43
+the Naive Bayes assumption is an extremely strong assumptions, the resulting
+algorithm works well on many problems.
+Our model is parameterized by φj|y=1=p(xj= 1|y= 1),φj|y=0=p(xj=
+1|y= 0), andφy=p(y= 1). As usual, given a training set {(x(i),y(i));i=
+1,...,n}, we can write down the joint likelihood of the data:
+L(φy,φj|y=0,φj|y=1) =n∏
+i=1p(x(i),y(i)).
+Maximizing this with respect to φy,φj|y=0andφj|y=1gives the maximum
+likelihood estimates:
+φj|y=1=∑n
+i=11{x(i)
+j= 1∧y(i)= 1}∑n
+i=11{y(i)= 1}
+φj|y=0=∑n
+i=11{x(i)
+j= 1∧y(i)= 0}∑n
+i=11{y(i)= 0}
+φy=∑n
+i=11{y(i)= 1}
+n
+In the equations above, the “ ∧” symbol means “and.” The parameters have
+a very natural interpretation. For instance, φj|y=1is just the fraction of the
+spam (y= 1) emails in which

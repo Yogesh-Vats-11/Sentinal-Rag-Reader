@@ -1,0 +1,16 @@
+ty—we write J(θ) even though it obviously needs to depend on the training dataset.
+135
+136
+model complexity (a small R(θ)). The balance between the two objectives is
+controlled by the regularization parameter λ. Whenλ= 0, the regularized
+loss is equivalent to the original loss. When λis a suﬃciently small positive
+number, minimizing the regularized loss is eﬀectively minimizing the original
+loss with the regularizer as the tie-breaker. When the regularizer is extremely
+large, then the original loss is not eﬀective (and likely the model will have a
+large bias.)
+The most commonly used regularization is perhaps ℓ2regularization,
+whereR(θ) =1
+2∥θ∥2
+2. It encourages the optimizer to ﬁnd a model with
+smallℓ2norm. In deep learning, it’s oftentimes referred to as weight de-
+cay, because gradient d

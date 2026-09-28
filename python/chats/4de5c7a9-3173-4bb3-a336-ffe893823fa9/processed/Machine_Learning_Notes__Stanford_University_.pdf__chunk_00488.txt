@@ -1,0 +1,38 @@
+ximized for aT= 0)
+209
+2.Recurrence step
+Lett<T . Suppose we know V∗
+t+1.
+Fact 1: It can be shown that if V∗
+t+1is a quadratic function in st, thenV∗
+t
+is also a quadratic function. In other words, there exists some matrix Φ
+and some scalar Ψ such that
+ifV∗
+t+1(st+1) =s⊤
+t+1Φt+1st+1+ Ψt+1
+thenV∗
+t(st) =s⊤
+tΦtst+ Ψt
+For time step t=T, we had Φ t=−UTand ΨT= 0.
+Fact 2: We can show that the optimal policy is just a linear function of
+the state.
+KnowingV∗
+t+1is equivalent to knowing Φ t+1and Ψt+1, so we just need
+to explain how we compute Φ tand Ψtfrom Φt+1and Ψt+1and the other
+parameters of the problem.
+V∗
+t(st) =s⊤
+tΦtst+ Ψt
+= max
+at[
+R(t)(st,at) +Est+1∼P(t)
+st,at[V∗
+t+1(st+1)]]
+= max
+at[
+−s⊤
+tUtst−a⊤
+tVtat+Est+1∼N(Atst+Btat,Σt)[s⊤
+t+1Φt+1st+1+ Ψt+1]]
+where the second line is just the deﬁniti

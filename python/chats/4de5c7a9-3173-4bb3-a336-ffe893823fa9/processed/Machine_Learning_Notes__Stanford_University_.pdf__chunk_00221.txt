@@ -1,0 +1,16 @@
+ion,
+denoted by Conv1D, takes in a matrix as input, which is the concatenation
+ofz1,...,zCand has dimension m×C. It can output C′vectors of dimension
+m, denoted by Conv1D( z)1,..., Conv1D(z)C′, whereC′is referred to as the
+output channel, or equivalently a matrix of dimension m×C′. Each of the
+output is a sum of the simpliﬁed convolutions applied on various channels.
+∀i∈[C′],Conv1D(z)i=C∑
+j=1Conv1D-S i,j(zj). (7.50)
+Note that each Conv1D-S i,jare modules with diﬀerent parameters, and
+thus the total number of parameters is k(the number of parameters in a
+Conv1D-S)×CC′(the number of Conv1D-S i.j’s) =kCC′. In contrast, a
+generic linear mapping from Rm×CandRm×C′hasm2CC′parameters. The
+98
+parameters can also be represented as a three-dimensional tensor of dimen-
+sionk×C×C′.
+2-D convolution (bri

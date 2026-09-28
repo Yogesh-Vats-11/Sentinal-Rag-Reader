@@ -1,0 +1,16 @@
+d
+face-matching and retrieval algorithm.
+Chapter 13
+Independent components
+analysis
+Our next topic is Independent Components Analysis (ICA). Similar to PCA,
+this will ﬁnd a new basis in which to represent our data. However, the goal
+is very diﬀerent.
+As a motivating example, consider the “cocktail party problem.” Here, d
+speakers are speaking simultaneously at a party, and any microphone placed
+in the room records only an overlapping combination of the dspeakers’ voices.
+But lets say we have ddiﬀerent microphones placed in the room, and because
+each microphone is a diﬀerent distance from each of the speakers, it records a
+diﬀerent combination of the speakers’ voices. Using these microphone record-
+ings, can we separate out the original dspeakers’ speech signals?
+To formalize this problem, 

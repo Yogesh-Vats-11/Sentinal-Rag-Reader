@@ -1,0 +1,16 @@
+is is a
+classic situation of overﬁtting.
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining data
+best fit 5-th degree model
+ground truth h*fitting 5-th degree model on large dataset
+Figure 8.6: The best ﬁt 5-th degree polynomial on a huge dataset nearly
+recovers the ground-truth—suggesting that the culprit in Figure 8.5 is the
+variance (or lack of data) but not bias.
+The failure of ﬁtting 5-th degree polynomials can be captured by another
+118
+component of the test error, called variance of a model ﬁtting procedure.
+Speciﬁcally, when ﬁtting a 5-th degree polynomial as in Figure 8.7, there is a
+large risk that we’re ﬁtting patterns in the data that happened to be present
+in our small, ﬁnite training set, but that do not reﬂect the wider pattern of
+the relationship between xandy. These “spurious”

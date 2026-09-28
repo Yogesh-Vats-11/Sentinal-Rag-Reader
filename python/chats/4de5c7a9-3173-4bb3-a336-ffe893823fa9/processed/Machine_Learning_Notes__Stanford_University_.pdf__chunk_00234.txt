@@ -1,0 +1,13 @@
+ion in this section to build
+a high-level understanding. Then, we will instantiate the approach to con-
+crete neural networks. We take the viewpoint that neural networks are com-
+plex compositions of small building blocks such as MM, σ, Conv2D, LN,
+etc., deﬁned in Section 7.3. Note that the losses (e.g., mean-squared loss, or
+the cross-entropy loss) can also be abstractly viewed as additional modules.
+Thus, we can abstractly write the loss function J(on a single example ( x,y))
+as a composition of many modules:7
+J=Mk(Mk−1(···M1(x))). (7.60)
+For example, for a binary classiﬁcation problem with a MLP ¯hθ(x) (de-
+ﬁned in equation (7.36) and (7.37)), the loss function has ber written in the
+form of equation (7.60) with M1= MMW[1],b[1],M2=σ,M3= MMW[2],b[2],
+..., andMk−1= MMW[r],b[r]andMk=ℓlogis

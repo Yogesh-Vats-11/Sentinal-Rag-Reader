@@ -1,0 +1,32 @@
+t
+is a reasonable way of choosing our best guess of the parameters θ? The
+principal of maximum likelihood says that we should choose θso as to
+make the data as high probability as possible. I.e., we should choose θto
+maximizeL(θ).
+17
+Instead of maximizing L(θ), we can also maximize any strictly increasing
+function of L(θ). In particular, the derivations will be a bit simpler if we
+instead maximize the log likelihood ℓ(θ):
+ℓ(θ) = logL(θ)
+= logn∏
+i=11√
+2πσexp(
+−(y(i)−θTx(i))2
+2σ2)
+=n∑
+i=1log1√
+2πσexp(
+−(y(i)−θTx(i))2
+2σ2)
+=nlog1√
+2πσ−1
+σ2·1
+2n∑
+i=1(y(i)−θTx(i))2.
+Hence, maximizing ℓ(θ) gives the same answer as minimizing
+1
+2n∑
+i=1(y(i)−θTx(i))2,
+which we recognize to be J(θ), our original least-squares cost function.
+To summarize: Under the previous probabilistic assumptions on the data,
+lea

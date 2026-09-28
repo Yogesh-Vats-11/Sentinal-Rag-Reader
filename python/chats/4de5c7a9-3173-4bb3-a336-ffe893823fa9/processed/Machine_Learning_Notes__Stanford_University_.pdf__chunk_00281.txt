@@ -1,0 +1,14 @@
+cit
+regularization eﬀect (which will be discussed in more detail in Section 9.2).
+In other words, even in the overparameterized regime and with an unregular-
+ized loss function, the model is still implicitly regularized, and thus exhibits
+a better test performance than an arbitrary solution that ﬁts the data. For
+example, for linear models, when n≪d, the gradient descent optimizer with
+zero initialization ﬁnds the minimum norm solution that ﬁts the data (in-
+stead of an arbitrary solution that ﬁts the data), and the minimum norm reg-
+ularizer turns out to be a suﬃciently good for the overparameterized regime
+(but it’s not a good regularizer when n≈d, resulting in the peak of test
+124
+error).
+0 200 400 600 800 1000
+Num Samples0.000.250.500.751.001.251.501.752.00T est ErrorT est Error vs. # 

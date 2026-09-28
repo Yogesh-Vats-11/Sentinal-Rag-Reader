@@ -1,0 +1,21 @@
+log(1−φ))
+= exp((
+log(φ
+1−φ))
+y+ log(1−φ))
+.
+Thus, the natural parameter is given by η= log(φ/(1−φ)). Interestingly, if
+we invert this deﬁnition for ηby solving for φin terms of η, we obtain φ=
+1/(1 +e−η). This is the familiar sigmoid function! This will come up again
+when we derive logistic regression as a GLM. To complete the formulation
+of the Bernoulli distribution as an exponential family distribution, we also
+have
+T(y) =y
+a(η) =−log(1−φ)
+= log(1 + eη)
+b(y) = 1
+This shows that the Bernoulli distribution can be written in the form of
+Equation (3.1), using an appropriate choice of T,aandb.
+Let’s now move on to consider the Gaussian distribution. Recall that,
+when deriving linear regression, the value of σ2had no eﬀect on our ﬁnal
+choice ofθandhθ(x). Thus, we can choose an arbitrary valu

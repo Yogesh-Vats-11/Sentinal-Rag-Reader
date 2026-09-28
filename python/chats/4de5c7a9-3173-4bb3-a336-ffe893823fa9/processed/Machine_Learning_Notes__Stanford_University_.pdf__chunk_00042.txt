@@ -1,0 +1,27 @@
+e of reasons that we’ll see
+later (when we talk about GLMs, and when we talk about generative learning
+algorithms), the choice of the logistic function is a fairly natural one. Before
+moving on, here’s a useful property of the derivative of the sigmoid function,
+which we write as g′:
+g′(z) =d
+dz1
+1 +e−z
+=1
+(1 +e−z)2(
+e−z)
+=1
+(1 +e−z)·(
+1−1
+(1 +e−z))
+=g(z)(1−g(z)).
+So, given the logistic regression model, how do we ﬁt θfor it? Following
+how we saw least squares regression could be derived as the maximum like-
+lihood estimator under a set of assumptions, let’s endow our classiﬁcation
+model with a set of probabilistic assumptions, and then ﬁt the parameters
+via maximum likelihood.
+22
+Let us assume that
+P(y= 1|x;θ) =hθ(x)
+P(y= 0|x;θ) = 1−hθ(x)
+Note that this can be written more compactly as
+p(

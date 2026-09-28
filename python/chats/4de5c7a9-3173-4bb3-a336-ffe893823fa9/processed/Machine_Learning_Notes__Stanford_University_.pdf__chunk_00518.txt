@@ -1,0 +1,15 @@
+kantan, Pranav Shyam, Girish Sas-
+try, Amanda Askell, et al. Language models are few-shot learners. Advances
+in neural information processing systems , 33:1877–1901, 2020.
+Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoﬀrey Hinton.
+A simple framework for contrastive learning of visual representations. In
+International Conference on Machine Learning , pages 1597–1607. PMLR,
+2020.
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert:
+Pre-training of deep bidirectional transformers for language understand-
+ing. In Proceedings of the 2019 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language Tech-
+nologies, Volume 1 (Long and Short Papers) , pages 4171–4186, 2019.
+223
+224
+Jeﬀ Z HaoChen, Colin Wei, Jason D Lee, and Teng

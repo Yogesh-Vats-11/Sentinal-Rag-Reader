@@ -1,0 +1,19 @@
+to verify that this is true from the standard
+properties of probabilities), and thus can also be expressed in terms of the
+quantitiesp(x|y) andp(y) that we’ve learned. Actually, if were calculating
+p(y|x) in order to make a prediction, then we don’t actually need to calculate
+the denominator, since
+arg max
+yp(y|x) = arg max
+yp(x|y)p(y)
+p(x)
+= arg max
+yp(x|y)p(y).
+4.1 Gaussian discriminant analysis
+The ﬁrst generative learning algorithm that we’ll look at is Gaussian discrim-
+inant analysis (GDA). In this model, we’ll assume that p(x|y) is distributed
+according to a multivariate normal distribution. Let’s talk brieﬂy about the
+properties of multivariate normal distributions before moving on to the GDA
+model itself.
+4.1.1 The multivariate normal distribution
+The multivariate normal distribut

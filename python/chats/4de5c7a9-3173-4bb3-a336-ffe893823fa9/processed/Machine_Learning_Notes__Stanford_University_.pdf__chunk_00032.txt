@@ -1,0 +1,12 @@
+t-squares cost function.
+To summarize: Under the previous probabilistic assumptions on the data,
+least-squares regression corresponds to ﬁnding the maximum likelihood esti-
+mate ofθ. This is thus one set of assumptions under which least-squares re-
+gression can be justiﬁed as a very natural method that’s just doing maximum
+likelihood estimation. (Note however that the probabilistic assumptions are
+by no means necessary for least-squares to be a perfectly good and rational
+procedure, and there may—and indeed there are—other natural assumptions
+that can also be used to justify it.)
+Note also that, in our previous discussion, our ﬁnal choice of θdid not
+depend on what was σ2, and indeed we’d have arrived at the same result
+even ifσ2were unknown. We will use this fact again later, when we talk

@@ -1,0 +1,17 @@
+the marginal formulas of gaussians (see Factor Analysis notes),
+we would get
+st|y1,...,yt∼N(
+st|t,Σt|t)
+However, computing the marginal distribution parameters using these
+formulas would be computationally expensive! It would require manipulating
+matrices of shape t×t. Recall that inverting a matrix can be done in O(t3),
+and it would then have to be repeated over the time steps, yielding a cost in
+O(t4)!
+TheKalman ﬁlter algorithm provides a much better way of computing
+the mean and variance, by updating them over time in constant time in
+t! The kalman ﬁlter is based on two basics steps. Assume that we know the
+distribution of st|y1,...,yt:
+predict step computest+1|y1,...,yt
+update step computest+1|y1,...,yt+1
+and iterate over time steps! The combination of the predict and update
+steps upda

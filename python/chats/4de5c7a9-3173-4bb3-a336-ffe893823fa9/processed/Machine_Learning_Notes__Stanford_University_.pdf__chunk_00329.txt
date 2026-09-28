@@ -1,0 +1,17 @@
+r.
+Here is a method, called k-fold cross validation , that holds out less
+data each time:
+1. Randomly split Sintokdisjoint subsets of m/k training examples each.
+Lets call these subsets S1,...,Sk.
+2. For each model Mi, we evaluate it as follows:
+Forj= 1,...,k
+Train the model MionS1∪···∪Sj−1∪Sj+1∪···Sk(i.e., train
+on all the data except Sj) to get some hypothesis hij.
+Test the hypothesis hijonSj, to get ˆεSj(hij).
+The estimated generalization error of model Miis then calculated
+as the average of the ˆ εSj(hij)’s (averaged over j).
+3. Pick the model Miwith the lowest estimated generalization error, and
+retrain that model on the entire training set S. The resulting hypothesis
+is then output as our ﬁnal answer.
+A typical choice for the number of folds to use here would be k= 10.
+While the frac

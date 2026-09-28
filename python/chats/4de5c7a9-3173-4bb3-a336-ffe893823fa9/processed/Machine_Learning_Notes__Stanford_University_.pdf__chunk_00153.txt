@@ -1,0 +1,19 @@
+re must exist w∗,α∗,β∗so thatw∗is the
+solution to the primal problem, α∗,β∗are the solution to the dual problem,
+and moreover p∗=d∗=L(w∗,α∗,β∗). Moreover, w∗,α∗andβ∗satisfy the
+Karush-Kuhn-Tucker (KKT) conditions , which are as follows:
+∂
+∂wiL(w∗,α∗,β∗) = 0, i= 1,...,d (6.3)
+∂
+∂βiL(w∗,α∗,β∗) = 0, i= 1,...,l (6.4)
+α∗
+igi(w∗) = 0, i= 1,...,k (6.5)
+gi(w∗)≤0, i= 1,...,k (6.6)
+α∗≥0, i= 1,...,k (6.7)
+Moreover, if some w∗,α∗,β∗satisfy the KKT conditions, then it is also a solution to t he primal and dual
+problems.
+We draw attention to Equation (6.5), which is called the KKT dual
+complementarity condition. Speciﬁcally, it implies that if α∗
+i>0, then
+gi(w∗) = 0. (I.e., the “ gi(w)≤0” constraint is active , meaning it holds with
+equality rather than with inequality.) Later on, this will be key for 

@@ -1,0 +1,23 @@
+uce a new trajectory
+s∗
+0,π0(s∗
+0)→s∗
+1,π1(s∗
+1)→...→s∗
+T
+note that when we generate this new trajectory, we use the real Fand
+not its linear approximation to compute transitions, meaning that
+s∗
+t+1=F(s∗
+t,a∗
+t)
+then, go back to step 2 and repeat until some stopping criterion.
+16.4 Linear Quadratic Gaussian (LQG)
+Often, in the real word, we don’t get to observe the full state st. For example,
+an autonomous car could receive an image from a camera, which is merely
+anobservation , and not the full state of the world. So far, we assumed
+that the state was available. As this might not hold true for most of the
+real-world problems, we need a new tool to model this situation: Partially
+Observable MDPs .
+A POMDP is an MDP with an extra observation layer. In other words,
+we introduce a new variab

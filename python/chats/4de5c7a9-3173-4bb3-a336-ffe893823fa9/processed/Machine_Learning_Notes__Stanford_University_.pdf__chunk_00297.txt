@@ -1,0 +1,16 @@
+rantee that with probability at least
+1−δ, training error will be within γof generalization error? By setting
+δ= 2kexp(−2γ2n) and solving for n, [you should convince yourself this is
+the right thing to do!], we ﬁnd that if
+n≥1
+2γ2log2k
+δ,
+130
+then with probability at least 1 −δ, we have that|ε(h)−ˆε(h)|≤γfor all
+h∈H. (Equivalently, this shows that the probability that |ε(h)−ˆε(h)|>γ
+for someh∈ H is at most δ.) This bound tells us how many training
+examples we need in order make a guarantee. The training set size nthat
+a certain method or algorithm requires in order to achieve a certain level of
+performance is also called the algorithm’s sample complexity .
+The key property of the bound above is that the number of training
+examples needed to make this guarantee is only logarithmic ink, the 

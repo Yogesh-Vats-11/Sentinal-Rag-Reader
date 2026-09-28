@@ -1,0 +1,16 @@
+ value function as a linear or non-linear
+function of the states:
+V(s) =θTφ(s).
+Here,φis some appropriate feature mapping of the states.
+For each state sin our ﬁnite sample of nstates, ﬁtted value iteration
+will ﬁrst compute a quantity y(i), which will be our approximation to R(s) +
+γmaxaEs′∼Psa[V(s′)] (the right hand side of Equation 15.8). Then, it will
+apply a supervised learning algorithm to try to get V(s) close toR(s) +
+γmaxaEs′∼Psa[V(s′)] (or, in other words, to try to get V(s) close toy(i)).
+In detail, the algorithm is as follows:
+1. Randomly sample nstatess(1),s(2),...s(n)∈S.
+2. Initialize θ:= 0.
+3. Repeat{
+Fori= 1,...,n{
+5In practice, most MDPs have much smaller action spaces than state spaces. E.g., a car
+has a 6d state space, and a 2d action space (steering and velocity control

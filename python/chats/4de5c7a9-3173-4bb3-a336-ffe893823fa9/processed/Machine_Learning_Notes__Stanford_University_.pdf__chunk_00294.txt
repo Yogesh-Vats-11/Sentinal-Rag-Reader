@@ -1,0 +1,17 @@
+whose distribution is deﬁned as follows. We’re going to sample ( x,y)∼D.
+Then, we set Z= 1{hi(x)̸=y}. I.e., we’re going to draw one example,
+and letZindicate whether himisclassiﬁes it. Similarly, we also deﬁne Zj=
+1{hi(x(j))̸=y(j)}. Since our training set was drawn iid from D,Zand the
+Zj’s have the same distribution.
+We see that the misclassiﬁcation probability on a randomly drawn
+example—that is, ε(h)—is exactly the expected value of Z(andZj). More-
+over, the training error can be written
+ˆε(hi) =1
+nn∑
+j=1Zj.
+Thus, ˆε(hi) is exactly the mean of the nrandom variables Zjthat are drawn
+iid from a Bernoulli distribution with mean ε(hi). Hence, we can apply the
+129
+Hoeﬀding inequality, and obtain
+P(|ε(hi)−ˆε(hi)|>γ)≤2 exp(−2γ2n).
+This shows that, for our particular hi, training error will be c

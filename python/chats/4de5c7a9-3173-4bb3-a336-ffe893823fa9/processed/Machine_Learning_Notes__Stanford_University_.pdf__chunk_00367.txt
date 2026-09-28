@@ -1,0 +1,53 @@
+ derivative with respect
+toµl, we ﬁnd
+∇µln∑
+i=1k∑
+j=1w(i)
+jlog1
+(2π)d/2|Σj|1/2exp(
+−1
+2(x(i)−µj)TΣ−1
+j(x(i)−µj))
+·φj
+w(i)
+j
+=−∇µln∑
+i=1k∑
+j=1w(i)
+j1
+2(x(i)−µj)TΣ−1
+j(x(i)−µj)
+=1
+2n∑
+i=1w(i)
+l∇µl2µT
+lΣ−1
+lx(i)−µT
+lΣ−1
+lµl
+=n∑
+i=1w(i)
+l(
+Σ−1
+lx(i)−Σ−1
+lµl)
+Setting this to zero and solving for µltherefore yields the update rule
+µl:=∑n
+i=1w(i)
+lx(i)
+∑n
+i=1w(i)
+l,
+which was what we had in the previous set of notes.
+Let’s do one more example, and derive the M-step update for the param-
+etersφj. Grouping together only the terms that depend on φj, we ﬁnd that
+we need to maximize
+n∑
+i=1k∑
+j=1w(i)
+jlogφj.
+However, there is an additional constraint that the φj’s sum to 1, since they
+represent the probabilities φj=p(z(i)=j;φ). To deal with the constraint
+160
+that∑k
+j=1φj= 1, we construct the Lagrangia

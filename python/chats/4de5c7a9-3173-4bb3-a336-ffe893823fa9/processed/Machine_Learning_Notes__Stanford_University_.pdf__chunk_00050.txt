@@ -1,0 +1,26 @@
+⊤
+kxto represent
+25
+φ1,...,φk, the probabilities P(y= 1|x;θ),...,P (y=k|x;θ). However,
+there are two issues with such a direct approach. First, θ⊤
+jxis not neces-
+sarily within [0 ,1]. Second, the summation of θ⊤
+jx’s is not necessarily 1.
+Thus, instead, we will use the softmax function to turn ( θ⊤
+1x,···,θ⊤
+kx) into
+a probability vector with nonnegative entries that sum up to 1.
+Deﬁne the softmax function softmax : Rk→Rkas
+softmax(t1,...,tk) =
+exp(t1)∑k
+j=1exp(tj)
+...
+exp(tk)∑k
+j=1exp(tj)
+. (2.9)
+The inputs to the softmax function, the vector there, are often called log-
+its. Note that by deﬁnition, the output of the softmax function is always a
+probability vector whose entries are nonnegative and sum up to 1.
+Let (t1,...,tk) = (θ⊤
+1x,···,θ⊤
+kx). We apply the softmax function to

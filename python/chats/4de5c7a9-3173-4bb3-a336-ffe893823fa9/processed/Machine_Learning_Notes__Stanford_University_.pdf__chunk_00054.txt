@@ -1,0 +1,17 @@
+ the loss function ℓ(θ).
+1There are some ambiguity in the naming here. Some people call the cross-entropy loss
+the function that maps the probability vector (the φin our language) and label yto the
+ﬁnal real number, and call our version of cross-entropy loss softmax-cross-entropy loss.
+We choose our current naming convention because it’s consistent with the naming of most
+modern deep learning library such as PyTorch and Jax.
+27
+1 1.5 2 2.5 3 3.5 4 4.5 5−100102030405060
+xf(x)
+1 1.5 2 2.5 3 3.5 4 4.5 5−100102030405060
+xf(x)
+1 1.5 2 2.5 3 3.5 4 4.5 5−100102030405060
+xf(x)
+2.4 Another algorithm for maximizing ℓ(θ)
+Returning to logistic regression with g(z) being the sigmoid function, let’s
+now talk about a diﬀerent algorithm for maximizing ℓ(θ).
+To get us started, let’s consider Newton’s metho

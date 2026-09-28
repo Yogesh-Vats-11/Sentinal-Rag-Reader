@@ -1,0 +1,17 @@
+
+91
+Figure 7.3: Activation functions in deep learning.
+Supposeσ(z) =z, then for two-layer neural network, we have that
+¯hθ(x) =W[2]a[1](7.29)
+=W[2]σ(z[1]) by deﬁnition (7.30)
+=W[2]z[1]sinceσ(z) =z (7.31)
+=W[2]W[1]x from Equation (7.18) (7.32)
+=˜Wx where ˜W=W[2]W[1](7.33)
+Notice how W[2]W[1]collapsed into ˜W.
+This is because applying a linear function to another linear function will
+result in a linear function over the original input (i.e., you can construct a ˜W
+such that ˜Wx=W[2]W[1]x). This loses much of the representational power
+of the neural network as often times the output we are trying to predict
+has a non-linear relationship with the inputs. Without non-linear activation
+functions, the neural network will simply perform linear regression.
+Connection to the Kernel Method. In the pr

@@ -1,0 +1,13 @@
+nal
+auto-encoder (optional reading)
+Loosely speaking, variational auto-encoder Kingma and Welling [2013] gen-
+erally refers to a family of algorithms that extend the EM algorithms to more
+complex models parameterized by neural networks. It extends the technique
+of variational inference with the additional “re-parametrization trick” which
+will be introduced below. Variational auto-encoder may not give the best
+performance for many datasets, but it contains several central ideas about
+how to extend EM algorithms to high-dimensional continuous latent variables
+7We don’t need to worry about the constraint that φj≥0, because as we’ll shortly see,
+the solution we’ll ﬁnd from this derivation will automatically satisfy that anyway.
+161
+with non-linear models. Understanding it will likely give you 

@@ -1,0 +1,20 @@
+ping it ﬁxed). Concretely, the prediction model is w⊤φθ(x) with pa-
+rameterswandθ.We optimize both wandθto ﬁt the downstream data,
+but initialize θwith the pretrained model ˆθ. The linear head wis usually
+initialized randomly.
+minimize
+w,θ1
+ntaskntask∑
+i=1ℓtask(y(i)
+task,w⊤φθ(x(i)
+task)) (14.2)
+with initialization w←random vector (14.3)
+θ←ˆθ (14.4)
+Various other adaptation methods exists and are sometimes specialized
+to the particular pretraining methods. We will discuss one of them in Sec-
+tion 14.3.1.
+14.2 Pretraining methods in computer vision
+This section introduces two concrete pretraining methods for computer vi-
+sion: supervised pretraining and contrastive learning.
+Supervised pretraining. Here, the pretraining dataset is a large-scale
+labeled dataset (e.g., ImageNet), and the pretr

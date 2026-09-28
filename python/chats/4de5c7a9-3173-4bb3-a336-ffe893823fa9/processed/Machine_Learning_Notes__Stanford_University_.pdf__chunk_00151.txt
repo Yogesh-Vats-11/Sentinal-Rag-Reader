@@ -1,0 +1,23 @@
+mization problem:
+max
+α,β:αi≥0θD(α,β) = max
+α,β:αi≥0min
+wL(w,α,β ).
+This is exactly the same as our primal problem shown above, except that the
+order of the “max” and the “min” are now exchanged. We also deﬁne the
+optimal value of the dual problem’s objective to be d∗= maxα,β:αi≥0θD(w).
+How are the primal and the dual problems related? It can easily be shown
+that
+d∗= max
+α,β:αi≥0min
+wL(w,α,β )≤min
+wmax
+α,β:αi≥0L(w,α,β ) =p∗.
+(You should convince yourself of this; this follows from the “max min” of a
+function always being less than or equal to the “min max.”) However, under
+certain conditions, we will have
+d∗=p∗,
+so that we can solve the dual problem in lieu of the primal problem. Let’s
+see what these conditions are.
+Supposefand thegi’s are convex,3and thehi’s are aﬃne.4Suppose
+further that

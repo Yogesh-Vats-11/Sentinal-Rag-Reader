@@ -1,0 +1,15 @@
+ning . . . . . . . 183
+V Reinforcement Learning and Control 185
+15 Reinforcement learning 186
+CS229 Spring 20223 4
+15.1 Markov decision processes . . . . . . . . . . . . . . . . . . . . 187
+15.2 Value iteration and policy iteration . . . . . . . . . . . . . . . 189
+15.3 Learning a model for an MDP . . . . . . . . . . . . . . . . . . 191
+15.4 Continuous state MDPs . . . . . . . . . . . . . . . . . . . . . 193
+15.4.1 Discretization . . . . . . . . . . . . . . . . . . . . . . . 193
+15.4.2 Value function approximation . . . . . . . . . . . . . . 196
+15.5 Connections between Policy and Value Iteration (Optional) . . 200
+16 LQR, DDP and LQG 203
+16.1 Finite-horizon MDPs . . . . . . . . . . . . . . . . . . . . . . . 203
+16.2 Linear Quadratic Regulation (LQR) . . . . . . . . . . . . . . . 207
+16.3 

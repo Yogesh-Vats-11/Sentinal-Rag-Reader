@@ -1,0 +1,12 @@
+se double descent. A priori, we would expect that more
+training examples always lead to smaller test errors—more samples give
+strictly more information for the algorithm to learn from. However, recent
+work [Nakkiran, 2019] observes that the test error is not monotonically de-
+creasing as we increase the sample size. Instead, as shown in Figure 8.11, the
+test error decreases, and then increases and peaks around when the number
+of examples (denoted by n) is similar to the number of parameters (denoted
+byd), and then decreases again. We refer to this as the sample-wise dou-
+ble descent phenomenon. To some extent, sample-wise double descent and
+model-wise double descent are essentially describing similar phenomena—the
+test error is peaked when n≈d.
+Explanation and mitigation strategy. The samp

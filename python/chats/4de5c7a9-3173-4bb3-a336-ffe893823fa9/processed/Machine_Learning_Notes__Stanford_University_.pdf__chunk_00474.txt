@@ -1,0 +1,25 @@
+om the current
+Vin the main algorithm.
+3: fori= 0 tok−1do
+4: For every state s, update
+V(s) :=R(s) +γ∑
+s′Psπ(s)(s′)V(s′). (15.12)
+returnV
+5:
+Require: hyperparameter k.
+6:Initializeπrandomly.
+7:foruntil convergence do
+8: LetV= VE(π,k).
+9: For each state s, let
+π(s) := arg max
+a∈A∑
+s′Psa(s′)V(s′). (15.13)
+202
+value iteration (Algorithm 4) is that on line 4, the procedure is using the
+action from πinstead of the greedy action.
+Using the Procedure VE, we can build Algorithm 6, which is a variant
+of policy iteration that serves an intermediate algorithm that connects pol-
+icy iteration and value iteration. Here we are going to use option 2 in VE
+to maximize the re-use of knowledge learned before. One can verify indeed
+that if we take k= 1 and use option 2 in Line 2 in Algorithm 6, then Algo-
+ri

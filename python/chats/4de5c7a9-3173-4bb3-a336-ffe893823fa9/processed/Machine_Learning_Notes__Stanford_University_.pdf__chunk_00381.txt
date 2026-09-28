@@ -1,0 +1,14 @@
+f attributes of ndif-
+ferent types of automobiles, such as their maximum speed, turn radius, and
+so on. Let x(i)∈Rdfor eachi(d≪n). But unknown to us, two diﬀerent
+attributes—some xiandxj—respectively give a car’s maximum speed mea-
+sured in miles per hour, and the maximum speed measured in kilometers per
+hour. These two attributes are therefore almost linearly dependent, up to
+only small diﬀerences introduced by rounding oﬀ to the nearest mph or kph.
+Thus, the data really lies approximately on an n−1 dimensional subspace.
+How can we automatically detect, and perhaps remove, this redundancy?
+For a less contrived example, consider a dataset resulting from a survey of
+pilots for radio-controlled helicopters, where x(i)
+1is a measure of the piloting
+skill of pilot i, andx(i)
+2captures how much

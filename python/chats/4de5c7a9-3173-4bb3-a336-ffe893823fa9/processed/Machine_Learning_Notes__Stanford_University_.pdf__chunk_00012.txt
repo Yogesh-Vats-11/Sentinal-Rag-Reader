@@ -1,0 +1,21 @@
+ing to predict is continuous, such
+as in our housing example, we call the learning problem a regression prob-
+lem. When ycan take on only a small number of discrete values (such as
+if, given the living area, we wanted to predict if a dwelling is a house or an
+apartment, say), we call it a classiﬁcation problem.
+Chapter 1
+Linear regression
+To make our housing example more interesting, let’s consider a slightly richer
+dataset in which we also know the number of bedrooms in each house:
+Living area (feet2)#bedrooms Price (1000 $s)
+2104 3 400
+1600 3 330
+2400 3 369
+1416 2 232
+3000 4 540
+.........
+Here, thex’s are two-dimensional vectors in R2. For instance, x(i)
+1is the
+living area of the i-th house in the training set, and x(i)
+2is its number of
+bedrooms. (In general, when designing a learning 

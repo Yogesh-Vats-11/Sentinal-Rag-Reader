@@ -1,0 +1,24 @@
+problem would have been easy. Speciﬁcally, we could then write
+down the likelihood as
+ℓ(φ,µ, Σ) =n∑
+i=1logp(x(i)|z(i);µ,Σ) + logp(z(i);φ).
+Maximizing this with respect to φ,µand Σ gives the parameters:
+φj=1
+nn∑
+i=11{z(i)=j},
+µj=∑n
+i=11{z(i)=j}x(i)
+∑n
+i=11{z(i)=j},
+Σj=∑n
+i=11{z(i)=j}(x(i)−µj)(x(i)−µj)T
+∑n
+i=11{z(i)=j}.
+Indeed, we see that if the z(i)’s were known, then maximum likelihood
+estimation becomes nearly identical to what we had when estimating the
+parameters of the Gaussian discriminant analysis model, except that here
+thez(i)’s playing the role of the class labels.1
+However, in our density estimation problem, the z(i)’s are notknown.
+What can we do?
+The EM algorithm is an iterative algorithm that has two main steps.
+Applied to our problem, in the E-step, it tries to “guess” the v

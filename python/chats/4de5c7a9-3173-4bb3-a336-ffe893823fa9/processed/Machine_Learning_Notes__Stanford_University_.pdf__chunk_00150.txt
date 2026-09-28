@@ -1,0 +1,22 @@
+s the primal constraints, and is positive inﬁnity if the
+constraints are violated. Hence, if we consider the minimization problem
+min
+wθP(w) = min
+wmax
+α,β:αi≥0L(w,α,β ),
+we see that it is the same problem (i.e., and has the same solutions as) our
+original, primal problem. For later use, we also deﬁne the optimal value of
+the objective to be p∗= minwθP(w); we call this the value of the primal
+problem.
+Now, let’s look at a slightly diﬀerent problem. We deﬁne
+θD(α,β) = min
+wL(w,α,β ).
+Here, the “D” subscript stands for “dual.” Note also that whereas in the
+deﬁnition of θPwe were optimizing (maximizing) with respect to α,β, here
+we are minimizing with respect to w.
+We can now pose the dual optimization problem:
+max
+α,β:αi≥0θD(α,β) = max
+α,β:αi≥0min
+wL(w,α,β ).
+This is exactly the same as our 

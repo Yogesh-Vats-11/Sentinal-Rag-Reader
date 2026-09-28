@@ -1,0 +1,16 @@
+emembering which way
+the inequality goes, and remembering a picture like this is a good way to
+quickly ﬁgure out the answer.
+Remark. Recall that fis [strictly] concave if and only if −fis [strictly]
+convex (i.e., f′′(x)≤0 orH≤0). Jensen’s inequality also holds for concave
+functionsf, but with the direction of all the inequalities reversed (E[ f(X)]≤
+f(EX), etc.).
+11.3 General EM algorithms
+Suppose we have an estimation problem in which we have a training set
+{x(1),...,x(n)}consisting of nindependent examples. We have a latent vari-
+able model p(x,z;θ) withzbeing the latent variable (which for simplicity is
+assumed to take ﬁnite number of values). The density for xcan be obtained
+by marginalized over the latent variable z:
+p(x;θ) =∑
+zp(x,z;θ) (11.1)
+We wish to ﬁt the parameters θby maximizi

@@ -1,8 +1,5 @@
 import { spawn } from "child_process";
-import path from "path";
-
-const PYTHON_BIN = process.env.PYTHON_BIN || "python3";
-const PYTHON_DIR = path.resolve(__dirname, process.env.PYTHON_DIR || "../../python");
+import { PYTHON_BIN, PYTHON_DIR } from "./pythonConfig";
 
 export interface QueryResult {
   answer?: string;
@@ -11,13 +8,15 @@ export interface QueryResult {
 }
 
 /**
- * Runs python/query.py "<question>" as a child process and parses its
+ * Runs python/query.py "<question>" [--store <path>] as a child process and parses its
  * single-line JSON stdout. All RAG logic (embeddings, retrieval, the LLM
  * call) lives entirely in Python; this is just the bridge.
  */
-export function runQuery(question: string): Promise<QueryResult> {
+export function runQuery(question: string, storePath?: string): Promise<QueryResult> {
   return new Promise((resolve) => {
-    const proc = spawn(PYTHON_BIN, ["query.py", question], {
+    const args = ["query.py", question];
+    if (storePath) args.push("--store", storePath);
+    const proc = spawn(PYTHON_BIN, args, {
       cwd: PYTHON_DIR,
     });
 

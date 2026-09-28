@@ -1,0 +1,14 @@
+
+. (7.41)
+Here the ﬁrst occurrence of βshould be technically interpreted as a vector
+with all the entries being β. in We also note that ˆ µand ˆσare also functions
+ofzand shouldn’t be treated as constants when computing the derivatives of
+layernorm. Moreover, βandγare learnable parameters and thus layernorm
+is a parameterized module (as opposed to the activation layer which doesn’t
+have any parameters.)
+Scaling-invariant property. One important property of layer normalization
+is that it will make the model invariant to scaling of the parameters in the
+following sense. Suppose we consider composing LN with MM W,band get
+a subnetwork LN(MM W,b(z)). Then, we have that the output of this sub-
+network does not change when the parameter in MM W,bis scaled:
+LN(MM αW,αb (z)) = LN(MM W,b(z)),∀α

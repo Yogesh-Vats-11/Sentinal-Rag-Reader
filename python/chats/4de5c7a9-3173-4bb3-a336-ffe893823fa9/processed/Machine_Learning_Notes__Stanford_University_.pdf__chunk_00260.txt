@@ -1,0 +1,15 @@
+0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining data
+best fit linear model
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytest data
+best fit linear model
+Figure 8.2: The best ﬁt linear model has large training and test errors.
+The issue cannot be mitigated with more training examples—even with
+a very large amount of, or even inﬁnite training examples, the best ﬁtted
+linear model is still inaccurate and fails to capture the structure of the data
+(Figure 8.3). Even if the noise is not present in the training data, the issue
+still occurs (Figure 8.4). Therefore, the fundamental bottleneck here is the
+linear model family’s inability to capture the structure in the data—linear
+models cannot represent the true quadratic function h⋆—, but not the lack of
+the data. Informally, we deﬁne the bias of a model to be

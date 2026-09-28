@@ -1,0 +1,15 @@
+nd thus the bias term has to
+be large.
+The variance term captures how the random nature of the ﬁnite dataset
+introduces errors in the learned model. It measures the sensitivity of the
+learned model to the randomness in the dataset. It often decreases as the
+size of the dataset increases.
+There is nothing we can do about the ﬁrst term σ2as we can not predict
+the noiseξby deﬁnition.
+Finally, we note that the bias-variance decomposition for classiﬁcation
+is much less clear than for regression problems. There have been several
+proposals, but there is as yet no agreement on what is the “right” and/or
+the most useful formalism.
+8.2 The double descent phenomenon
+Model-wise double descent. Recent works have demonstrated that the
+test error can present a “double descent” phenomenon in a range of ma

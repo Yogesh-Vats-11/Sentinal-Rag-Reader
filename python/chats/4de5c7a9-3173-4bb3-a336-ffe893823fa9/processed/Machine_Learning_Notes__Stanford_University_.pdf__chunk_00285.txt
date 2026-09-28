@@ -1,0 +1,15 @@
+cates the direction of increasing model size. Their relationship
+are closer to the convention wisdom than to a double descent. Setup: We
+consider a linear regression with a ﬁxed dataset of size n= 500.The input
+xis a random ReLU feature on Fashion-MNIST, and output y∈R10is the
+one-hot label. This is the same setting as in Section 5.2 of Nakkiran et al.
+[2020].
+126
+8.3 Sample complexity bounds (optional
+readings)
+8.3.1 Preliminaries
+In this set of notes, we begin our foray into learning theory. Apart from
+being interesting and enlightening in its own right, this discussion will also
+help us hone our intuitions and derive rules of thumb about how to best
+apply learning algorithms in diﬀerent settings. We will also seek to answer
+a few questions: First, can we make formal the bias/variance tr

@@ -1,0 +1,13 @@
+i)−ˆε(hi)|>γ) =P(∀h∈H.|ε(hi)−ˆε(hi)|≤γ)
+≥1−2kexp(−2γ2n)
+(The “¬” symbol means “not.”) So, with probability at least 1 −
+2kexp(−2γ2n), we have that ε(h) will be within γof ˆε(h) for allh∈H.
+This is called a uniform convergence result, because this is a bound that
+holds simultaneously for all (as opposed to just one) h∈H.
+In the discussion above, what we did was, for particular values of nand
+γ, give a bound on the probability that for some h∈H,|ε(h)−ˆε(h)|> γ.
+There are three quantities of interest here: n,γ, and the probability of error;
+we can bound either one in terms of the other two.
+For instance, we can ask the following question: Given γand someδ>0,
+how large must nbe before we can guarantee that with probability at least
+1−δ, training error will be within γof generalization error? B

@@ -1,0 +1,15 @@
+t,
+and can we make any guarantees about it, such as regarding its convergence?
+In the next set of notes, we will describe a more general view of EM, one
+2The term “soft” refers to our guesses being probabilities and taking values in [0 ,1]; in
+contrast, a “hard” guess is one that represents a single best guess (such as taking values
+in{0,1}or{1,...,k}).
+151
+that will allow us to easily apply it to other estimation problems in which
+there are also latent variables, and which will allow us to give a convergence
+guarantee.
+11.2 Jensen’s inequality
+We begin our discussion with a very useful result called Jensen’s inequality
+Letfbe a function whose domain is the set of real numbers. Recall that
+fis a convex function if f′′(x)≥0 (for allx∈R). In the case of ftaking
+vector-valued inputs, this is 

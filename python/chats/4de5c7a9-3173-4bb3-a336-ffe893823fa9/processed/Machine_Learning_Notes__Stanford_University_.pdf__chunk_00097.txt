@@ -1,0 +1,19 @@
+0xx to submit work you did to the NeurIPS
+conference for publication.3Because you end up discussing the conference
+in your emails, you also start getting messages with the word “neurips”
+in it. But this is your ﬁrst NeurIPS paper, and until this time, you had
+not previously seen any emails containing the word “neurips”; in particular
+“neurips” did not ever appear in your training set of spam/non-spam emails.
+Assuming that “neurips” was the 35000th word in the dictionary, your Naive
+Bayes spam ﬁlter therefore had picked its maximum likelihood estimates of
+the parameters φ35000|yto be
+φ35000|y=1=∑n
+i=11{x(i)
+35000 = 1∧y(i)= 1}∑n
+i=11{y(i)= 1}= 0
+φ35000|y=0=∑n
+i=11{x(i)
+35000 = 1∧y(i)= 0}∑n
+i=11{y(i)= 0}= 0
+I.e., because it has never seen “neurips” before in either spam or non-spam
+training e

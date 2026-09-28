@@ -1,0 +1,16 @@
+inforcement learning has been successful in applications as diverse as
+autonomous helicopter ﬂight, robot legged locomotion, cell-phone network
+routing, marketing strategy selection, factory control, and eﬃcient web-page
+indexing. Our study of reinforcement learning will begin with a deﬁnition of
+theMarkov decision processes (MDP) , which provides the formalism in
+which RL problems are usually posed.
+186
+187
+15.1 Markov decision processes
+A Markov decision process is a tuple ( S,A,{Psa},γ,R ), where:
+•Sis a set of states . (For example, in autonomous helicopter ﬂight, S
+might be the set of all possible positions and orientations of the heli-
+copter.)
+•Ais a set of actions . (For example, the set of all possible directions in
+which you can push the helicopter’s control sticks.)
+•Psaare the 

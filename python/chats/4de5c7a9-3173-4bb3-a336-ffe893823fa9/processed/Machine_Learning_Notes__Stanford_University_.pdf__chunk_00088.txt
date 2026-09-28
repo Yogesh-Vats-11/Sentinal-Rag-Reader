@@ -1,0 +1,15 @@
+h to classify messages according to whether
+they are unsolicited commercial (spam) email, or non-spam email. After
+learning to do this, we can then have our mail reader automatically ﬁlter
+out the spam messages and perhaps place them in a separate mail folder.
+Classifying emails is one example of a broader set of problems called text
+classiﬁcation .
+Let’s say we have a training set (a set of emails labeled as spam or non-
+spam). We’ll begin our construction of our spam ﬁlter by specifying the
+featuresxjused to represent an email.
+We will represent an email via a feature vector whose length is equal to
+the number of words in the dictionary. Speciﬁcally, if an email contains the
+j-th word of the dictionary, then we will set xj= 1; otherwise, we let xj= 0.
+For instance, the vector
+x=
+

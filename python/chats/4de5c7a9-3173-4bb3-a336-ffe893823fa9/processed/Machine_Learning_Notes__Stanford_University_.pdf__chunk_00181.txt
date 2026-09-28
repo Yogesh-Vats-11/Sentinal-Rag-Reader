@@ -1,0 +1,17 @@
+verage of the loss function of indi-
+vidual training examples, J(θ) =1
+n∑n
+i=1J(i)(θ).
+We also note that the approach above can also be generated to any con-
+ditional probabilistic model where we have an exponential distribution for
+y, Exponential-family( y;η), whereη=¯hθ(x) is a parameterized nonlinear
+function of x. However, the most widely used situations are the three cases
+discussed above.
+Optimizers (SGD). Commonly, people use gradient descent (GD), stochas-
+tic gradient (SGD), or their variants to optimize the loss function J(θ). GD’s
+update rule can be written as2
+θ:=θ−α∇θJ(θ) (7.8)
+whereα > 0 is often referred to as the learning rate or step size. Next, we
+introduce a version of the SGD (Algorithm 1), which is lightly diﬀerent from
+that in the ﬁrst lecture notes.
+2Recall that, as 

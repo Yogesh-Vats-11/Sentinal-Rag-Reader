@@ -1,0 +1,14 @@
+ﬀerence optimizers may converge to diﬀerent
+global minima. Though these global minima have the same or similar train-
+ing losses, they may be of diﬀerent nature and have dramatically diﬀerent
+generalization performance. See Figures 9.1 and 9.2 and its caption for an
+illustration and some experiment results. For example, it’s possible that one
+global minimum gives a much more Lipschitz or sparse model than others
+and thus has a better test error. It turns out that many commonly-used op-
+timizers (or their components) prefer or bias towards ﬁnding global minima
+of certain properties, leading to a better test performance.
+happen to be the sparsest parameter with only 1 non-zero coordinate. Thus, sparsity and
+ℓ1norm gives the same extremal points to some extent.
+138
+θloss
+Figure 9.1: An Illust

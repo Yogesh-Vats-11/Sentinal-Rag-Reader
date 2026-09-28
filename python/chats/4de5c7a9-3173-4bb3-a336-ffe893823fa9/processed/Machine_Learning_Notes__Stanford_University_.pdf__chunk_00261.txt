@@ -1,0 +1,21 @@
+quadratic function h⋆—, but not the lack of
+the data. Informally, we deﬁne the bias of a model to be the test error even
+if we were to ﬁt it to a very (say, inﬁnitely) large training dataset. Thus, in
+this case, the linear model suﬀers from large bias, and underﬁts (i.e., fails to
+capture structure exhibited by) the data.
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5yfitting linear models on a large dataset
+training data
+ground truth h*
+best fit linear model
+Figure 8.3: The best ﬁt linear
+model on a much larger dataset
+still has a large training error.
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5yfitting linear models on a noiseless dataset
+training data
+ground truth h*
+best fit linear modelFigure 8.4: The best ﬁt linear
+model on a noiseless dataset also
+has a large training/test error.
+Next, we ﬁt a 5th

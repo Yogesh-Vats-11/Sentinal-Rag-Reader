@@ -1,0 +1,12 @@
+al risk minimization (ERM), and the resulting
+hypothesis output by the learning algorithm is ˆh=hˆθ. We think of ERM
+as the most “basic” learning algorithm, and it will be this algorithm that we
+9PAC stands for “probably approximately correct,” which is a framework and set of
+assumptions under which numerous results on learning theory were proved. Of these, the
+assumption of training and testing on the same distribution, and the assumption of the
+independently drawn training examples, were the most important.
+128
+focus on in these notes. (Algorithms such as logistic regression can also be
+viewed as approximations to empirical risk minimization.)
+In our study of learning theory, it will be useful to abstract away from
+the speciﬁc parameterization of hypotheses and from issues such as whethe

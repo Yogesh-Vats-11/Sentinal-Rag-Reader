@@ -1,0 +1,14 @@
+ the interme-
+diate computation in transformer as a blackbox. We refer the students to
+more advanced courses or the original paper for more details. The high-level
+pipeline is visualized in Figure 14.1. Given a document ( x1,···,xT), we ﬁrst
+compute the corresponding word embeddings ( ex1,···,exT). Then, the word
+embeddings is passed to a transformer model, which takes in a sequence of
+4To see this, you can verify that the function −logp
+p+qis decreasing in p, and increasing
+inqwhenp,q> 0.
+5In the practical implementations, typically all the data are concatenated into a single
+sequence in some order, and each example typically corresponds a sub-sequence of consec-
+utive words which may corresponds to a subset of a document or may span across multiple
+documents.
+6Technically, words may be d

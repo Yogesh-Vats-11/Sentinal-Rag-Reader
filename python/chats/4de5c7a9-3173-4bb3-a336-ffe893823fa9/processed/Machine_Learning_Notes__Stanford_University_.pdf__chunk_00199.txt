@@ -1,0 +1,16 @@
+the biases). The collection of W[1],b[1]is referred to as
+the ﬁrst layer, and W[2],b[2]the second layer. The activation ais referred to as
+the hidden layer. A two-layer neural network is also called one-hidden-layer
+neural network.
+Multi-layer fully-connected neural networks. With this succinct no-
+tations, we can stack more layers to get a deeper fully-connected neu-
+ral network. Let rbe the number of layers (weight matrices). Let
+W[1],...,W[r],b[1],...,b[r]be the weight matrices and biases of all the layers.
+Then a multi-layer neural network can be written as
+a[1]= ReLU(W[1]x+b[1])
+a[2]= ReLU(W[2]a[1]+b[2])
+···
+a[r−1]= ReLU(W[r−1]a[r−2]+b[r−1])
+¯hθ(x) =W[r]a[r−1]+b[r](7.22)
+We note that the weight matrices and biases need to have compatible
+dimensions for the equations above to make sens

@@ -1,0 +1,12 @@
+ze it with the solution found during the pre-
+vious iteration of our algorithm, then that will provide value iteration with
+a much better initial starting point and make it converge more quickly.
+15.4 Continuous state MDPs
+So far, we’ve focused our attention on MDPs with a ﬁnite number of states.
+We now discuss algorithms for MDPs that may have an inﬁnite number of
+states. For example, for a car, we might represent the state as ( x,y,θ, ˙x,˙y,˙θ),
+comprising its position ( x,y); orientation θ; velocity in the xandydirections
+˙xand ˙y; and angular velocity ˙θ. Hence,S=R6is an inﬁnite set of states,
+because there is an inﬁnite number of possible positions and orientations
+for the car.3Similarly, the inverted pendulum you saw in PS4 has states
+(x,θ, ˙x,˙θ), whereθis the angle of the pole. And

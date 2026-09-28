@@ -1,0 +1,12 @@
+onal linear head. One option
+is to treat cT+1=φθ(x1,···,xT) as the representation and use w⊤cT+1=
+w⊤φθ(x1,···,xT) to predict task label. As described in Section 14.1, we
+initializeθto the pretrained model ˆθand then optimize both wandθ.
+Zero-shot adaptation or zero-shot learning is the setting where there is no
+input-output pairs from the downstream tasks. For language problems tasks,
+typically the task is formatted as a question or a cloze test form via natural
+language. For example, we can format an example as a question:
+xtask= (xtask,1,···,xtask,T) = “Is the speed of light a universal constant?”
+Then, we compute the most likely next word predicted by the lan-
+guage model given this question, that is, computing argmaxxT+1p(xT+1|
+xtask,1,···,xtask,T). In this case, if the most likely nex

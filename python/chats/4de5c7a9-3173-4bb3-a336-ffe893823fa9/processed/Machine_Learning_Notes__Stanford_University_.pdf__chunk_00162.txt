@@ -1,0 +1,13 @@
+els to our classiﬁcation problem. The resulting algorithm, support vector
+machines , will be able to eﬃciently learn in very high dimensional spaces.
+72
+6.7 Regularization and the non-separable case
+(optional reading)
+The derivation of the SVM as presented so far assumed that the data is
+linearly separable. While mapping data to a high dimensional feature space
+viaφdoes generally increase the likelihood that the data is separable, we
+can’t guarantee that it always will be so. Also, in some cases it is not clear
+that ﬁnding a separating hyperplane is exactly what we’d want to do, since
+that might be susceptible to outliers. For instance, the left ﬁgure below
+shows an optimal margin classiﬁer, and when a single outlier is added in the
+upper-left region (right ﬁgure), it causes the decision b

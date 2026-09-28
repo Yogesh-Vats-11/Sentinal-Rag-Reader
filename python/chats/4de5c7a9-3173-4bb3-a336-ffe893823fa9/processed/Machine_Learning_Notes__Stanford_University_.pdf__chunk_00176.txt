@@ -1,0 +1,14 @@
+x). In the past lectures, we have considered the
+cases when hθ(x) =θ⊤x(in linear regression) or hθ(x) =θ⊤φ(x) (whereφ(x)
+is the feature map). A commonality of these two models is that they are
+linear in the parameters θ. Next we will consider learning general family of
+models that are non-linear in both the parameters θand the inputs x. The
+most common non-linear models are neural networks, which we will deﬁne
+staring from the next section. For this section, it suﬃces to think hθ(x) as
+an abstract non-linear model.1
+Suppose{(x(i),y(i))}n
+i=1are the training examples. We will deﬁne the
+nonlinear model and the loss/cost function for learning it.
+Regression problems. For simplicity, we start with the case where the
+output is a real number, that is, y(i)∈R, and thus the model hθalso outputs
+a 

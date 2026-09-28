@@ -1,0 +1,17 @@
+ey are not seman-
+tically related. We call (ˆ x,ˆz) a negative or random pair.2We will design a
+loss to push the representation of random pairs, φθ(ˆx),φθ(ˆz), far away from
+each other.
+There are many recent algorithms based on the contrastive learning prin-
+ciple, and here we introduce SIMCLR [Chen et al., 2020] as an concrete
+example. The loss function is deﬁned on a batch of examples ( x1,···,x(B))
+with batch size B. The algorithm computes two random augmentations for
+each example x(i)in the batch, denoted by ˆ x(i)and ˜x(i).As a result, we
+have the augmented batch of 2 Bexamples: ˆx1,···,ˆx(B), ˜x1,···,˜x(B). The
+SIMCLR loss is deﬁned as3
+Lpre(θ) =−B∑
+i=1logexp(
+φθ(ˆx(i))⊤φθ(˜x(i)))
+exp (φθ(ˆx(i))⊤φθ(˜x(i))) +∑
+j̸=iexp (φθ(ˆx(i))⊤φθ(˜x(j))).
+The intuition is as follows. The loss is inc

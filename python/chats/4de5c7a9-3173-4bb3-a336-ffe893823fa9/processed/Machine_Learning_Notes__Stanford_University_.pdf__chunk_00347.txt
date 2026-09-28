@@ -1,0 +1,15 @@
+-step with the formulas we
+had when the z(i)’s were known exactly. They are identical, except that in-
+stead of the indicator functions “1 {z(i)=j}” indicating from which Gaussian
+each datapoint had come, we now instead have the w(i)
+j’s.
+The EM-algorithm is also reminiscent of the K-means clustering algo-
+rithm, except that instead of the “hard” cluster assignments c(i), we instead
+have the “soft” assignments w(i)
+j. Similar to K-means, it is also susceptible
+to local optima, so reinitializing at several diﬀerent initial parameters may
+be a good idea.
+It’s clear that the EM algorithm has a very natural interpretation of
+repeatedly trying to guess the unknown z(i)’s; but how did it come about,
+and can we make any guarantees about it, such as regarding its convergence?
+In the next set of no

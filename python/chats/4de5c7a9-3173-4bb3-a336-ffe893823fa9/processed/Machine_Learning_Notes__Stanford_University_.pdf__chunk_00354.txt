@@ -1,0 +1,21 @@
+ion over the possible values of z. That is,∑
+zQ(z) = 1,
+Q(z)≥0).
+Consider the following:5
+logp(x;θ) = log∑
+zp(x,z;θ)
+= log∑
+zQ(z)p(x,z;θ)
+Q(z)(11.6)
+≥∑
+zQ(z) logp(x,z;θ)
+Q(z)(11.7)
+The last step of this derivation used Jensen’s inequality. Speciﬁcally,
+f(x) = logxis a concave function, since f′′(x) =−1/x2<0 over its domain
+3It’s mostly an empirical observation that the optimization problem is diﬃcult to op-
+timize.
+4Empirically, the E-step and M-step can often be computed more eﬃciently than op-
+timizing the function ℓ(·) directly. However, it doesn’t necessarily mean that alternating
+the two steps can always converge to the global optimum of ℓ(·). Even for mixture of
+Gaussians, the EM algorithm can either converge to a global optimum or get stuck, de-
+pending on the properties of the trai

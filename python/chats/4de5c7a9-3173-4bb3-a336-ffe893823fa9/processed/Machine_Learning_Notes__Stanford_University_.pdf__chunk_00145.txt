@@ -1,0 +1,17 @@
+ the training set must be 1:
+ˆγ= 1.
+65
+Since multiplying wandbby some constant results in the functional margin
+being multiplied by that same constant, this is indeed a scaling constraint,
+and can be satisﬁed by rescaling w,b. Plugging this into our problem above,
+and noting that maximizing ˆ γ/||w||= 1/||w||is the same thing as minimizing
+||w||2, we now have the following optimization problem:
+minw,b1
+2||w||2
+s.t.y(i)(wTx(i)+b)≥1, i= 1,...,n
+We’ve now transformed the problem into a form that can be eﬃciently
+solved. The above is an optimization problem with a convex quadratic ob-
+jective and only linear constraints. Its solution gives us the optimal mar-
+gin classiﬁer . This optimization problem can be solved using commercial
+quadratic programming (QP) code.1
+While we could call the probl

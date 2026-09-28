@@ -1,0 +1,20 @@
+
+lem of predicting the price of a house (denoted by y) from the living area of
+the house (denoted by x), and we ﬁt a linear function of xto the training
+data. What if the price ycan be more accurately represented as a non-linear
+function of x? In this case, we need a more expressive family of models than
+linear models.
+We start by considering ﬁtting cubic functions y=θ3x3+θ2x2+θ1x+θ0.
+It turns out that we can view the cubic function as a linear function over
+the a diﬀerent set of feature variables (deﬁned below). Concretely, let the
+functionφ:R→R4be deﬁned as
+φ(x) =
+1
+x
+x2
+x3
+∈R4. (5.1)
+Letθ∈R4be the vector containing θ0,θ1,θ2,θ3as entries. Then we can
+rewrite the cubic function in xas:
+θ3x3+θ2x2+θ1x+θ0=θTφ(x)
+Thus, a cubic function of the variable xcan be viewed as a linear functi

@@ -1,0 +1,14 @@
+ tens or low hundreds) and x2were the num-
+ber of seats (taking values around 2-4), then this renormalization rescales
+the diﬀerent attributes to make them more comparable. This rescaling may
+be omitted if we had a priori knowledge that the diﬀerent attributes are all
+on the same scale. One example of this is if each data point represented a
+grayscale image, and each x(i)
+jtook a value in{0,1,..., 255}corresponding
+to the intensity value of pixel jin imagei.
+Now, having normalized our data, how do we compute the “major axis
+of variation” u—that is, the direction on which the data approximately lies?
+One way is to pose this problem as ﬁnding the unit vector uso that when
+167
+the data is projected onto the direction corresponding to u, the variance of
+the projected data is maximized. Intuiti

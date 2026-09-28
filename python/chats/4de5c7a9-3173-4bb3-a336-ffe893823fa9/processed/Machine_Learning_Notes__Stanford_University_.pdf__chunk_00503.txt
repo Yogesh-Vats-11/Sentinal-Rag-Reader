@@ -1,0 +1,17 @@
+ Σt+1|tC⊤(CΣt+1|tC⊤+ Σy)−1
+The matrix Ktis called the Kalman gain .
+Now, if we have a closer look at the formulas, we notice that we don’t
+need the observations prior to time step t! The update steps only depends
+on the previous distribution. Putting it all together, the algorithm ﬁrst runs
+a forward pass to compute the Kt, Σt|tandst|t(sometimes referred to as
+ˆsin the literature). Then, it runs a backward pass (the LQR updates) to
+compute the quantities Ψ t,ΨtandLt. Finally, we recover the optimal policy
+witha∗
+t=Ltst|t.
+Chapter 17
+Policy Gradient
+(REINFORCE)
+We will present a model-free algorithm called REINFORCE that does not
+require the notion of value functions and Qfunctions. It turns out to be more
+convenient to introduce REINFORCE in the ﬁnite horizon case, which will
+be assumed th

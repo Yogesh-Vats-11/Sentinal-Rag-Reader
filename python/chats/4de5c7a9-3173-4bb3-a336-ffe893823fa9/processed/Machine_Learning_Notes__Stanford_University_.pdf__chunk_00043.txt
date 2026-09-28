@@ -1,0 +1,22 @@
+ume that
+P(y= 1|x;θ) =hθ(x)
+P(y= 0|x;θ) = 1−hθ(x)
+Note that this can be written more compactly as
+p(y|x;θ) = (hθ(x))y(1−hθ(x))1−y
+Assuming that the ntraining examples were generated independently, we
+can then write down the likelihood of the parameters as
+L(θ) =p(⃗ y|X;θ)
+=n∏
+i=1p(y(i)|x(i);θ)
+=n∏
+i=1(
+hθ(x(i)))y(i)(
+1−hθ(x(i)))1−y(i)
+As before, it will be easier to maximize the log likelihood:
+ℓ(θ) = logL(θ) =n∑
+i=1y(i)logh(x(i)) + (1−y(i)) log(1−h(x(i))) (2.1)
+How do we maximize the likelihood? Similar to our derivation in the case
+of linear regression, we can use gradient ascent. Written in vectorial notation,
+our updates will therefore be given by θ:=θ+α∇θℓ(θ). (Note the positive
+rather than negative sign in the update formula, since we’re maximizing,
+rather than minimizing, a function

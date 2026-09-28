@@ -1,0 +1,12 @@
+s
+So far, we’ve mainly been talking about learning algorithms that model
+p(y|x;θ), the conditional distribution of ygivenx. For instance, logistic
+regression modeled p(y|x;θ) ashθ(x) =g(θTx) wheregis the sigmoid func-
+tion. In these notes, we’ll talk about a diﬀerent type of learning algorithm.
+Consider a classiﬁcation problem in which we want to learn to distinguish
+between elephants ( y= 1) and dogs ( y= 0), based on some features of
+an animal. Given a training set, an algorithm like logistic regression or
+the perceptron algorithm (basically) tries to ﬁnd a straight line—that is, a
+decision boundary—that separates the elephants and dogs. Then, to classify
+a new animal as either an elephant or a dog, it checks on which side of the
+decision boundary it falls, and makes its prediction accor

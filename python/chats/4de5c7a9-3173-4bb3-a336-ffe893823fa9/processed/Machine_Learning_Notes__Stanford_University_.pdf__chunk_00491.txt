@@ -1,0 +1,28 @@
+ster! As the optimal policy does not depend on Ψ t, and the
+update of Φ tonly depends on Φ t, it is suﬃcient to update only Φt!
+16.3 From non-linear dynamics to LQR
+It turns out that a lot of problems can be reduced to LQR, even if dynamics
+are non-linear. While LQR is a nice formulation because we are able to come
+up with a nice exact solution, it is far from being general. Let’s take for
+instance the case of the inverted pendulum. The transitions between states
+look like
+
+xt+1
+˙xt+1
+θt+1
+˙θt+1
+=F
+
+xt
+˙xt
+θt
+˙θt
+,at
+
+where the function Fdepends on the cos of the angle etc. Now, the
+question we may ask is
+Can we linearize this system?
+211
+16.3.1 Linearization of dynamics
+Let’s suppose that at time t, the system spends most of its time in some state
+¯stand the action

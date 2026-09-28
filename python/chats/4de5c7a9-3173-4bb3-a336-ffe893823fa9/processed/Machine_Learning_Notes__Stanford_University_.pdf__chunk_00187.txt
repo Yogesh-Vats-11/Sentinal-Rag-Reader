@@ -1,0 +1,16 @@
+ro-
+nounced “ray-lu”), or rectiﬁed linear unit, and often denoted by ReLU( t)≜
+max{t,0}.
+Generally, a one-dimensional non-linear function that maps RtoRsuch as
+ReLU is often referred to as an activation function . The model ¯hθ(x) is said
+to have a single neuron partly because it has a single non-linear activation
+function. (We will discuss more about why a non-linear activation is called
+neuron.)
+When the input x∈Rdhas multiple dimensions, a neural network with
+a single neuron can be written as
+¯hθ(x) = ReLU(w⊤x+b),wherew∈Rd,b∈R, andθ= (w,b) (7.12)
+85
+500 1000 1500 2000 2500 3000 3500 4000 4500 500001002003004005006007008009001000housing prices 
+square feet price (in $1000) 
+Figure 7.1: Housing prices with a “kink” in the graph.
+The termbis often referred to as the “bias”, and the vector 

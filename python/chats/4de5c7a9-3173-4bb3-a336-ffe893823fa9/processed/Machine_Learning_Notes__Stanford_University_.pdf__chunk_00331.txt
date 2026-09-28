@@ -1,0 +1,13 @@
+generalization error of a model. This method has
+142
+its own name; since we’re holding out one training example at a time, this
+method is called leave-one-out cross validation.
+Finally, even though we have described the diﬀerent versions of cross vali-
+dation as methods for selecting a model, they can also be used more simply to
+evaluate a single model or algorithm. For example, if you have implemented
+some learning algorithm and want to estimate how well it performs for your
+application (or if you have invented a novel learning algorithm and want to
+report in a technical paper how well it performs on various test sets), cross
+validation would give a reasonable way of doing so.
+9.4 Bayesian statistics and regularization
+In this section, we will talk about one more tool in our arsenal for o

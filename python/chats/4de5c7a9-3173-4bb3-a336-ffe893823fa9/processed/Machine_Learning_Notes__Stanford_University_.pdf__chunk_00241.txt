@@ -1,0 +1,31 @@
+kward
+function for the parameter variables Wandb. It’s less convenient to use
+equation (7.59) because the variable Wis a matrix and the matrix in (7.59)
+will be a 4-th order tensor that is challenging for us to mathematically write
+down. We use (7.58) instead:
+(B[MM,W](v))ij=m∑
+k=1∂(Wz+b)k
+∂Wij·vk=m∑
+k=1∂∑m
+s=1Wkszs
+∂Wij·vk=vizj.
+(7.64)
+In vectorized notation, we have
+B[MM,W](v) =vz⊤∈Rn××m. (7.65)
+Using equation (7.59) for the variable b, we have,
+B[MM,b](v) =
+∂(Wz+b)1
+∂b1···∂(Wz+b)n
+∂b1.........
+∂(Wz+b)1
+∂bn···∂(Wz+b)n
+∂bn
+v=v. (7.66)
+106
+Here we used that∂(Wz+b)j
+∂bi= 0 ifi̸=jand∂(Wz+b)j
+∂bi= 1 ifi=j.
+The computational eﬃciency for computing the backward function is
+O(mn), the same as evaluating the result of matrix multiplication up to
+constant factor.
+Backward function for the ac

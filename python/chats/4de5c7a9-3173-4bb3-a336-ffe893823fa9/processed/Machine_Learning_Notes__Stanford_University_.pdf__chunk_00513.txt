@@ -1,0 +1,21 @@
+0 (because E [ ∇θlogπθ(at|st)|s0,a0,...,st−1,at−1,st] = 0)
+2In general, it’s true that E x∼pθ[∇logpθ(x)] = 0.
+221
+Again here we used the law of total expectation. The outer expecta-
+tion in the second line above is over the randomness of s0,a0,...,at−1,st,
+whereas the inner expectation is over the randomness of at(conditioned on
+s0,a0,...,at−1,st.) It follows from equation (17.10) and the equation above
+that
+∇θη(θ) =T−1∑
+t=0Eτ∼Pθ[
+∇θlogπθ(at|st)·(T−1∑
+j≥tγjR(sj,aj)−γtB(st))]
+=T−1∑
+t=0Eτ∼Pθ[
+∇θlogπθ(at|st)·γt(T−1∑
+j≥tγj−tR(sj,aj)−B(st))]
+(17.11)
+Therefore, we will get a diﬀerent estimator for estimating the ∇η(θ) with a
+diﬀerence choice of B(·). The beneﬁt of introducing a proper B(·) — which
+is often referred to as a baseline — is that it helps reduce the variance of the
+estimator.3It turn

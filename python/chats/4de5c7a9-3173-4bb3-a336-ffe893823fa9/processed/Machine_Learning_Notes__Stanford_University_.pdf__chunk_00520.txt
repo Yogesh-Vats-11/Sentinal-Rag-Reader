@@ -1,0 +1,14 @@
+puter vision and pattern recognition , pages 770–778, 2016.
+Sergey Ioﬀe and Christian Szegedy. Batch normalization: Accelerating deep
+network training by reducing internal covariate shift. In Proceedings of the
+32nd International Conference on Machine Learning, ICML 2015, Lille,
+France, 6-11 July 2015 , pages 448–456, 2015. URL http://jmlr.org/
+proceedings/papers/v37/ioffe15.html .
+Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An
+introduction to statistical learning, second edition , volume 112. Springer,
+2021.
+Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic opti-
+mization. arXiv preprint arXiv:1412.6980 , 2014.
+Diederik P Kingma and Max Welling. Auto-encoding variational bayes. arXiv
+preprint arXiv:1312.6114 , 2013.
+Yuping Luo, Huazhe Xu, Yuanzhi Li, Yu

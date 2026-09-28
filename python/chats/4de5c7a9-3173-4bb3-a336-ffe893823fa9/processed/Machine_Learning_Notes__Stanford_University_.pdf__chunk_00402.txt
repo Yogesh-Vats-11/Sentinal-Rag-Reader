@@ -1,0 +1,13 @@
+sT]AT=A·Cov[s]·AT=AAT
+Now, letRbe an arbitrary orthogonal (less formally, a rotation/reﬂection)
+matrix, so that RRT=RTR=I, and letA′=AR. Then if the data had
+been mixed according to A′instead ofA, we would have instead observed
+x′=A′s. The distribution of x′is also Gaussian, x′∼N (0,AAT), since
+Es∼N(0,I)[x′(x′)T] = E[A′ssT(A′)T] = E[ARssT(AR)T] =ARRTAT=AAT.
+Hence, whether the mixing matrix is AorA′, we would observe data from
+aN(0,AAT) distribution. Thus, there is no way to tell if the sources were
+mixed using AandA′. There is an arbitrary rotational component in the
+mixing matrix that cannot be determined from the data, and we cannot
+recover the original sources.
+Our argument above was based on the fact that the multivariate standard
+normal distribution is rotationally symmetric. Despite 

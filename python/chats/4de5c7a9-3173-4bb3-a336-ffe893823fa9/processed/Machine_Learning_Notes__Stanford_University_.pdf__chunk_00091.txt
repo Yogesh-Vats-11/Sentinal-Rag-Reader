@@ -1,0 +1,15 @@
+the value of x39831 (whether “price” appears).
+More formally, this can be written p(x2087|y) =p(x2087|y,x 39831). (Note that
+this is notthe same as saying that x2087andx39831 are independent, which
+would have been written “ p(x2087) =p(x2087|x39831)”; rather, we are only
+assuming that x2087andx39831 are conditionally independent giveny.)
+We now have:
+p(x1,...,x 50000|y)
+=p(x1|y)p(x2|y,x 1)p(x3|y,x 1,x2)···p(x50000|y,x 1,...,x 49999)
+=p(x1|y)p(x2|y)p(x3|y)···p(x50000|y)
+=d∏
+j=1p(xj|y)
+The ﬁrst equality simply follows from the usual properties of probabilities,
+and the second equality used the NB assumption. We note that even though
+2Actually, rather than looking through an English dictionary for the list of all English
+words, in practice it is more common to look through our training set an

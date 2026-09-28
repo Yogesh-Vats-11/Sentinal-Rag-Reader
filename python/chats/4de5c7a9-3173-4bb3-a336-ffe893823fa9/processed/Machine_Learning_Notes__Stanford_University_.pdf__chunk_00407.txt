@@ -1,0 +1,19 @@
+ joint distribution of the sources sis given by
+p(s) =d∏
+j=1ps(sj).
+175
+Note that by modeling the joint distribution as a product of marginals, we
+capture the assumption that the sources are independent. Using our formulas
+from the previous section, this implies the following density on x=As=
+W−1s:
+p(x) =d∏
+j=1ps(wT
+jx)·|W|.
+All that remains is to specify a density for the individual sources ps.
+Recall that, given a real-valued random variable z, its cumulative distri-
+bution function (cdf) Fis deﬁned by F(z0) =P(z≤z0) =∫z0
+−∞pz(z)dzand
+the density is the derivative of the cdf: pz(z) =F′(z).
+Thus, to specify a density for the si’s, all we need to do is to specify some
+cdf for it. A cdf has to be a monotonic function that increases from zero
+to one. Following our previous discussion, we can

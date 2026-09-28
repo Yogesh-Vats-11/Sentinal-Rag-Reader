@@ -1,0 +1,13 @@
+oss function for training purposes is
+oftentimes referred to as the training loss/error/cost.
+However, minimizing the training loss is not our ultimate goal—it is
+merely our approach towards the goal of learning a predictive model. The
+most important evaluation metric of a model is the loss on unseen test exam-
+ples, which is oftentimes referred to as the test error. Formally, we sample a
+test example ( x,y) from the so-called test distribution D, and measure the
+model’s error on it, by, e.g., the mean squared error, ( hθ(x)−y)2. The ex-
+pected loss/error over the randomness of the test example is called the test
+loss/error,1
+L(θ) =E(x,y)∼D[(y−hθ(x))2] (8.1)
+Note that the measurement of the error involves computing the expectation,
+and in practice, it can be approximated by the average err

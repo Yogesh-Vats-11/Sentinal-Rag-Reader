@@ -1,0 +1,28 @@
+he dictionary, then we will set xj= 1; otherwise, we let xj= 0.
+For instance, the vector
+x=
+1
+0
+0
+...
+1
+...
+0
+a
+aardvark
+aardwolf
+...
+buy
+...
+zygmurgy
+is used to represent an email that contains the words “a” and “buy,” but not
+42
+“aardvark,” “aardwolf” or “zygmurgy.”2The set of words encoded into the
+feature vector is called the vocabulary , so the dimension of xis equal to
+the size of the vocabulary.
+Having chosen our feature vector, we now want to build a generative
+model. So, we have to model p(x|y). But if we have, say, a vocabulary of
+50000 words, then x∈{0,1}50000(xis a 50000-dimensional vector of 0’s and
+1’s), and if we were to model xexplicitly with a multinomial distribution over
+the 250000possible outcomes, then we’d end up with a (250000−1)-dimensional
+par

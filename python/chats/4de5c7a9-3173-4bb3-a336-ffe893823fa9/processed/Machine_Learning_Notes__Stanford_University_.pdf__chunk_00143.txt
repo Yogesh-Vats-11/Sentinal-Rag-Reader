@@ -1,0 +1,14 @@
+argin at least γ. The||w||= 1 constraint moreover ensures that the
+functional margin equals to the geometric margin, so we are also guaranteed
+that all the geometric margins are at least γ. Thus, solving this problem will
+result in (w,b) with the largest possible geometric margin with respect to the
+training set.
+If we could solve the optimization problem above, we’d be done. But the
+“||w||= 1” constraint is a nasty (non-convex) one, and this problem certainly
+isn’t in any format that we can plug into standard optimization software to
+solve. So, let’s try transforming the problem into a nicer one. Consider:
+max ˆγ,w,bˆγ
+||w||
+s.t.y(i)(wTx(i)+b)≥ˆγ, i = 1,...,n
+Here, we’re going to maximize ˆ γ/||w||, subject to the functional margins all
+being at least ˆ γ. Since the geometric and function

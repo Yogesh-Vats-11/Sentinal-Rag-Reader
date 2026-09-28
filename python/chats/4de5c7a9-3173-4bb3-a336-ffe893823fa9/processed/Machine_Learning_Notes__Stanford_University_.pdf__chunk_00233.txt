@@ -1,0 +1,19 @@
+∂g1
+∂z1···∂gn
+∂z1.........
+∂g1
+∂zm···∂gn
+∂zm
+·v. (7.59)
+6e.g., the function is the .backward() method of the module in pytorch.
+102
+and thereforeB[g,z] can be viewed as a matrix. However, in reality, zwill be
+changing and thus the backward mapping has to be recomputed for diﬀerent
+z’s whilegis often ﬁxed. Thus, empirically, the backward function B[g,z](v)
+is often viewed as a function which takes in z(=the input to g) andv(=a
+vector that is supposed to be the gradient of some variable Jw.r.t to the
+output ofg) as the inputs, and outputs a vector that is supposed to be the
+gradient of Jw.r.t toz.
+7.4.2 General strategy of backpropagation
+We discuss the general strategy of auto-diﬀerentiation in this section to build
+a high-level understanding. Then, we will instantiate the approach to c

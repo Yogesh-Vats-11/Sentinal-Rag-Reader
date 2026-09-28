@@ -1,0 +1,23 @@
+(i)
+∑n
+i=11{y(i)= 0}
+µ1=∑n
+i=11{y(i)= 1}x(i)
+∑n
+i=11{y(i)= 1}
+Σ =1
+nn∑
+i=1(x(i)−µy(i))(x(i)−µy(i))T.
+Pictorially, what the algorithm is doing can be seen in as follows:
+−2 −1 0 1 2 3 4 5 6 7−7−6−5−4−3−2−101
+Shown in the ﬁgure are the training set, as well as the contours of the
+two Gaussian distributions that have been ﬁt to the data in each of the
+two classes. Note that the two Gaussians have contours that are the same
+shape and orientation, since they share a covariance matrix Σ, but they have
+diﬀerent means µ0andµ1. Also shown in the ﬁgure is the straight line
+giving the decision boundary at which p(y= 1|x) = 0.5. On one side of
+the boundary, we’ll predict y= 1 to be the most likely outcome, and on the
+other side, we’ll predict y= 0.
+40
+4.1.3 Discussion: GDA and logistic regression
+The 

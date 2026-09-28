@@ -1,0 +1,14 @@
+y, the inverted pendulum you saw in PS4 has states
+(x,θ, ˙x,˙θ), whereθis the angle of the pole. And, a helicopter ﬂying in 3d
+space has states of the form ( x,y,z,φ,θ,ψ, ˙x,˙y,˙z,˙φ,˙θ,˙ψ), where here the roll
+φ, pitchθ, and yawψangles specify the 3d orientation of the helicopter.
+In this section, we will consider settings where the state space is S=Rd,
+and describe ways for solving such MDPs.
+15.4.1 Discretization
+Perhaps the simplest way to solve a continuous-state MDP is to discretize
+the state space, and then to use an algorithm like value iteration or policy
+iteration, as described previously.
+For example, if we have 2d states ( s1,s2), we can use a grid to discretize
+the state space:
+3Technically, θis an orientation and so the range of θis better written θ∈[−π,π) than
+θ∈R; but for o

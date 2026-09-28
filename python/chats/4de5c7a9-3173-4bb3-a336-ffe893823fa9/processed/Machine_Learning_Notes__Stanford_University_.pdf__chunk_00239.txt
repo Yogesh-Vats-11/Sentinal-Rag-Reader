@@ -1,0 +1,14 @@
+the atomic modules
+such as addition, multiplication and ReLU can be computed as eﬃciently as
+the the evaluation of these modules (up to multiplicative constant factor).
+Using this fact, we can prove Theorem 7.4.1 by viewing neural networks as
+compositions of many atomic operations, and invoking the backpropagation
+discussed above. However, in practice, it’s oftentimes more convenient to
+modularize the networks using modules on the level of matrix multiplication,
+layernorm, etc. As we will see, naive implementation of these operations’
+backward functions also have the same runtime as the evaluation of these
+functions.
+105
+7.4.3 Backward functions for basic modules
+Using the general strategy in Section 7.4.2, it suﬃces to compute the back-
+ward function for all modules Mi’s used in the netwo

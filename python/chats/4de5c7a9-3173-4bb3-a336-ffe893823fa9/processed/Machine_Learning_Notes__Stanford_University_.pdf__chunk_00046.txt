@@ -1,0 +1,23 @@
+,y). (2.4)
+Oftentimes θ⊤xortis called the logit. Basic calculus gives us that
+∂ℓlogistic (t,y)
+∂t=y−exp(−t)
+1 + exp(−t)+ (1−y)1
+1 + exp(−t)(2.5)
+= 1/(1 + exp(−t))−y. (2.6)
+Then, using the chain rule, we have that
+∂
+∂θjℓ(θ) =−∂ℓlogistic (t,y)
+∂t·∂t
+∂θj(2.7)
+= (y−1/(1 + exp(−t)))·xj= (y−hθ(x))xj, (2.8)
+which is consistent with the derivation in equation (2.2). We will see this
+viewpoint can be extended nonlinear models in Section 7.1.
+2.2 Digression: the perceptron learning algo-
+rithm
+We now digress to talk brieﬂy about an algorithm that’s of some historical
+interest, and that we will also return to later when we talk about learning
+24
+theory. Consider modifying the logistic regression method to “force” it to
+output values that are either 0 or 1 or exactly. To do so, it seems natural to
+cha

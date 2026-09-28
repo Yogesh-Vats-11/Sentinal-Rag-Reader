@@ -1,0 +1,12 @@
+out to be more
+convenient to introduce REINFORCE in the ﬁnite horizon case, which will
+be assumed throughout this note: we use τ= (s0,a0,...,sT−1,aT−1,sT) to
+denote a trajectory, where T <∞is the length of the trajectory. Moreover,
+REINFORCE only applies to learning a randomized policy . We useπθ(a|s)
+to denote the probability of the policy πθoutputting the action aat states.
+The other notations will be the same as in previous lecture notes.
+The advantage of applying REINFORCE is that we only need to assume
+that we can sample from the transition probabilities {Psa}and can query the
+reward function R(s,a) at statesand actiona,1but we do not need to know
+the analytical form of the transition probabilities or the reward function.
+We do not explicitly learn the transition probabilities or the 

@@ -1,0 +1,13 @@
+the general theorem is not the main focus here,
+we will introduce the terms with informal deﬁnitions. By a diﬀerentiable
+circuit or a diﬀerentiable network, we mean a composition of a sequence of
+diﬀerentiable arithmetic operations (additions, subtraction, multiplication,
+divisions, etc) and elementary diﬀerentiable functions (ReLU, exp, log, sin,
+cos, etc.). Let the size of the circuit be the total number of such operations
+and elementary functions. We assume that each of the operations and func-
+tions, and their derivatives or partial derivatives ecan be computed in O(1)
+time.
+Theorem 7.4.1: [backpropagation or auto-diﬀerentiation, informally stated]
+Suppose a diﬀerentiable circuit of size Ncomputes a real-valued function
+99
+f:Rℓ→R. Then, the gradient ∇fcan be computed in time O(N), by a

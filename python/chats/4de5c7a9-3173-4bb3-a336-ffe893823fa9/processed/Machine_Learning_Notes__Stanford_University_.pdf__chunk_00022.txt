@@ -1,0 +1,15 @@
+can rewrite update (1.2) in a slightly more succinct way:
+θ:=θ+α(
+y(i)−hθ(x(i)))
+x(i)
+In this algorithm, we repeatedly run through the training set, and each
+time we encounter a training example, we update the parameters according
+to the gradient of the error with respect to that single training example only.
+This algorithm is called stochastic gradient descent (also incremental
+gradient descent ). Whereas batch gradient descent has to scan through
+the entire training set before taking a single step—a costly operation if nis
+large—stochastic gradient descent can start making progress right away, and
+13
+continues to make progress with each example it looks at. Often, stochastic
+gradient descent gets θ“close” to the minimum much faster than batch gra-
+dient descent. (Note however that it may

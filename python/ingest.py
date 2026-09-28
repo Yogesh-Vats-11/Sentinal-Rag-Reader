@@ -1,13 +1,19 @@
 """
 Ingest raw source documents (.txt or .pdf) from RAW_DIR, split them into
-fixed-size chunks, and write each chunk out as data_ingest/processed/chunk_NNNNN.txt.
+fixed-size chunks, and write each chunk out as
+    <processed>/<source file name>__chunk_NNNNN.txt
 
-This produces the same processed/chunk_*.txt layout already present in the
-uploaded project, so it can be re-run on new source material.
+Prefixing chunks with the source file name means every chunk can be traced
+back to the document it came from (used for per-document citations and for
+per-chat document deletion).
+
+Usage:
+    python ingest.py                                  # global defaults from config.py
+    python ingest.py --raw DIR --processed DIR --clean  # used by the backend, one folder per chat
 """
 
+import argparse
 import os
-import sys
 
 from config import RAW_DIR, PROCESSED_DIR, CHUNK_SIZE, CHUNK_OVERLAP
 
@@ -39,27 +45,51 @@ def chunk_text(text: str, chunk_size: int, overlap: int) -> list[str]:
     return [c for c in chunks if c.strip()]
 
 
-def run_ingest(raw_dir: str = RAW_DIR, processed_dir: str = PROCESSED_DIR) -> int:
+def run_ingest(
+    raw_dir: str = RAW_DIR,
+    processed_dir: str = PROCESSED_DIR,
+    clean: bool = False,
+) -> int:
+    """Chunk every .txt/.pdf in raw_dir. If clean=True, existing chunk files in
+    processed_dir are removed first so deleted documents don't leave stale chunks.
+
+    A file that can't be read (corrupt/encrypted PDF) or has no extractable text
+    (scanned PDF) is skipped with a warning and simply produces zero chunks."""
     if not os.path.isdir(raw_dir):
         raise FileNotFoundError(f"Raw directory '{raw_dir}' not found.")
 
     os.makedirs(processed_dir, exist_ok=True)
 
-    chunk_index = 0
+    if clean:
+        for f in os.listdir(processed_dir):
+            if f.endswith(".txt"):
+                os.remove(os.path.join(processed_dir, f))
+
+    total = 0
     for fname in sorted(os.listdir(raw_dir)):
         if not fname.lower().endswith((".txt", ".pdf")):
             continue
         path = os.path.join(raw_dir, fname)
-        text = _read_source_text(path)
-        for chunk in chunk_text(text, CHUNK_SIZE, CHUNK_OVERLAP):
-            out_path = os.path.join(processed_dir, f"chunk_{chunk_index:05d}.txt")
+        try:
+            text = _read_source_text(path)
+        except Exception as e:  # keep going; the backend reports docs with 0 chunks
+            print(f"[ingest] Skipped '{fname}': {e}")
+            continue
+
+        for i, chunk in enumerate(chunk_text(text, CHUNK_SIZE, CHUNK_OVERLAP)):
+            out_path = os.path.join(processed_dir, f"{fname}__chunk_{i:05d}.txt")
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(chunk)
-            chunk_index += 1
+            total += 1
 
-    print(f"[ingest] Wrote {chunk_index} chunks to '{processed_dir}'.")
-    return chunk_index
+    print(f"[ingest] Wrote {total} chunks to '{processed_dir}'.")
+    return total
 
 
 if __name__ == "__main__":
-    run_ingest()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--raw", default=RAW_DIR)
+    parser.add_argument("--processed", default=PROCESSED_DIR)
+    parser.add_argument("--clean", action="store_true")
+    args = parser.parse_args()
+    run_ingest(args.raw, args.processed, args.clean)

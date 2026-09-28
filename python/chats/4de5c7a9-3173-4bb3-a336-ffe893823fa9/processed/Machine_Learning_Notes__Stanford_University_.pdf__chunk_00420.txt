@@ -1,0 +1,13 @@
+tation function φθ(·) should map semantically similar images to sim-
+ilar representations, and that random pair of images should generally have
+180
+distinct representations. E.g., we may want to map images of two huskies to
+similar representations, but a husky and an elephant should have diﬀerent
+representations. One deﬁnition of similarity is that images from the same
+class are similar. Using this deﬁnition will result in the so-called supervised
+contrastive algorithms that work well when labeled pretraining datasets are
+available.
+Without labeled data, we can use data augmentation to generate a pair
+of “similar” augmented images given an original image x. Data augmenta-
+tion typically means that we apply random cropping, ﬂipping, and/or color
+transformation on the original image xto gene

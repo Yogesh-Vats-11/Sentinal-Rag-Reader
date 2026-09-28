@@ -1,0 +1,29 @@
+test+1|y1,...,yt+1
+and iterate over time steps! The combination of the predict and update
+steps updates our belief states. In other words, the process looks like
+(st|y1,...,yt)predict−−−−→ (st+1|y1,...,yt)update−−−−→ (st+1|y1,...,yt+1)predict−−−−→...
+predict step Suppose that we know the distribution of
+st|y1,...,yt∼N(
+st|t,Σt|t)
+then, the distribution over the next state is also a gaussian distribution
+st+1|y1,...,yt∼N(
+st+1|t,Σt+1|t)
+where
+216
+{
+st+1|t=A·st|t
+Σt+1|t=A·Σt|t·A⊤+ Σs
+update step givenst+1|tand Σt+1|tsuch that
+st+1|y1,...,yt∼N(
+st+1|t,Σt+1|t)
+we can prove that
+st+1|y1,...,yt+1∼N(
+st+1|t+1,Σt+1|t+1)
+where
+{
+st+1|t+1 =st+1|t+Kt(yt+1−Cst+1|t)
+Σt+1|t+1= Σt+1|t−Kt·C·Σt+1|t
+with
+Kt:= Σt+1|tC⊤(CΣt+1|tC⊤+ Σy)−1
+The matrix Ktis called the Kalman gain .
+Now, if we have a closer look at

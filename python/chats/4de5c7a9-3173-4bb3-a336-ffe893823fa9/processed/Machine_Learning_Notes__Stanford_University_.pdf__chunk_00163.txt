@@ -1,0 +1,16 @@
+ and when a single outlier is added in the
+upper-left region (right ﬁgure), it causes the decision boundary to make a
+dramatic swing, and the resulting classiﬁer has a much smaller margin.
+To make the algorithm work for non-linearly separable datasets as well
+as be less sensitive to outliers, we reformulate our optimization (using ℓ1
+regularization ) as follows:
+minγ,w,b1
+2||w||2+Cn∑
+i=1ξi
+s.t.y(i)(wTx(i)+b)≥1−ξi, i= 1,...,n
+ξi≥0, i= 1,...,n.
+Thus, examples are now permitted to have (functional) margin less than 1,
+and if an example has functional margin 1 −ξi(withξ >0), we would pay
+a cost of the objective function being increased by Cξi. The parameter C
+controls the relative weighting between the twin goals of making the ||w||2
+small (which we saw earlier makes the margin large) and of e

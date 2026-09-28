@@ -1,0 +1,12 @@
+for the list of all English
+words, in practice it is more common to look through our training set and encode in our
+feature vector only the words that occur at least once there. Apart from reducing the
+number of words modeled and hence reducing our computational and space requirements,
+this also has the advantage of allowing us to model/include as a feature many words
+that may appear in your email (such as “cs229”) but that you won’t ﬁnd in a dictionary.
+Sometimes (as in the homework), we also exclude the very high frequency words (which
+will be words like “the,” “of,” “and”; these high frequency, “content free” words are called
+stop words ) since they occur in so many documents and do little to indicate whether an
+email is spam or non-spam.
+43
+the Naive Bayes assumption is an extremely st

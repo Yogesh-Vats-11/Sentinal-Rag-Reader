@@ -1,0 +1,16 @@
+mmon case is if the simulator is of the form st+1=
+f(st,at) +ϵt, wherefis some deterministic function of the states (such as
+f(st,at) =Ast+Bat), andϵis zero-mean Gaussian noise. In this case, we
+can pick the action given by
+arg max
+aV(f(s,a)).
+In other words, here we are just setting ϵt= 0 (i.e., ignoring the noise in
+the simulator), and setting k= 1. Equivalent, this can be derived from
+Equation (15.9) using the approximation
+Es′[V(s′)]≈V(Es′[s′]) (15.10)
+=V(f(s,a)), (15.11)
+where here the expectation is over the random s′∼Psa. So long as the noise
+termsϵtare small, this will usually be a reasonable approximation.
+However, for problems that don’t lend themselves to such approximations,
+having to sample k|A|states using the model, in order to approximate the
+expectation above, can be compu

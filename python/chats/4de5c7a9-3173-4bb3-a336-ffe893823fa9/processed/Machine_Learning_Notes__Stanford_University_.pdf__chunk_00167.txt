@@ -1,0 +1,16 @@
+ers αi’s, and for now
+ignore any relationship between this problem and SVMs. We’ve already seen
+two optimization algorithms, gradient ascent and Newton’s method. The
+new algorithm we’re going to consider here is called coordinate ascent :
+Loop until convergence: {
+Fori= 1,...,n ,{
+αi:= arg max ˆαiW(α1,...,αi−1,ˆαi,αi+1,...,αn).
+}
+}
+Thus, in the innermost loop of this algorithm, we will hold all the variables
+except for some αiﬁxed, and reoptimize Wwith respect to just the parameter
+αi. In the version of this method presented here, the inner-loop reoptimizes
+the variables in order α1,α2,...,αn,α1,α2,.... (A more sophisticated version
+might choose other orderings; for instance, we may choose the next variable
+to update according to which one we expect to allow us to make the largest
+increase

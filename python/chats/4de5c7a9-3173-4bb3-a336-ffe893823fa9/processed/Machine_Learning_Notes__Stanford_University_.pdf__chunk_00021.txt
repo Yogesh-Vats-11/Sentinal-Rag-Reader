@@ -1,0 +1,25 @@
+obtain
+θ0= 71.27,θ1= 0.1345. If we plot hθ(x) as a function of x(area), along
+with the training data, we obtain the following ﬁgure:
+12
+500 1000 1500 2000 2500 3000 3500 4000 4500 500001002003004005006007008009001000housing prices
+square feetprice (in $1000)
+If the number of bedrooms were included as one of the input features as well,
+we getθ0= 89.60,θ1= 0.1392,θ2=−8.738.
+The above results were obtained with batch gradient descent. There is
+an alternative to batch gradient descent that also works very well. Consider
+the following algorithm:
+Loop{
+fori= 1 ton,{
+θj:=θj+α(
+y(i)−hθ(x(i)))
+x(i)
+j,(for everyj) (1.2)
+}
+}
+By grouping the updates of the coordinates into an update of the vector
+θ, we can rewrite update (1.2) in a slightly more succinct way:
+θ:=θ+α(
+y(i)−hθ(x(i)))
+x(i)
+In this algori

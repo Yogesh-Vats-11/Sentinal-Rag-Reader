@@ -1,0 +1,15 @@
+e our classiﬁer as
+hw,b(x) =g(wTx+b).
+Here,g(z) = 1 ifz≥0, andg(z) =−1 otherwise. This “ w,b” notation
+allows us to explicitly treat the intercept term bseparately from the other
+parameters. (We also drop the convention we had previously of letting x0= 1
+be an extra coordinate in the input feature vector.) Thus, btakes the role of
+what was previously θ0, andwtakes the role of [ θ1...θd]T.
+Note also that, from our deﬁnition of gabove, our classiﬁer will directly
+predict either 1 or −1 (cf. the perceptron algorithm), without ﬁrst going
+through the intermediate step of estimating p(y= 1) (which is what logistic
+regression does).
+6.3 Functional and geometric margins (op-
+tion reading)
+Let’s formalize the notions of the functional and geometric margins. Given a
+training example ( x(i),y(i)), we

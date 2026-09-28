@@ -1,0 +1,18 @@
+r, this addition is performed using broadcasting . We create
+an intermediate ˜b[1]∈R4×3:
+˜b[1]=
+| | |
+b[1]b[1]b[1]
+| | |
+ (7.83)
+We can then perform the computation: Z[1]=W[1]X+˜b[1]. Often times, it
+is not necessary to explicitly construct ˜b[1]. By inspecting the dimensions in
+(7.82), you can assume b[1]∈R4×1is correctly broadcast to W[1]X∈R4×3.
+The matricization approach as above can easily generalize to multiple
+layers, with one subtlety though, as discussed below.
+111
+Complications/Subtlety in the Implementation. All the deep learn-
+ing packages or implementations put the data points in the rows of a data
+matrix. (If the data point itself is a matrix or tensor, then the data are con-
+centrated along the zero-th dimension.) However, most of the deep learning
+papers use a similar no

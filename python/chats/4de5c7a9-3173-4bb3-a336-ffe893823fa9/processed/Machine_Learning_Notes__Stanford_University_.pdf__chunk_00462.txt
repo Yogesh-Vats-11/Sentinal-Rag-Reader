@@ -1,0 +1,25 @@
+actionat, and computes the state st+1of the
+system a small fraction of a second into the future.4
+An alternative way to get a model is to learn one from data collected in
+the MDP. For example, suppose we execute ntrials in which we repeatedly
+take actions in an MDP, each trial for Ttimesteps. This can be done picking
+actions at random, executing some speciﬁc policy, or via some other way of
+4Open Dynamics Engine (http://www.ode.com) is one example of a free/open-source
+physics simulator that can be used to simulate systems like the inverted pendulum, and
+that has been a reasonably popular choice among RL researchers.
+197
+choosing actions. We would then observe nstate sequences like the following:
+s(1)
+0a(1)
+0−→s(1)
+1a(1)
+1−→s(1)
+2a(1)
+2−→···a(1)
+T−1−→s(1)
+T
+s(2)
+0a(2)
+0−→s(2)
+1a(2)
+1−→s(2)

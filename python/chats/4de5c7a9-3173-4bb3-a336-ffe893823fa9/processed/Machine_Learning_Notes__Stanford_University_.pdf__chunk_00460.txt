@@ -1,0 +1,17 @@
+may even get it
+to work for some 6d problems. But it very rarely works for problems any
+higher dimensional than that.
+196
+15.4.2 Value function approximation
+We now describe an alternative method for ﬁnding policies in continuous-
+state MDPs, in which we approximate V∗directly, without resorting to dis-
+cretization. This approach, called value function approximation, has been
+successfully applied to many RL problems.
+Using a model or simulator
+To develop a value function approximation algorithm, we will assume that
+we have a model , orsimulator , for the MDP. Informally, a simulator is
+a black-box that takes as input any (continuous-valued) state stand action
+at, and outputs a next-state st+1sampled according to the state transition
+probabilities Pstat:
+[t]
+There are several ways that one 

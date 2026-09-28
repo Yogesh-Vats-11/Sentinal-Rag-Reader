@@ -1,0 +1,15 @@
+iscretized state ¯ s, and execute action π∗(¯s).
+This discretization approach can work well for many problems. However,
+there are two downsides. First, it uses a fairly naive representation for V∗
+(andπ∗). Speciﬁcally, it assumes that the value function is takes a constant
+value over each of the discretization intervals (i.e., that the value function is
+piecewise constant in each of the gridcells).
+To better understand the limitations of such a representation, consider a
+supervised learning problem of ﬁtting a function to this dataset:
+[t]
+1 2 3 4 5 6 7 81.522.533.544.555.5
+xy
+195
+Clearly, linear regression would do ﬁne on this problem. However, if we
+instead discretize the x-axis, and then use a representation that is piecewise
+constant in each of the discretization intervals, then our ﬁt

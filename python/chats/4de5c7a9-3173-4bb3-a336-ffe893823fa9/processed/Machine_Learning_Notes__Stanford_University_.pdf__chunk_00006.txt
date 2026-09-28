@@ -1,0 +1,14 @@
+ . . . . . . 137
+9.3 Model selection via cross validation . . . . . . . . . . . . . . . 139
+9.4 Bayesian statistics and regularization . . . . . . . . . . . . . . 142
+IV Unsupervised learning 144
+10 Clustering and the k-means algorithm 145
+11 EM algorithms 148
+11.1 EM for mixture of Gaussians . . . . . . . . . . . . . . . . . . . 148
+11.2 Jensen’s inequality . . . . . . . . . . . . . . . . . . . . . . . . 151
+11.3 General EM algorithms . . . . . . . . . . . . . . . . . . . . . . 152
+11.3.1 Other interpretation of ELBO . . . . . . . . . . . . . . 158
+11.4 Mixture of Gaussians revisited . . . . . . . . . . . . . . . . . . 158
+11.5 Variational inference and variational auto-encoder (optional
+reading) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 160
+12 Principal components analy

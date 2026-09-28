@@ -1,0 +1,19 @@
+our prediction hθ(x(i)) has a large error (i.e., if it is very far from
+y(i)).
+We’d derived the LMS rule for when there was only a single training
+example. There are two ways to modify this method for a training set of
+more than one example. The ﬁrst is replace it with the following algorithm:
+Repeat until convergence {
+θj:=θj+αn∑
+i=1(
+y(i)−hθ(x(i)))
+x(i)
+j,(for everyj) (1.1)
+}
+1We use the notation “ a:=b” to denote an operation (in a computer program) in
+which we setthe value of a variable ato be equal to the value of b. In other words, this
+operation overwrites awith the value of b. In contrast, we will write “ a=b” when we are
+asserting a statement of fact, that the value of ais equal to the value of b.
+11
+By grouping the updates of the coordinates into an update of the vector
+θ, we can

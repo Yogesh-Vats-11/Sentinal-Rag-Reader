@@ -1,0 +1,21 @@
+ natural interpretation. For instance, φj|y=1is just the fraction of the
+spam (y= 1) emails in which word jdoes appear.
+Having ﬁt all these parameters, to make a prediction on a new example
+with features x, we then simply calculate
+p(y= 1|x) =p(x|y= 1)p(y= 1)
+p(x)
+=(∏d
+j=1p(xj|y= 1))
+p(y= 1)
+(∏d
+j=1p(xj|y= 1))
+p(y= 1) +(∏d
+j=1p(xj|y= 0))
+p(y= 0),
+and pick whichever class has the higher posterior probability.
+Lastly, we note that while we have developed the Naive Bayes algorithm
+mainly for the case of problems where the features xjare binary-valued, the
+generalization to where xjcan take values in {1,2,...,kj}is straightforward.
+Here, we would simply model p(xj|y) as multinomial rather than as Bernoulli.
+Indeed, even if some original input attribute (say, the living area of a house,
+as in o

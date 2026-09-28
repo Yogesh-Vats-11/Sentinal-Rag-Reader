@@ -1,0 +1,31 @@
+ (7.56)
+Moreover, this formula only involves knowledge about g(more precisely∂gj
+∂zi).
+We will repeatedly use this fact in situations where gis a building blocks of
+a complex network f.
+Empirically, it’s often useful to modularized the mapping in (7.53) or
+(7.54) into a black-box, and mathematically it’s also convenient to deﬁne a
+notation for it.6We useB[g,z] to deﬁne the function that maps∂J
+∂uto∂J
+∂z,
+and write
+∂J
+∂z=B[g,z](∂J
+∂u)
+. (7.57)
+We callB[g,z] thebackward function for the module g. Note that when z
+is ﬁxed,B[g,z] is merely a linear map from RntoRm. Using equation (7.53),
+we have
+(B[g,z](v))i=m∑
+j=1∂gj
+∂zi·vj. (7.58)
+Or in vectorized notation, using (7.54), we have
+B[g,z](v) =
+∂g1
+∂z1···∂gn
+∂z1.........
+∂g1
+∂zm···∂gn
+∂zm
+·v. (7.59)
+6e.g., the function is the .backward() m

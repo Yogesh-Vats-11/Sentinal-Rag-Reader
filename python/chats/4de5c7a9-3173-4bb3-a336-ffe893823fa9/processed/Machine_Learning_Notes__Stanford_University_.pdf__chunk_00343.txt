@@ -1,0 +1,20 @@
+variables, meaning that they’re hidden/unobserved.
+This is what will make our estimation problem diﬃcult.
+The parameters of our model are thus φ,µand Σ. To estimate them, we
+can write down the likelihood of our data:
+ℓ(φ,µ, Σ) =n∑
+i=1logp(x(i);φ,µ, Σ)
+=n∑
+i=1logk∑
+z(i)=1p(x(i)|z(i);µ,Σ)p(z(i);φ).
+However, if we set to zero the derivatives of this formula with respect to
+148
+149
+the parameters and try to solve, we’ll ﬁnd that it is not possible to ﬁnd the
+maximum likelihood estimates of the parameters in closed form. (Try this
+yourself at home.)
+The random variables z(i)indicate which of the kGaussians each x(i)
+had come from. Note that if we knew what the z(i)’s were, the maximum
+likelihood problem would have been easy. Speciﬁcally, we could then write
+down the likelihood as
+ℓ(φ,µ, Σ) =n∑

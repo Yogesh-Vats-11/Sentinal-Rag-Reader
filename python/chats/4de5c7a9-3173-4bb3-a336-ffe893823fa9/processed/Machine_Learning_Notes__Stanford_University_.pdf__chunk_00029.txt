@@ -1,0 +1,22 @@
+ng housing price, but
+that we’d left out of the regression), or random noise. Let us further assume
+that theϵ(i)are distributed IID (independently and identically distributed)
+according to a Gaussian distribution (also called a Normal distribution) with
+mean zero and some variance σ2. We can write this assumption as “ ϵ(i)∼
+N(0,σ2).” I.e., the density of ϵ(i)is given by
+p(ϵ(i)) =1√
+2πσexp(
+−(ϵ(i))2
+2σ2)
+.
+This implies that
+p(y(i)|x(i);θ) =1√
+2πσexp(
+−(y(i)−θTx(i))2
+2σ2)
+.
+The notation “ p(y(i)|x(i);θ)” indicates that this is the distribution of y(i)
+givenx(i)and parameterized by θ. Note that we should not condition on θ
+(“p(y(i)|x(i),θ)”), sinceθis not a random variable. We can also write the
+distribution of y(i)asy(i)|x(i);θ∼N(θTx(i),σ2).
+GivenX(the design matrix, which contains all the x

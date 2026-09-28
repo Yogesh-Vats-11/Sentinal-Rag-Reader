@@ -1,0 +1,20 @@
+
+α,β:αi≥0L(w,α,β ).
+Here, the “P” subscript stands for “primal.” Let some wbe given. If w
+violates any of the primal constraints (i.e., if either gi(w)>0 orhi(w)̸= 0
+for somei), then you should be able to verify that
+θP(w) = max
+α,β:αi≥0f(w) +k∑
+i=1αigi(w) +l∑
+i=1βihi(w) (6.1)
+=∞. (6.2)
+Conversely, if the constraints are indeed satisﬁed for a particular value of w,
+thenθP(w) =f(w). Hence,
+θP(w) ={f(w) ifwsatisﬁes primal constraints
+∞ otherwise.
+2Readers interested in learning more about this topic are encouraged to read, e.g., R.
+T. Rockarfeller (1970), Convex Analysis, Princeton University Press.
+67
+Thus,θPtakes the same value as the objective in our problem for all val-
+ues ofwthat satisﬁes the primal constraints, and is positive inﬁnity if the
+constraints are violated. Hence, if we cons

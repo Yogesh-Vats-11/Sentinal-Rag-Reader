@@ -1,0 +1,17 @@
+and variance. This means that the test error will
+have a convex curve as the model complexity increases, and in practice we
+should tune the model complexity to achieve the best tradeoﬀ. For instance,
+in the example above, ﬁtting a quadratic function does better than either of
+the extremes of a ﬁrst or a 5-th degree polynomial, as shown in Figure 8.9.
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytraining data
+best fit quadratic model
+0.0 0.2 0.4 0.6 0.8 1.0
+x0.00.51.01.5ytest data
+best fit quadratic model
+ground truth h*
+Figure 8.9: Best ﬁt quadratic model has small training and test error because
+quadratic model achieves a better tradeoﬀ.
+Interestingly, the bias-variance tradeoﬀ curves or the test error curves
+do not universally follow the shape in Figure 8.8, at least not universally
+when the mo

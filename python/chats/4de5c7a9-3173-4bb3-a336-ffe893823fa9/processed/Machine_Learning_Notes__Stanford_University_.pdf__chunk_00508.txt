@@ -1,0 +1,19 @@
+t of
+η(θ) by
+∇θEτ∼Pθ[f(τ)] = Eτ∼Pθ[(∇θlogPθ(τ))f(τ)] (17.4)
+≈1
+nn∑
+i=1(∇θlogPθ(τ(i)))f(τ(i)) (17.5)
+219
+The next question is how to compute log Pθ(τ). We derive an analyt-
+ical formula for log Pθ(τ) and compute its gradient w.r.t θ(using auto-
+diﬀerentiation). Using the deﬁnition of τ, we have
+Pθ(τ) =µ(s0)πθ(a0|s0)Ps0a0(s1)πθ(a1|s1)Ps1a1(s2)···PsT−1aT−1(sT) (17.6)
+Here recall that µto used to denote the density of the distribution of s0. It
+follows that
+logPθ(τ) = logµ(s0) + logπθ(a0|s0) + logPs0a0(s1) + logπθ(a1|s1)
++ logPs1a1(s2) +···+ logPsT−1aT−1(sT) (17.7)
+Taking gradient w.r.t to θ, we obtain
+∇θlogPθ(τ) =∇θlogπθ(a0|s0) +∇θlogπθ(a1|s1) +···+∇θlogπθ(aT−1|sT−1)
+Note that many of the terms disappear because they don’t depend on θand
+thus have zero gradients. (This is somewhat important —

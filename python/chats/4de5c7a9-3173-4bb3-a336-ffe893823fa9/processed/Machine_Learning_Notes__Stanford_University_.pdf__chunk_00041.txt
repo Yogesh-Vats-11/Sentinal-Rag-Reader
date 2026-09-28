@@ -1,0 +1,21 @@
+ larger than 1 or smaller than 0 when we know that y∈{0,1}.
+To ﬁx this, let’s change the form for our hypotheses hθ(x). We will choose
+hθ(x) =g(θTx) =1
+1 +e−θTx,
+where
+g(z) =1
+1 +e−z
+20
+21
+is called the logistic function or the sigmoid function . Here is a plot
+showingg(z):
+−5 −4 −3 −2 −1 0 1 2 3 4 500.10.20.30.40.50.60.70.80.91
+zg(z)
+Notice that g(z) tends towards 1 as z→∞ , andg(z) tends towards 0 as
+z→−∞ . Moreover, g(z), and hence also h(x), is always bounded between
+0 and 1. As before, we are keeping the convention of letting x0= 1, so that
+θTx=θ0+∑d
+j=1θjxj.
+For now, let’s take the choice of gas given. Other functions that smoothly
+increase from 0 to 1 can also be used, but for a couple of reasons that we’ll see
+later (when we talk about GLMs, and when we talk about generative learni

@@ -1,0 +1,14 @@
+our ﬁnal answer.
+A typical choice for the number of folds to use here would be k= 10.
+While the fraction of data held out each time is now 1 /k—much smaller
+than before—this procedure may also be more computationally expensive
+than hold-out cross validation, since we now need train to each model k
+times.
+Whilek= 10 is a commonly used choice, in problems in which data is
+really scarce, sometimes we will use the extreme choice of k=min order
+to leave out as little data as possible each time. In this setting, we would
+repeatedly train on all but one of the training examples in S, and test on that
+held-out example. The resulting m=kerrors are then averaged together to
+obtain our estimate of the generalization error of a model. This method has
+142
+its own name; since we’re holding out one train

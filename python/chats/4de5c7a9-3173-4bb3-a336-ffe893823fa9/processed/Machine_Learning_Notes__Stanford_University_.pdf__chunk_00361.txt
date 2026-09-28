@@ -1,0 +1,23 @@
+e. This is the E-step. In the
+M-step of the algorithm, we then maximize our formula in Equation (11.11)
+with respect to the parameters to obtain a new setting of the θ’s. Repeatedly
+carrying out these two steps gives us the EM algorithm, which is as follows:
+Repeat until convergence {
+(E-step) For each i, set
+Qi(z(i)) :=p(z(i)|x(i);θ).
+(M-step) Set
+θ:= arg max
+θn∑
+i=1ELBO(x(i);Qi,θ)
+= arg max
+θ∑
+i∑
+z(i)Qi(z(i)) logp(x(i),z(i);θ)
+Qi(z(i)). (11.12)
+}
+How do we know if this algorithm will converge? Well, suppose θ(t)and
+θ(t+1)are the parameters from two successive iterations of EM. We will now
+prove that ℓ(θ(t))≤ℓ(θ(t+1)), which shows EM always monotonically im-
+proves the log-likelihood. The key to showing this result lies in our choice of
+157
+theQi’s. Speciﬁcally, on the iteration of EM in 

@@ -1,0 +1,16 @@
+error curves
+do not universally follow the shape in Figure 8.8, at least not universally
+when the model complexity is simply measured by the number of parameters.
+(We will discuss the so-called double descent phenomenon in Section 8.2.)
+Nevertheless, the principle of bias-variance tradeoﬀ is perhaps still the ﬁrst
+resort when analyzing and predicting the behavior of test errors.
+120
+8.1.1 A mathematical decomposition (for regression)
+To formally state the bias-variance tradeoﬀ for regression problems, we con-
+sider the following setup (which is an extension of the beginning paragraph
+of Section 8.1).
+•Draw a training dataset S={x(i),y(i)}n
+i=1such thaty(i)=h⋆(x(i)) +ξ(i)
+whereξ(i)∈N(0,σ2).
+•Train a model on the dataset S, denoted by ˆhS.
+•Take a test example ( x,y) such that y=h⋆(x) +ξwher

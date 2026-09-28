@@ -1,0 +1,15 @@
+eneral case, but without keeping track of time. It turns out that
+in the standard setting, if we run value iteration for T steps, we get a γT
+approximation of the optimal value iteration (geometric convergence). See
+problem set 4 for a proof of the following result:
+Theorem LetBdenote the Bellman update and ||f(x)||∞:= supx|f(x)|.
+IfVtdenotes the value function at the t-th step, then
+||Vt+1−V∗||∞=||B(Vt)−V∗||∞
+≤γ||Vt−V∗||∞
+≤γt||V1−V∗||∞
+In other words, the Bellman operator Bis aγ-contracting operator.
+16.2 Linear Quadratic Regulation (LQR)
+In this section, we’ll cover a special case of the ﬁnite-horizon setting described
+in Section 16.1, for which the exact solution is (easily) tractable. This
+model is widely used in robotics, and a common technique in many problems
+is to reduce the formul

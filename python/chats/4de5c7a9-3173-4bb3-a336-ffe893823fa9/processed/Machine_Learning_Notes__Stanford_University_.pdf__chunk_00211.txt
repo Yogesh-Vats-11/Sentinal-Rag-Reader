@@ -1,0 +1,16 @@
+sition of many residual blocks followed
+by a matrix multiplication,
+ResNet-S(x) = MM(Res(Res( ···Res(x)))). (7.39)
+94
+𝑥Layer 𝑟−1Layer 𝑖...Layer 1MLP(𝑥)...Layer𝑖MM!["],#["]𝜎MM![$],#[$]
+𝑥ResRes...ResResNet-S(𝑥)...Res
+MM𝜎MM𝜎
+Figure 7.4: Illustrative Figures for Architecture. Left: An MLP with r
+layers. Right : A residual network.
+We also draw the dependency of these modules in Figure 7.4, Right.
+We note that the ResNet-S is still not the same as the ResNet architec-
+ture introduced in the seminal paper [He et al., 2016] because ResNet uses
+convolution layers instead of vanilla matrix multiplication, and adds batch
+normalization between convolutions and activations. We will introduce con-
+volutional layers and some variants of batch normalization below. ResNet-S
+and layer normalization are par

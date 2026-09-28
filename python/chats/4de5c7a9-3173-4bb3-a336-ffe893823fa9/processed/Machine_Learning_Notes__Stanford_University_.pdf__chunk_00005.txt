@@ -1,0 +1,14 @@
+ization 113
+8.1 Bias-variance tradeoﬀ . . . . . . . . . . . . . . . . . . . . . . . 115
+8.1.1 A mathematical decomposition (for regression) . . . . . 120
+8.2 The double descent phenomenon . . . . . . . . . . . . . . . . . 121
+8.3 Sample complexity bounds (optional readings) . . . . . . . . . 126
+CS229 Spring 20223 3
+8.3.1 Preliminaries . . . . . . . . . . . . . . . . . . . . . . . 126
+8.3.2 The case of ﬁnite H. . . . . . . . . . . . . . . . . . . . 128
+8.3.3 The case of inﬁnite H. . . . . . . . . . . . . . . . . . 131
+9 Regularization and model selection 135
+9.1 Regularization . . . . . . . . . . . . . . . . . . . . . . . . . . . 135
+9.2 Implicit regularization eﬀect (optional reading) . . . . . . . . . 137
+9.3 Model selection via cross validation . . . . . . . . . . . . . . . 139
+9.4 Baye

@@ -1,0 +1,15 @@
+eful to abstract away from
+the speciﬁc parameterization of hypotheses and from issues such as whether
+we’re using a linear classiﬁer. We deﬁne the hypothesis class Hused by a
+learning algorithm to be the set of all classiﬁers considered by it. For linear
+classiﬁcation,H={hθ:hθ(x) = 1{θTx≥0},θ∈Rd+1}is thus the set of
+all classiﬁers over X(the domain of the inputs) where the decision boundary
+is linear. More broadly, if we were studying, say, neural networks, then we
+could letHbe the set of all classiﬁers representable by some neural network
+architecture.
+Empirical risk minimization can now be thought of as a minimization over
+the class of functions H, in which the learning algorithm picks the hypothesis:
+ˆh= arg min
+h∈Hˆε(h)
+8.3.2 The case of ﬁnite H
+Let’s start by considering a learning pr

@@ -12,3 +12,8 @@ export interface Chat {
   createdAt: number;
   messages: ChatMessage[];
 }
+
+export interface DocInfo {
+  name: string;
+  size: number;
+}

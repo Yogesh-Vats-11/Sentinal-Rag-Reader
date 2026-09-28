@@ -1,0 +1,17 @@
+<αi<C⇒y(i)(wTx(i)+b) = 1. (6.18)
+Now, all that remains is to give an algorithm for actually solving the dual
+problem, which we will do in the next section.
+6.8 The SMO algorithm (optional reading)
+The SMO (sequential minimal optimization) algorithm, due to John Platt,
+gives an eﬃcient way of solving the dual problem arising from the derivation
+74
+of the SVM. Partly to motivate the SMO algorithm, and partly because it’s
+interesting in its own right, let’s ﬁrst take another digression to talk about
+the coordinate ascent algorithm.
+6.8.1 Coordinate ascent
+Consider trying to solve the unconstrained optimization problem
+max
+αW(α1,α2,...,αn).
+Here, we think of Was just some function of the parameters αi’s, and for now
+ignore any relationship between this problem and SVMs. We’ve already seen
+two 

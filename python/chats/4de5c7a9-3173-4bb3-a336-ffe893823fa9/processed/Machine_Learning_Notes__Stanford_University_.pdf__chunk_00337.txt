@@ -1,0 +1,26 @@
+ yis discrete-valued.
+Part IV
+Unsupervised learning
+144
+Chapter 10
+Clustering and the k-means
+algorithm
+In the clustering problem, we are given a training set {x(1),...,x(n)}, and
+want to group the data into a few cohesive “clusters.” Here, x(i)∈Rd
+as usual; but no labels y(i)are given. So, this is an unsupervised learning
+problem.
+Thek-means clustering algorithm is as follows:
+1. Initialize cluster centroids µ1,µ2,...,µk∈Rdrandomly.
+2. Repeat until convergence: {
+For everyi, set
+c(i):= arg min
+j||x(i)−µj||2.
+For eachj, set
+µj:=∑n
+i=11{c(i)=j}x(i)
+∑n
+i=11{c(i)=j}.
+}
+In the algorithm above, k(a parameter of the algorithm) is the number
+of clusters we want to ﬁnd; and the cluster centroids µjrepresent our current
+guesses for the positions of the centers of the clusters. To initialize the clu

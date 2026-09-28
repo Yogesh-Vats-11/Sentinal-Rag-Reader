@@ -1,0 +1,14 @@
+x)Tφ(z), so that we can now implicitly work
+in this 26k-dimensional feature space, but without ever explicitly computing
+feature vectors in this space.
+3Many texts present Mercer’s theorem in a slightly more complicated form involving
+L2functions, but when the input attributes take values in Rd, the version given here is
+equivalent.
+58
+Application of kernel methods: We’ve seen the application of kernels
+to linear regression. In the next part, we will introduce the support vector
+machines to which kernels can be directly applied. dwell too much longer on
+it here. In fact, the idea of kernels has signiﬁcantly broader applicability than
+linear regression and SVMs. Speciﬁcally, if you have any learning algorithm
+that you can write in terms of only inner products ⟨x,z⟩between input
+attribute ve

@@ -1,0 +1,29 @@
+ing an iteration-based approach, we make the following observations:
+1. Notice that at the end of the game (for time step T), the optimal value
+is obvious
+∀s∈S:V∗
+T(s) := max
+a∈AR(T)(s,a) (16.1)
+2. For another time step 0 ≤t < T , if we suppose that we know the
+optimal value function for the next time step V∗
+t+1, then we have
+∀t<T,s∈S:V∗
+t(s) := max
+a∈A[
+R(t)(s,a) +Es′∼P(t)
+sa[
+V∗
+t+1(s′)]]
+(16.2)
+With these observations in mind, we can come up with a clever algorithm
+to solve for the optimal value function:
+1. compute V∗
+Tusing equation (16.1).
+2. fort=T−1,..., 0:
+computeV∗
+tusingV∗
+t+1using equation (16.2)
+207
+Side note We can interpret standard value iteration as a special case
+of this general case, but without keeping track of time. It turns out that
+in the standard setting, if we run

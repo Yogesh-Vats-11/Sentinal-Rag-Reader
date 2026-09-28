@@ -1,0 +1,19 @@
+that the superscript “( i)” in the
+notation is simply an index into the training set, and has nothing to do with
+exponentiation. We will also use Xdenote the space of input values, and Y
+the space of output values. In this example, X=Y=R.
+To describe the supervised learning problem slightly more formally, our
+goal is, given a training set, to learn a function h:X↦→Y so thath(x) is a
+“good” predictor for the corresponding value of y. For historical reasons, this
+7
+functionhis called a hypothesis . Seen pictorially, the process is therefore
+like this:
+Training 
+    set
+ house.)(living area ofLearning 
+algorithm
+h predicted y x
+(predicted price)
+of house)
+When the target variable that we’re trying to predict is continuous, such
+as in our housing example, we call the learning problem a regress

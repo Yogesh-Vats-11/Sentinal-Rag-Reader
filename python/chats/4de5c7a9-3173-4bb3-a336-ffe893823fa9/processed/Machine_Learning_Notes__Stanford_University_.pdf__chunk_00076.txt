@@ -1,0 +1,22 @@
+o the GDA
+model itself.
+4.1.1 The multivariate normal distribution
+The multivariate normal distribution in d-dimensions, also called the multi-
+variate Gaussian distribution, is parameterized by a mean vector µ∈Rd
+and a covariance matrix Σ∈Rd×d, where Σ≥0 is symmetric and positive
+semi-deﬁnite. Also written “ N(µ,Σ)”, its density is given by:
+p(x;µ,Σ) =1
+(2π)d/2|Σ|1/2exp(
+−1
+2(x−µ)TΣ−1(x−µ))
+.
+In the equation above, “ |Σ|” denotes the determinant of the matrix Σ.
+For a random variable XdistributedN(µ,Σ), the mean is (unsurpris-
+ingly) given by µ:
+E[X] =∫
+xxp(x;µ,Σ)dx=µ
+Thecovariance of a vector-valued random variable Zis deﬁned as Cov( Z) =
+E[(Z−E[Z])(Z−E[Z])T]. This generalizes the notion of the variance of a
+36
+real-valued random variable. The covariance can also be deﬁned as Cov( Z) =
+E

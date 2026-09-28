@@ -1,0 +1,14 @@
+have that wcan be expressed in terms of the αi’s as
+given in Equation (6.10), so that after solving the dual problem, we can con-
+tinue to use Equation (6.15) to make our predictions. Note that, somewhat
+surprisingly, in adding ℓ1regularization, the only change to the dual prob-
+lem is that what was originally a constraint that 0 ≤αihas now become
+0≤αi≤C. The calculation for b∗also has to be modiﬁed (Equation 6.13 is
+no longer valid); see the comments in the next section/Platt’s paper.
+Also, the KKT dual-complementarity conditions (which in the next sec-
+tion will be useful for testing for the convergence of the SMO algorithm)
+are:
+αi= 0⇒y(i)(wTx(i)+b)≥1 (6.16)
+αi=C⇒y(i)(wTx(i)+b)≤1 (6.17)
+0<αi<C⇒y(i)(wTx(i)+b) = 1. (6.18)
+Now, all that remains is to give an algorithm for actually solving 

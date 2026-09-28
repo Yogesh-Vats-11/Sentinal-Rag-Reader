@@ -1,0 +1,15 @@
+ar in the
+context or just for convenience when they are not essential to the discussion.
+Then, the MLP can be written as as a composition of multiple matrix
+multiplication modules and nonlinear activation modules (which can also be
+viewed as a building block):
+MLP(x) = MMW[r],b[r](σ(MMW[r−1],b[r−1](σ(···MMW[1],b[1](x)))).(7.36)
+Alternatively, when we drop the subscripts that indicate the parameters for
+convenience, we can write
+MLP(x) = MM(σ(MMσ(···MM(x)))). (7.37)
+Note that in this lecture notes, by default, all the modules have diﬀerent
+sets of parameters, and the dimensions of the parameters are chosen such
+that the composition is meaningful.
+Larger modules can be deﬁned via smaller modules as well, e.g., one
+activation layer σand a matrix multiplication layer MM are often combined
+and 

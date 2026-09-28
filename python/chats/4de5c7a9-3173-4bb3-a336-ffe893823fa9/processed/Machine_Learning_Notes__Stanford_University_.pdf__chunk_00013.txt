@@ -1,0 +1,14 @@
+se in the training set, and x(i)
+2is its number of
+bedrooms. (In general, when designing a learning problem, it will be up to
+you to decide what features to choose, so if you are out in Portland gathering
+housing data, you might also decide to include other features such as whether
+each house has a ﬁreplace, the number of bathrooms, and so on. We’ll say
+more about feature selection later, but for now let’s take the features as
+given.)
+To perform supervised learning, we must decide how we’re going to rep-
+resent functions/hypotheses hin a computer. As an initial choice, let’s say
+we decide to approximate yas a linear function of x:
+hθ(x) =θ0+θ1x1+θ2x2
+Here, theθi’s are the parameters (also called weights ) parameterizing the
+space of linear functions mapping from XtoY. When there is no risk

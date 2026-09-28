@@ -1,0 +1,20 @@
+1{y(i)= 0}= 0
+I.e., because it has never seen “neurips” before in either spam or non-spam
+training examples, it thinks the probability of seeing it in either type of email
+is zero. Hence, when trying to decide if one of these messages containing
+3NeurIPS is one of the top machine learning conferences. The deadline for submitting
+a paper is typically in May-June.
+45
+“neurips” is spam, it calculates the class posterior probabilities, and obtains
+p(y= 1|x) =∏d
+j=1p(xj|y= 1)p(y= 1)
+∏d
+j=1p(xj|y= 1)p(y= 1) +∏d
+j=1p(xj|y= 0)p(y= 0)
+=0
+0.
+This is because each of the terms “∏d
+j=1p(xj|y)” includes a term p(x35000|y) =
+0 that is multiplied into it. Hence, our algorithm obtains 0 /0, and doesn’t
+know how to make a prediction.
+Stating the problem more broadly, it is statistically a bad idea to esti-

@@ -1,0 +1,26 @@
+above estimate
+with
+φj=1 +∑n
+i=11{z(i)=j}
+k+n.
+Here, we’ve added 1 to the numerator, and kto the denominator. Note that∑k
+j=1φj= 1 still holds (check this yourself!), which is a desirable property
+since theφj’s are estimates for probabilities that we know must sum to 1.
+Also,φj̸= 0 for all values of j, solving our problem of probabilities being
+estimated as zero. Under certain (arguably quite strong) conditions, it can
+be shown that the Laplace smoothing actually gives the optimal estimator
+of theφj’s.
+Returning to our Naive Bayes classiﬁer, with Laplace smoothing, we
+therefore obtain the following estimates of the parameters:
+φj|y=1=1 +∑n
+i=11{x(i)
+j= 1∧y(i)= 1}
+2 +∑n
+i=11{y(i)= 1}
+φj|y=0=1 +∑n
+i=11{x(i)
+j= 1∧y(i)= 0}
+2 +∑n
+i=11{y(i)= 0}
+46
+(In practice, it usually doesn’t matter much whe

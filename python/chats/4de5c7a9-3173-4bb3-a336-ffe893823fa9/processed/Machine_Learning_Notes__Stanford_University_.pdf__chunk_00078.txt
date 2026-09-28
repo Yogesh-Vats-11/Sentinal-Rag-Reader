@@ -1,0 +1,25 @@
+ the density of a Gaussian with
+zero mean and Σ = 0 .6I; and in the rightmost ﬁgure shows one with , Σ = 2 I.
+We see that as Σ becomes larger, the Gaussian becomes more “spread-out,”
+and as it becomes smaller, the distribution becomes more “compressed.”
+Let’s look at some more examples.
+−3−2−10123
+−3−2−101230.050.10.150.20.25
+−3−2−10123
+−3−2−101230.050.10.150.20.25
+−3−2−10123
+−3−2−101230.050.10.150.20.25
+The ﬁgures above show Gaussians with mean 0, and with covariance
+matrices respectively
+Σ =[1 0
+0 1]
+; Σ =[1 0.5
+0.5 1]
+; Σ =[1 0.8
+0.8 1]
+.
+The leftmost ﬁgure shows the familiar standard normal distribution, and we
+see that as we increase the oﬀ-diagonal entry in Σ, the density becomes more
+37
+“compressed” towards the 45◦line (given by x1=x2). We can see this more
+clearly when we look at t

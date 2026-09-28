@@ -1,0 +1,30 @@
+for readability). This expression can be
+re-written as
+Rt(st,at) =−s⊤
+tUtst−a⊤
+tWtat
+for some matrices Ut,Wt, with the same trick of adding an extra dimen-
+sion of ones. To convince yourself, notice that
+(
+1x)
+·(a b
+b c)
+·(1
+x)
+=a+ 2bx+cx2
+213
+step 3 Now, you can convince yourself that our problem is strictly re-written
+in the LQR framework. Let’s just use LQR to ﬁnd the optimal policy
+πt. As a result, our new controller will (hopefully) be better!
+Note: Some problems might arise if the LQR trajectory deviates too
+much from the linearized approximation of the trajectory, but that can
+be ﬁxed with reward-shaping...
+step 4 Now that we get a new controller (our new policy πt), we use it to
+produce a new trajectory
+s∗
+0,π0(s∗
+0)→s∗
+1,π1(s∗
+1)→...→s∗
+T
+note that when we generate this new trajec

@@ -1,0 +1,12 @@
+ One can verify indeed
+that if we take k= 1 and use option 2 in Line 2 in Algorithm 6, then Algo-
+rithm 6 is semantically equivalent to value iteration (Algorithm 4). In other
+words, both Algorithm 6 and value iteration interleave the updates in (15.13)
+and (15.12). Algorithm 6 alternate between ksteps of update (15.12) and
+one step of (15.13), whereas value iteration alternates between 1 steps of up-
+date (15.12) and one step of (15.13). Therefore generally Algorithm 6 should
+not be faster than value iteration, because assuming that update (15.12)
+and (15.13) are equally useful and time-consuming, then the optimal balance
+of the update frequencies could be just k= 1 ork≈1.
+On the other hand, if ksteps of update (15.12) can be done much faster
+thanktimes a single step of (15.12), then taki

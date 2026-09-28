@@ -1,0 +1,25 @@
+th the case where the
+output is a real number, that is, y(i)∈R, and thus the model hθalso outputs
+a real number hθ(x)∈R. We deﬁne the least square cost function for the
+1If a concrete example is helpful, perhaps think about the model hθ(x) =θ2
+1x2
+1+θ2
+2x2
+2+
+···+θ2
+dx2
+din this subsection, even though it’s not a neural network.
+80
+81
+i-th example ( x(i),y(i)) as
+J(i)(θ) =1
+2(hθ(x(i))−y(i))2, (7.1)
+and deﬁne the mean-square cost function for the dataset as
+J(θ) =1
+nn∑
+i=1J(i)(θ), (7.2)
+which is same as in linear regression except that we introduce a constant
+1/nin front of the cost function to be consistent with the convention. Note
+that multiplying the cost function with a scalar will not change the local
+minima or global minima of the cost function. Also note that the underlying
+paramete

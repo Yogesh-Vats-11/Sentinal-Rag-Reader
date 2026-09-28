@@ -1,0 +1,13 @@
+at time step t. The dynam-
+ics of the ﬁnite horizon MDP following policy π(t)proceeds as follows:
+we start in some state s0, take some action a0:=π(0)(s0) according to
+our policy at time step 0. The MDP transitions to a successor s1, drawn
+according to Ps0a0. Then, we get to pick another action a1:=π(1)(s1)
+following our new policy at time step 1 and so on...
+Why does the optimal policy happen to be non-stationary in the ﬁnite-
+horizon setting? Intuitively, as we have a ﬁnite numbers of actions to
+take, we might want to adopt diﬀerent strategies depending on where
+we are in the environment and how much time we have left. Imagine
+a grid with 2 goals with rewards +1 and +10. At the beginning, we
+might want to take actions to aim for the +10 goal. But if after some
+steps, dynamics somehow pus

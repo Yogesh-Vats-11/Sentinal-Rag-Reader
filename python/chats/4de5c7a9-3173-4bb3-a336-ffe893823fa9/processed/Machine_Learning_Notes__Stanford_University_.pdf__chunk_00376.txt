@@ -1,0 +1,18 @@
+a function of φ,ψ,θ by
+ELBO(φ,ψ,θ ) =n∑
+i=1Ez(i)∼Qi[
+logp(x(i),z(i);θ)
+Qi(z(i))]
+, (11.22)
+whereQi=N(q(x(i);φ),diag(v(x(i);ψ))2)
+Note that to evaluate Qi(z(i)) inside the expectation, we should be able to
+compute the density of Qi. To estimate the expectation Ez(i)∼Qi, we
+8qandvcan also share parameters. We sweep this level of details under the rug in this
+note.
+163
+should be able to sample from distribution Qiso that we can build an
+empirical estimator with samples. It happens that for Gaussian distribution
+Qi=N(q(x(i);φ),diag(v(x(i);ψ))2), we are able to be both eﬃciently.
+Now let’s optimize the ELBO. It turns out that we can run gradient ascent
+overφ,ψ,θ instead of alternating maximization. There is no strong need to
+compute the maximum over each variable at a much greater cost. (For Ga

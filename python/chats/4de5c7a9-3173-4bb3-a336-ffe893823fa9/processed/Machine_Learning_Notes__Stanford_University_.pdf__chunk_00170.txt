@@ -1,0 +1,18 @@
+alently have
+α1=−y(1)n∑
+i=2αiy(i).
+(This step used the fact that y(1)∈{− 1,1}, and hence ( y(1))2= 1.) Hence,
+α1is exactly determined by the other αi’s, and if we were to hold α2,...,αn
+ﬁxed, then we can’t make any change to α1without violating the con-
+straint (6.21) in the optimization problem.
+Thus, if we want to update some subject of the αi’s, we must update at
+least two of them simultaneously in order to keep satisfying the constraints.
+This motivates the SMO algorithm, which simply does the following:
+Repeat till convergence {
+1. Select some pair αiandαjto update next (using a heuristic that
+tries to pick the two that will allow us to make the biggest progress
+towards the global maximum).
+2. Reoptimize W(α) with respect to αiandαj, while holding all the
+otherαk’s (k̸=i,j) ﬁxed.
+}
+To

@@ -1,0 +1,13 @@
+alize the notions of the functional and geometric margins. Given a
+training example ( x(i),y(i)), we deﬁne the functional margin of (w,b) with
+respect to the training example as
+ˆγ(i)=y(i)(wTx(i)+b).
+Note that if y(i)= 1, then for the functional margin to be large (i.e., for
+our prediction to be conﬁdent and correct), we need wTx(i)+bto be a large
+positive number. Conversely, if y(i)=−1, then for the functional margin
+to be large, we need wTx(i)+bto be a large negative number. Moreover, if
+y(i)(wTx(i)+b)>0, then our prediction on this example is correct. (Check
+this yourself.) Hence, a large functional margin represents a conﬁdent and a
+correct prediction.
+For a linear classiﬁer with the choice of ggiven above (taking values in
+{−1,1}), there’s one property of the functional margin that ma

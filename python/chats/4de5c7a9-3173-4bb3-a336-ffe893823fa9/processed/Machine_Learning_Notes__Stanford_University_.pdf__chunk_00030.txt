@@ -1,0 +1,21 @@
+e
+distribution of y(i)asy(i)|x(i);θ∼N(θTx(i),σ2).
+GivenX(the design matrix, which contains all the x(i)’s) andθ, what
+is the distribution of the y(i)’s? The probability of the data is given by
+p(⃗ y|X;θ). This quantity is typically viewed a function of ⃗ y(and perhaps X),
+for a ﬁxed value of θ. When we wish to explicitly view this as a function of
+θ, we will instead call it the likelihood function:
+L(θ) =L(θ;X,⃗ y) =p(⃗ y|X;θ).
+Note that by the independence assumption on the ϵ(i)’s (and hence also the
+y(i)’s given the x(i)’s), this can also be written
+L(θ) =n∏
+i=1p(y(i)|x(i);θ)
+=n∏
+i=11√
+2πσexp(
+−(y(i)−θTx(i))2
+2σ2)
+.
+Now, given this probabilistic model relating the y(i)’s and thex(i)’s, what
+is a reasonable way of choosing our best guess of the parameters θ? The
+principal of maximum likel

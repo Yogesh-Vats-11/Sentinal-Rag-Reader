@@ -1,0 +1,14 @@
+well on Straindoes not
+necessarily mean it will also do well on Scv, and it might be better to forgo
+this retraining step.)
+The disadvantage of using hold out cross validation is that it “wastes”
+about 30% of the data. Even if we were to take the optional step of retraining
+the model on the entire training set, it’s still as if we’re trying to ﬁnd a good
+model for a learning problem in which we had 0 .7ntraining examples, rather
+thanntraining examples, since we’re testing models that were trained on
+only 0.7nexamples each time. While this is ﬁne if data is abundant and/or
+cheap, in learning problems in which data is scarce (consider a problem with
+n= 20, say), we’d like to do something better.
+Here is a method, called k-fold cross validation , that holds out less
+data each time:
+1. Randoml

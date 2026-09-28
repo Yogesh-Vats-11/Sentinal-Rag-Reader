@@ -1,0 +1,23 @@
+ithm can either converge to a global optimum or get stuck, de-
+pending on the properties of the training data. Empirically, for real-world data, often EM
+can converge to a solution with relatively high likelihood (if not the optimum), and the
+theory behind it is still largely not understood.
+5Ifzwere continuous, then Qwould be a density, and the summations over zin our
+discussion are replaced with integrals over z.
+154
+x∈R+. Also, the term
+∑
+zQ(z)[p(x,z;θ)
+Q(z)]
+in the summation is just an expectation of the quantity [ p(x,z;θ)/Q(z)] with
+respect tozdrawn according to the distribution given by Q.6By Jensen’s
+inequality, we have
+f(
+Ez∼Q[p(x,z;θ)
+Q(z)])
+≥Ez∼Q[
+f(p(x,z;θ)
+Q(z))]
+,
+where the “ z∼Q” subscripts above indicate that the expectations are with
+respect tozdrawn from Q. This allowed u
