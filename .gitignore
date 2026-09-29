@@ -1,4 +1,27 @@
-.env
+# dependencies
 node_modules/
-venv310/
-backend/python/chats
+venv/
+venv*/
+.venv/
+env/
+
+# secrets: never commit these (copy from .env.example instead)
+.env
+.env.*
+!.env.example
+
+# uploaded documents, their chunks and vector indexes (created per chat at runtime)
+python/chats/
+backend/python/
+
+# build output / caches
+dist/
+build/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

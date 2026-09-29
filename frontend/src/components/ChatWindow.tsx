@@ -1,11 +1,31 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { ChatMessage, DocInfo } from "../types";
-import { IconBook, IconSend, IconPaperclip, IconFile, IconClose, IconScroll } from "./Icons";
+import { IconBook, IconSend, IconPaperclip, IconClose, IconScroll } from "./Icons";
 
-const CONSTITUTION_SUGGESTIONS = [
-  "What does Article 21 guarantee?",
-  "What are the Fundamental Rights?",
-  "Explain the Directive Principles of State Policy",
+function subtitleForDocs(docs: DocInfo[]): string {
+  const names = docs.map((d) => d.name).join(", ");
+  return "Answering from " + (names.length > 80 ? names.slice(0, 80) + "…" : names);
+}
+
+/** "Thinking…" with a running seconds counter, so a slow start is visible rather than a mystery. */
+function Thinking() {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSeconds((n) => n + 1), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return <>Thinking…{seconds >= 2 ? ` ${seconds}s` : ""}</>;
+}
+
+function formatTiming(t: NonNullable<ChatMessage["timing"]>): string {
+  const secs = (ms: number) => (ms / 1000).toFixed(1) + "s";
+  return (t.firstMs === null ? "" : `First word ${secs(t.firstMs)} · `) + `total ${secs(t.totalMs)}`;
+}
+
+const GENERAL_SUGGESTIONS = [
+  "Explain how a neural network learns, in simple words",
+  "Help me write a polite follow-up email",
+  "Give me a 4-week plan to learn Python",
 ];
 
 const DOC_SUGGESTIONS = [
@@ -26,7 +46,6 @@ interface Props {
   onAsk: (question: string) => void;
   onOpenSources: (message: ChatMessage) => void;
   onUpload: (files: File[]) => void;
-  onDeleteDoc: (name: string) => void;
   onDismissDocsMessage: () => void;
 }
 
@@ -42,7 +61,6 @@ export default function ChatWindow({
   onAsk,
   onOpenSources,
   onUpload,
-  onDeleteDoc,
   onDismissDocsMessage,
 }: Props) {
   const [draft, setDraft] = useState("");
@@ -56,10 +74,6 @@ export default function ChatWindow({
     if (files.length > 0) onUpload(files);
   }
 
-  function handleDelete(name: string) {
-    if (!confirm(`Remove "${name}" from this chat?`)) return;
-    onDeleteDoc(name);
-  }
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -79,8 +93,8 @@ export default function ChatWindow({
         <h1>{title}</h1>
         <p>
           {hasDocs
-            ? "Answers come only from the documents attached to this chat."
-            : "No documents attached — using the built-in Constitution of India."}
+            ? subtitleForDocs(documents)
+            : "Upload a document to ask questions about it."}
         </p>
       </header>
 
@@ -90,15 +104,15 @@ export default function ChatWindow({
             <div className="empty-icon">
               <IconScroll />
             </div>
-            <h2 className="empty-title">{hasDocs ? "Ask your documents" : "What would you like to know?"}</h2>
+            <h2 className="empty-title">{hasDocs ? "Ask your documents" : "How can I help?"}</h2>
             <p className="empty-sub">
               {hasDocs
                 ? `Every answer is drawn from ${documents.length === 1 ? documents[0].name : "the documents in this chat"} and shows exactly which passages it used.`
-                : "Ask about the Constitution of India, or attach your own .txt or .pdf and ask questions about it. Every answer shows the passages it came from."}
+                : "Chat about anything, or attach a .txt or .pdf and ask questions about it. Answers about a document show the passages they came from."}
             </p>
 
             <div className="suggestions">
-              {(hasDocs ? DOC_SUGGESTIONS : CONSTITUTION_SUGGESTIONS).map((q) => (
+              {(hasDocs ? DOC_SUGGESTIONS : GENERAL_SUGGESTIONS).map((q) => (
                 <button key={q} type="button" className="suggestion-btn" disabled={loading} onClick={() => onAsk(q)}>
                   {q}
                 </button>
@@ -123,7 +137,7 @@ export default function ChatWindow({
             <div className="message-role">{m.role === "user" ? "You" : "Sentinel"}</div>
             <div className={"message-bubble" + (m.error ? " message-bubble-error" : "")}>
               {m.content}
-              {m.role === "assistant" && !m.error && (
+              {m.role === "assistant" && !m.error && m.sources && m.sources.length > 0 && (
                 <button
                   className={"book-btn" + (activeSourcesId === m.id ? " book-btn-active" : "")}
                   onClick={() => onOpenSources(m)}
@@ -135,42 +149,25 @@ export default function ChatWindow({
                 </button>
               )}
             </div>
+            {m.role === "assistant" && m.timing && <div className="message-timing">{formatTiming(m.timing)}</div>}
           </div>
         ))}
 
-        {loading && (
+        {loading && (messages.length === 0 || messages[messages.length - 1].role === "user") && (
           <div className="message message-assistant">
             <div className="message-role">Sentinel</div>
-            <div className="message-bubble message-bubble-loading">Consulting the indexed text…</div>
+            <div className="message-bubble message-bubble-loading">
+              <Thinking />
+            </div>
           </div>
         )}
 
         <div ref={bottomRef} />
       </div>
 
-      {(hasDocs || docsBusy || docsError || docsNotice) && (
+      {(docsBusy || docsError || docsNotice) && (
         <div className="docs-bar">
-          {hasDocs && (
-            <div className="docs-chips">
-              {documents.map((d) => (
-                <span key={d.name} className="doc-chip" title={d.name}>
-                  <IconFile />
-                  <span className="doc-chip-name">{d.name}</span>
-                  <button
-                    type="button"
-                    className="doc-chip-remove"
-                    aria-label={`Remove ${d.name}`}
-                    title="Remove document"
-                    disabled={docsBusy}
-                    onClick={() => handleDelete(d.name)}
-                  >
-                    <IconClose />
-                  </button>
-                </span>
-              ))}
-            </div>
-          )}
-          {docsBusy && <div className="docs-status">Reading and indexing…</div>}
+          {docsBusy && <div className="docs-status">Reading and indexing your document…</div>}
           {docsError && (
             <div className="docs-message docs-message-error" role="alert">
               <span>{docsError}</span>
@@ -211,7 +208,7 @@ export default function ChatWindow({
         </button>
         <textarea
           rows={2}
-          placeholder={hasDocs ? "Ask about your documents..." : "Ask a question, or attach a document..."}
+          placeholder={hasDocs ? "Ask about your documents..." : "Message Sentinel, or attach a document..."}
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={(e) => {

@@ -1,22 +1,20 @@
 """
-CLI entrypoint: build the FAISS vector store from a folder of processed
-chunks and save it. Run once (and again whenever the source documents change).
+CLI entrypoint: build a FAISS vector store from a folder of processed chunks.
+The backend runs this for a chat every time its documents change.
 
 Usage:
-    python build_index.py                                   # global defaults from config.py
-    python build_index.py --processed DIR --store DIR       # used by the backend, one index per chat
+    python build_index.py --processed DIR --store DIR
 """
 
 import argparse
 
 from rag.vectorstore import build_vectorstore
-from config import VECTORSTORE_PATH, PROCESSED_DIR
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--processed", default=PROCESSED_DIR)
-    parser.add_argument("--store", default=VECTORSTORE_PATH)
+    parser.add_argument("--processed", required=True)
+    parser.add_argument("--store", required=True)
     args = parser.parse_args()
 
     print(f"[build_index] Building vector store from '{args.processed}'...")

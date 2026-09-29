@@ -8,17 +8,29 @@ export interface QueryResult {
 }
 
 /**
- * Runs python/query.py "<question>" [--store <path>] as a child process and parses its
+ * Runs python/query.py "<question>" [--store <path>] [--history] as a child process and parses its
  * single-line JSON stdout. All RAG logic (embeddings, retrieval, the LLM
  * call) lives entirely in Python; this is just the bridge.
  */
-export function runQuery(question: string, storePath?: string): Promise<QueryResult> {
+export interface HistoryMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export function runQuery(question: string, storePath?: string, history: HistoryMessage[] = []): Promise<QueryResult> {
   return new Promise((resolve) => {
     const args = ["query.py", question];
     if (storePath) args.push("--store", storePath);
+    // earlier messages only matter for a normal chat (no documents); they go over stdin
+    // so long conversations can't hit the Windows command-line length limit
+    const sendHistory = !storePath && history.length > 0;
+    if (sendHistory) args.push("--history");
     const proc = spawn(PYTHON_BIN, args, {
       cwd: PYTHON_DIR,
     });
+    if (sendHistory) proc.stdin.write(JSON.stringify(history));
+    proc.stdin.on("error", () => undefined);
+    proc.stdin.end();
 
     let stdout = "";
     let stderr = "";

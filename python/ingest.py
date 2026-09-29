@@ -1,5 +1,5 @@
 """
-Ingest raw source documents (.txt or .pdf) from RAW_DIR, split them into
+Ingest raw source documents (.txt or .pdf) from a folder, split them into
 fixed-size chunks, and write each chunk out as
     <processed>/<source file name>__chunk_NNNNN.txt
 
@@ -8,26 +8,50 @@ back to the document it came from (used for per-document citations and for
 per-chat document deletion).
 
 Usage:
-    python ingest.py                                  # global defaults from config.py
-    python ingest.py --raw DIR --processed DIR --clean  # used by the backend, one folder per chat
+    python ingest.py --raw DIR --processed DIR --clean   # run by the backend, one folder per chat
 """
 
 import argparse
 import os
 
-from config import RAW_DIR, PROCESSED_DIR, CHUNK_SIZE, CHUNK_OVERLAP
+from config import CHUNK_SIZE, CHUNK_OVERLAP
+
+
+def _read_pdf_text(path: str) -> str:
+    # pypdfium2 is much faster than pypdf on image/drawing-heavy PDFs (illustrated books, scans with
+    # a text layer) -- tens of seconds vs. minutes on a large file -- and extracts the same text.
+    try:
+        import pypdfium2 as pdfium
+
+        doc = pdfium.PdfDocument(path)
+        try:
+            pages = []
+            for page in doc:
+                textpage = page.get_textpage()
+                try:
+                    pages.append(textpage.get_text_bounded())
+                finally:
+                    textpage.close()
+                    page.close()
+            return "\n".join(pages)
+        finally:
+            doc.close()
+    except ImportError:
+        pass
+
+    try:
+        from pypdf import PdfReader
+    except ImportError as e:
+        raise RuntimeError(
+            "Reading PDFs requires 'pypdfium2' or 'pypdf' (pip install -r requirements.txt)."
+        ) from e
+    reader = PdfReader(path)
+    return "\n".join(page.extract_text() or "" for page in reader.pages)
 
 
 def _read_source_text(path: str) -> str:
     if path.lower().endswith(".pdf"):
-        try:
-            from pypdf import PdfReader
-        except ImportError as e:
-            raise RuntimeError(
-                "Reading PDFs requires the 'pypdf' package (pip install pypdf)."
-            ) from e
-        reader = PdfReader(path)
-        return "\n".join(page.extract_text() or "" for page in reader.pages)
+        return _read_pdf_text(path)
 
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         return f.read()
@@ -45,11 +69,7 @@ def chunk_text(text: str, chunk_size: int, overlap: int) -> list[str]:
     return [c for c in chunks if c.strip()]
 
 
-def run_ingest(
-    raw_dir: str = RAW_DIR,
-    processed_dir: str = PROCESSED_DIR,
-    clean: bool = False,
-) -> int:
+def run_ingest(raw_dir: str, processed_dir: str, clean: bool = False) -> int:
     """Chunk every .txt/.pdf in raw_dir. If clean=True, existing chunk files in
     processed_dir are removed first so deleted documents don't leave stale chunks.
 
@@ -88,8 +108,8 @@ def run_ingest(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--raw", default=RAW_DIR)
-    parser.add_argument("--processed", default=PROCESSED_DIR)
+    parser.add_argument("--raw", required=True)
+    parser.add_argument("--processed", required=True)
     parser.add_argument("--clean", action="store_true")
     args = parser.parse_args()
     run_ingest(args.raw, args.processed, args.clean)

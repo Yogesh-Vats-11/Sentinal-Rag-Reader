@@ -93,3 +93,17 @@ export function IconFile() {
     </svg>
   );
 }
+
+export function IconPencil() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path
+        d="M8.9 2.6L11.4 5.1M2.2 11.8L2.7 9.2L9.6 2.3C10 1.9 10.6 1.9 11 2.3L11.7 3C12.1 3.4 12.1 4 11.7 4.4L4.8 11.3L2.2 11.8Z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

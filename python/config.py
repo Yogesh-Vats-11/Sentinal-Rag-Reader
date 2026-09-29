@@ -25,13 +25,25 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 
-# --- Storage / ingestion -----------------------------------------------------
-VECTORSTORE_PATH = os.getenv("VECTORSTORE_PATH", "vectorstore")
-RAW_DIR = os.getenv("RAW_DIR", "data_ingest/raw")
-PROCESSED_DIR = os.getenv("PROCESSED_DIR", "data_ingest/processed")
+# --- Ingestion ---------------------------------------------------------------
+# (Where documents/indexes live is decided per chat by the backend: python/chats/<chatId>/)
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "800"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "100"))
-TOP_K = int(os.getenv("TOP_K", "4"))
+TOP_K = int(os.getenv("TOP_K", "3"))  # fewer retrieved chunks = shorter prompt = faster answers
+
+# --- Speed ---------------------------------------------------------------------
+# Keep the Ollama model loaded in memory between questions (Ollama's default is 5 minutes).
+LLM_KEEP_ALIVE = os.getenv("LLM_KEEP_ALIVE", "30m")
+# Upper limit on the length of one answer, in tokens. Stops very long replies on slow machines.
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", "600"))
+# Optional: Ollama context window. Smaller = less RAM and faster. Leave empty for Ollama's default.
+OLLAMA_NUM_CTX = int(os.getenv("OLLAMA_NUM_CTX", "0")) or None
+# How much of the earlier conversation is sent along in a normal chat. Every message is re-read by
+# the model on each question, so long history makes every answer slower.
+HISTORY_MESSAGES = int(os.getenv("HISTORY_MESSAGES", "6"))
+HISTORY_CHARS = int(os.getenv("HISTORY_CHARS", "800"))
+# Load the embedding model and the LLM as soon as the backend starts, so the first question is fast.
+WARMUP = os.getenv("WARMUP", "true").lower() != "false"
 
 
 def require_api_key() -> str:

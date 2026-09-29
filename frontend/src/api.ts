@@ -3,6 +3,7 @@ import { DocInfo } from "./types";
 export interface QueryResponse {
   answer?: string;
   sources?: string[];
+  timing?: { firstMs: number | null; totalMs: number };
   error?: string;
 }
 
@@ -23,18 +24,80 @@ async function readJson<T>(res: Response): Promise<T & { error?: string }> {
   }
 }
 
-export async function askQuestion(question: string, chatId: string): Promise<QueryResponse> {
+export interface HistoryItem {
+  role: "user" | "assistant";
+  content: string;
+}
+
+/**
+ * Ask a question. The answer arrives as a stream: onToken is called with each piece of
+ * text as it is generated, so the reply appears immediately instead of after the full wait.
+ */
+export async function askQuestion(
+  question: string,
+  chatId: string,
+  history: HistoryItem[] = [],
+  onToken?: (text: string) => void
+): Promise<QueryResponse> {
+  let answer = "";
   try {
     const res = await fetch("/api/query", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question, chatId }),
+      body: JSON.stringify({ question, chatId, history }),
     });
-    const data = await readJson<QueryResponse>(res);
-    if (!res.ok) return { error: data.error || "Something went wrong." };
-    return data;
+
+    if (!res.ok || !res.body) {
+      const data = await readJson<QueryResponse>(res);
+      return { error: data.error || "Something went wrong." };
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let sources: string[] = [];
+    let timing: QueryResponse["timing"];
+    let finished = false;
+    let error: string | undefined;
+
+    const handleLine = (line: string) => {
+      if (!line.trim()) return;
+      let ev: { type?: string; text?: string; sources?: string[]; timing?: QueryResponse["timing"]; error?: string };
+      try {
+        ev = JSON.parse(line);
+      } catch {
+        return;
+      }
+      if (ev.type === "token" && ev.text) {
+        answer += ev.text;
+        onToken?.(ev.text);
+      } else if (ev.type === "done") {
+        finished = true;
+        sources = ev.sources ?? [];
+        timing = ev.timing;
+      } else if (ev.type === "error") {
+        finished = true;
+        error = ev.error || "Something went wrong.";
+      }
+    };
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let newline: number;
+      while ((newline = buffer.indexOf("\n")) >= 0) {
+        handleLine(buffer.slice(0, newline));
+        buffer = buffer.slice(newline + 1);
+      }
+    }
+    handleLine(buffer);
+
+    if (error) return { answer, error };
+    if (!finished) return { answer, error: "The connection was lost before the answer finished." };
+    return { answer, sources, timing };
   } catch {
-    return { error: "Couldn't reach the backend. Is it running on port 4000?" };
+    return { answer, error: "Couldn't reach the backend. Is it running on port 4000?" };
   }
 }
 

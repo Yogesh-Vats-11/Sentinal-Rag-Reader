@@ -144,24 +144,122 @@ body {
   white-space: nowrap;
 }
 
-.chat-item-delete {
+.chat-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.chat-item:hover .chat-item-actions,
+.chat-item-active .chat-item-actions,
+.chat-item:focus-within .chat-item-actions {
+  opacity: 1;
+}
+
+.chat-item-btn {
   background: transparent;
   border: none;
   color: var(--ink-text-dim);
   cursor: pointer;
   padding: 3px;
   border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.1s ease, color 0.1s ease;
+  display: flex;
+  transition: color 0.1s ease, background 0.1s ease;
+}
+
+.chat-item-btn:hover {
+  color: var(--ink-text);
+  background: var(--ink-border);
+}
+
+.chat-item-input {
+  flex: 1;
+  min-width: 0;
+  background: var(--ink-900);
+  color: var(--ink-text);
+  border: 1px solid var(--ink-text-dim);
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.chat-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* documents of the open chat, nested under its name */
+.chat-docs {
+  margin: 2px 0 6px 18px;
+  padding-left: 10px;
+  border-left: 1px solid var(--ink-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.chat-doc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px;
+  border-radius: 6px;
+  color: var(--ink-text-dim);
+  font-size: 0.78rem;
+}
+
+.chat-doc:hover {
+  background: var(--ink-700);
+  color: var(--ink-text);
+}
+
+.chat-doc svg {
   flex-shrink: 0;
 }
 
-.chat-item:hover .chat-item-delete {
+.chat-doc-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-doc-remove {
+  display: flex;
+  background: transparent;
+  border: none;
+  color: var(--ink-text-dim);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.chat-doc:hover .chat-doc-remove {
   opacity: 1;
 }
 
-.chat-item-delete:hover {
+.chat-doc-remove:hover:not(:disabled) {
   color: var(--ink-text);
+  background: var(--ink-border);
+}
+
+.chat-doc-remove:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.chat-doc-status {
+  padding: 5px 6px;
+  font-size: 0.75rem;
+  color: var(--ink-text-dim);
 }
 
 .sidebar-footer {
@@ -512,61 +610,6 @@ body {
   gap: 8px;
 }
 
-.docs-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.doc-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  max-width: 260px;
-  padding: 5px 6px 5px 10px;
-  border: 1px solid var(--paper-border);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--charcoal);
-  font-size: 0.8rem;
-}
-
-.doc-chip svg {
-  color: var(--brass);
-  flex-shrink: 0;
-}
-
-.doc-chip-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.doc-chip-remove {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.doc-chip-remove:hover:not(:disabled) {
-  background: var(--hover);
-  color: var(--charcoal);
-}
-
-.doc-chip-remove:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
 .docs-status {
   font-size: 0.78rem;
   color: var(--muted);
@@ -647,4 +690,11 @@ textarea:focus-visible {
     width: 82vw;
     z-index: 10;
   }
+}
+
+.message-timing {
+  margin-top: 4px;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  color: var(--muted);
 }

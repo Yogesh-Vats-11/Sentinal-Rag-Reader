@@ -1,8 +1,8 @@
-import { spawn } from "child_process";
 import fs from "fs";
 import path from "path";
 
-import { PYTHON_BIN, PYTHON_DIR } from "./pythonConfig";
+import { PYTHON_DIR } from "./pythonConfig";
+import { startRequest } from "./pythonWorker";
 
 /**
  * Every chat gets its own folder so its documents and index never mix with
@@ -61,17 +61,6 @@ export function withChatLock<T>(chatId: string, fn: () => Promise<T>): Promise<T
 }
 
 // ---------------------------------------------------------------------------
-
-function runPython(scriptArgs: string[]): Promise<{ ok: boolean; output: string }> {
-  return new Promise((resolve) => {
-    const proc = spawn(PYTHON_BIN, scriptArgs, { cwd: PYTHON_DIR });
-    let out = "";
-    proc.stdout.on("data", (c) => (out += c.toString()));
-    proc.stderr.on("data", (c) => (out += c.toString()));
-    proc.on("close", (code) => resolve({ ok: code === 0, output: out.trim() }));
-    proc.on("error", (err) => resolve({ ok: false, output: err.message }));
-  });
-}
 
 export function listDocuments(chatId: string): DocInfo[] {
   const dir = rawDir(chatId);
@@ -132,25 +121,25 @@ function clearIndex(chatId: string) {
 export async function indexChat(chatId: string): Promise<{ ok: boolean; output: string }> {
   ensureChatDirs(chatId);
 
-  const ingest = await runPython([
-    "ingest.py",
-    "--raw", rawDir(chatId),
-    "--processed", processedDir(chatId),
-    "--clean",
-  ]);
-  if (!ingest.ok) return ingest;
+  const ingest = await startRequest("ingest", {
+    raw: rawDir(chatId),
+    processed: processedDir(chatId),
+    clean: true,
+  }).result;
+  if (!ingest.ok) return { ok: false, output: ingest.error ?? "" };
 
   if (countChunks(chatId) === 0) {
     fs.rmSync(vectorstoreDir(chatId), { recursive: true, force: true });
-    return { ok: true, output: ingest.output };
+    return { ok: true, output: ingest.output ?? "" };
   }
 
-  const build = await runPython([
-    "build_index.py",
-    "--processed", processedDir(chatId),
-    "--store", vectorstoreDir(chatId),
-  ]);
-  return { ok: build.ok, output: ingest.output + "\n" + build.output };
+  const build = await startRequest("build", {
+    processed: processedDir(chatId),
+    store: vectorstoreDir(chatId),
+  }).result;
+  return build.ok
+    ? { ok: true, output: (ingest.output ?? "") + "\n" + (build.output ?? "") }
+    : { ok: false, output: build.error ?? "" };
 }
 
 /** Delete one document from a chat and rebuild (or drop) its index. Call inside withChatLock. */

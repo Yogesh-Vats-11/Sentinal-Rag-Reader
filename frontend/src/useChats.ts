@@ -53,11 +53,17 @@ export function useChats() {
     });
   }
 
+  function renameChat(id: string, title: string) {
+    const clean = title.trim().slice(0, 60);
+    if (!clean) return; // ignore an empty name, keep the old one
+    setChats((prev) => prev.map((c) => (c.id === id ? { ...c, title: clean, customTitle: true } : c)));
+  }
+
   function updateChat(id: string, updater: (chat: Chat) => Chat) {
     setChats((prev) => prev.map((c) => (c.id === id ? updater(c) : c)));
   }
 
   const activeChat = chats.find((c) => c.id === activeId) ?? chats[0];
 
-  return { chats, activeChat, activeId, setActiveId, newChat, deleteChat, updateChat };
+  return { chats, activeChat, activeId, setActiveId, newChat, deleteChat, renameChat, updateChat };
 }

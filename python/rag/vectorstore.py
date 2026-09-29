@@ -15,25 +15,24 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 
-from config import (
-    EMBEDDING_MODEL,
-    VECTORSTORE_PATH,
-    PROCESSED_DIR,
-    CHUNK_SIZE,
-    CHUNK_OVERLAP,
-)
+from config import EMBEDDING_MODEL, CHUNK_SIZE, CHUNK_OVERLAP
 
 
 def get_embeddings() -> HuggingFaceEmbeddings:
-    return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+    # Use the copy already on disk without contacting huggingface.co (slow or hanging on a poor
+    # connection). Only the very first run needs the download.
+    try:
+        return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL, model_kwargs={"local_files_only": True})
+    except Exception:
+        return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
 
 
-def _load_processed_documents(processed_dir: str = PROCESSED_DIR) -> list[Document]:
+def _load_processed_documents(processed_dir: str) -> list[Document]:
     """Read every chunk_*.txt file in the processed directory into
     LangChain Document objects, tagged with their source filename."""
     if not os.path.isdir(processed_dir):
         raise FileNotFoundError(
-            f"Processed directory '{processed_dir}' not found. Run ingest.py first."
+            f"Processed directory '{processed_dir}' not found. Upload a document first."
         )
 
     docs: list[Document] = []
@@ -48,10 +47,7 @@ def _load_processed_documents(processed_dir: str = PROCESSED_DIR) -> list[Docume
     return docs
 
 
-def build_vectorstore(
-    processed_dir: str = PROCESSED_DIR,
-    save_path: str = VECTORSTORE_PATH,
-) -> FAISS:
+def build_vectorstore(processed_dir: str, save_path: str) -> FAISS:
     """Chunk the processed documents, embed them, and persist a FAISS index
     to disk at save_path."""
     raw_docs = _load_processed_documents(processed_dir)
@@ -72,11 +68,11 @@ def build_vectorstore(
     return db
 
 
-def load_vectorstore(save_path: str = VECTORSTORE_PATH) -> FAISS:
+def load_vectorstore(save_path: str) -> FAISS:
     """Load a previously built FAISS index from disk."""
     if not os.path.exists(save_path):
         raise FileNotFoundError(
-            f"Vectorstore not found at '{save_path}'. Run build_index.py first."
+            f"Vectorstore not found at '{save_path}'. Upload a document first."
         )
     embeddings = get_embeddings()
     return FAISS.load_local(
